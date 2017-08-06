@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC23F49C1F379F100083A365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49B1F379F100083A365 /* main.m */; };
+		DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49E1F379F100083A365 /* MCAppDelegate.m */; };
+		DC23F4A51F379F100083A365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A31F379F100083A365 /* Main.storyboard */; };
+		DC23F4A71F379F100083A365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A61F379F100083A365 /* Assets.xcassets */; };
+		DC23F4AA1F379F100083A365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A81F379F100083A365 /* LaunchScreen.storyboard */; };
+		DC23F4B51F379F100083A365 /* MicrosoftiOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */; };
+		DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */; };
+		DC23F4D21F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC23F4B11F379F100083A365 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC23F48F1F379F0F0083A365 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC23F4961F379F0F0083A365;
+			remoteInfo = MicrosoftiOSChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicrosoftiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC23F49B1F379F100083A365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC23F49D1F379F100083A365 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
+		DC23F49E1F379F100083A365 /* MCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppDelegate.m; sourceTree = "<group>"; };
+		DC23F4A41F379F100083A365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC23F4A61F379F100083A365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC23F4A91F379F100083A365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC23F4AB1F379F100083A365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC23F4B01F379F100083A365 /* MicrosoftiOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicrosoftiOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MicrosoftiOSChallengeTests.m; sourceTree = "<group>"; };
+		DC23F4B61F379F100083A365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC23F4CF1F37A0F40083A365 /* MCCalenderAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderAgendaViewController.h; sourceTree = "<group>"; };
+		DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderAgendaViewController.m; sourceTree = "<group>"; };
+		DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MicrosoftiOSChallenge-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC23F4941F379F0F0083A365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC23F4AD1F379F100083A365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC23F48E1F379F0F0083A365 = {
+			isa = PBXGroup;
+			children = (
+				DC23F4991F379F0F0083A365 /* MicrosoftiOSChallenge */,
+				DC23F4B31F379F100083A365 /* MicrosoftiOSChallengeTests */,
+				DC23F4981F379F0F0083A365 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC23F4981F379F0F0083A365 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */,
+				DC23F4B01F379F100083A365 /* MicrosoftiOSChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC23F4991F379F0F0083A365 /* MicrosoftiOSChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4BF1F379F1D0083A365 /* Source */,
+				DC23F4C01F379F220083A365 /* Resources */,
+				DC23F49A1F379F0F0083A365 /* Supporting Files */,
+			);
+			path = MicrosoftiOSChallenge;
+			sourceTree = "<group>";
+		};
+		DC23F49A1F379F0F0083A365 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */,
+				DC23F4AB1F379F100083A365 /* Info.plist */,
+				DC23F49B1F379F100083A365 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC23F4B31F379F100083A365 /* MicrosoftiOSChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */,
+				DC23F4B61F379F100083A365 /* Info.plist */,
+			);
+			path = MicrosoftiOSChallengeTests;
+			sourceTree = "<group>";
+		};
+		DC23F4BF1F379F1D0083A365 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4C81F379FE50083A365 /* Common */,
+				DC23F4C61F379FCC0083A365 /* Controllers */,
+				DC23F4C11F379F2D0083A365 /* AppDelegate */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		DC23F4C01F379F220083A365 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4C31F379F4A0083A365 /* Assets */,
+				DC23F4C21F379F390083A365 /* Storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DC23F4C11F379F2D0083A365 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F49D1F379F100083A365 /* MCAppDelegate.h */,
+				DC23F49E1F379F100083A365 /* MCAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DC23F4C21F379F390083A365 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4A31F379F100083A365 /* Main.storyboard */,
+				DC23F4A81F379F100083A365 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		DC23F4C31F379F4A0083A365 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4A61F379F100083A365 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		DC23F4C61F379FCC0083A365 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4C71F379FD80083A365 /* CalenderAgenda */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DC23F4C71F379FD80083A365 /* CalenderAgenda */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4CF1F37A0F40083A365 /* MCCalenderAgendaViewController.h */,
+				DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */,
+			);
+			name = CalenderAgenda;
+			sourceTree = "<group>";
+		};
+		DC23F4C81F379FE50083A365 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DC23F4C91F379FEC0083A365 /* Categories */,
+				DC23F4CC1F37A00A0083A365 /* Library */,
+				DC23F4CA1F379FF50083A365 /* Protocols */,
+				DC23F4D31F37A1300083A365 /* Constants */,
+				DC23F4CB1F379FFA0083A365 /* Global */,
+				DC23F4CE1F37A04E0083A365 /* BaseClass */,
+				DC23F4CD1F37A0140083A365 /* Connectivity */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		DC23F4C91F379FEC0083A365 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		DC23F4CA1F379FF50083A365 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		DC23F4CB1F379FFA0083A365 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		DC23F4CC1F37A00A0083A365 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		DC23F4CD1F37A0140083A365 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Connectivity;
+			sourceTree = "<group>";
+		};
+		DC23F4CE1F37A04E0083A365 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BaseClass;
+			sourceTree = "<group>";
+		};
+		DC23F4D31F37A1300083A365 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC23F4961F379F0F0083A365 /* MicrosoftiOSChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC23F4B91F379F100083A365 /* Build configuration list for PBXNativeTarget "MicrosoftiOSChallenge" */;
+			buildPhases = (
+				DC23F4931F379F0F0083A365 /* Sources */,
+				DC23F4941F379F0F0083A365 /* Frameworks */,
+				DC23F4951F379F0F0083A365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MicrosoftiOSChallenge;
+			productName = MicrosoftiOSChallenge;
+			productReference = DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC23F4AF1F379F100083A365 /* MicrosoftiOSChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC23F4BC1F379F100083A365 /* Build configuration list for PBXNativeTarget "MicrosoftiOSChallengeTests" */;
+			buildPhases = (
+				DC23F4AC1F379F100083A365 /* Sources */,
+				DC23F4AD1F379F100083A365 /* Frameworks */,
+				DC23F4AE1F379F100083A365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC23F4B21F379F100083A365 /* PBXTargetDependency */,
+			);
+			name = MicrosoftiOSChallengeTests;
+			productName = MicrosoftiOSChallengeTests;
+			productReference = DC23F4B01F379F100083A365 /* MicrosoftiOSChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC23F48F1F379F0F0083A365 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Shaheen M Basheer";
+				TargetAttributes = {
+					DC23F4961F379F0F0083A365 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T4JB848GZR;
+						ProvisioningStyle = Automatic;
+					};
+					DC23F4AF1F379F100083A365 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T4JB848GZR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DC23F4961F379F0F0083A365;
+					};
+				};
+			};
+			buildConfigurationList = DC23F4921F379F0F0083A365 /* Build configuration list for PBXProject "MicrosoftiOSChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC23F48E1F379F0F0083A365;
+			productRefGroup = DC23F4981F379F0F0083A365 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC23F4961F379F0F0083A365 /* MicrosoftiOSChallenge */,
+				DC23F4AF1F379F100083A365 /* MicrosoftiOSChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC23F4951F379F0F0083A365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23F4AA1F379F100083A365 /* LaunchScreen.storyboard in Resources */,
+				DC23F4A71F379F100083A365 /* Assets.xcassets in Resources */,
+				DC23F4A51F379F100083A365 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC23F4AE1F379F100083A365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC23F4931F379F0F0083A365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */,
+				DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
+				DC23F49C1F379F100083A365 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC23F4AC1F379F100083A365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23F4D21F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
+				DC23F4B51F379F100083A365 /* MicrosoftiOSChallengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC23F4B21F379F100083A365 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC23F4961F379F0F0083A365 /* MicrosoftiOSChallenge */;
+			targetProxy = DC23F4B11F379F100083A365 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC23F4A31F379F100083A365 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC23F4A41F379F100083A365 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC23F4A81F379F100083A365 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC23F4A91F379F100083A365 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC23F4B71F379F100083A365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC23F4B81F379F100083A365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC23F4BA1F379F100083A365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T4JB848GZR;
+				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
+				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC23F4BB1F379F100083A365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T4JB848GZR;
+				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
+				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DC23F4BD1F379F100083A365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T4JB848GZR;
+				INFOPLIST_FILE = MicrosoftiOSChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicrosoftiOSChallenge.app/MicrosoftiOSChallenge";
+			};
+			name = Debug;
+		};
+		DC23F4BE1F379F100083A365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T4JB848GZR;
+				INFOPLIST_FILE = MicrosoftiOSChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicrosoftiOSChallenge.app/MicrosoftiOSChallenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC23F4921F379F0F0083A365 /* Build configuration list for PBXProject "MicrosoftiOSChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC23F4B71F379F100083A365 /* Debug */,
+				DC23F4B81F379F100083A365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC23F4B91F379F100083A365 /* Build configuration list for PBXNativeTarget "MicrosoftiOSChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC23F4BA1F379F100083A365 /* Debug */,
+				DC23F4BB1F379F100083A365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DC23F4BC1F379F100083A365 /* Build configuration list for PBXNativeTarget "MicrosoftiOSChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC23F4BD1F379F100083A365 /* Debug */,
+				DC23F4BE1F379F100083A365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC23F48F1F379F0F0083A365 /* Project object */;
+}
