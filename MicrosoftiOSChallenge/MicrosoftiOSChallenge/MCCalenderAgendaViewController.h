@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+  MCCalenderAgendaViewController is used to display and handle events from
+  calender and agenda view controllers.
+ */
 @interface MCCalenderAgendaViewController : UIViewController
 
 @end

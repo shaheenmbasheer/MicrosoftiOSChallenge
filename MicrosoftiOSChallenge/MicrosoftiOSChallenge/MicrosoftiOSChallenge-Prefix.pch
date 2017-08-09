@@ -6,10 +6,17 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#ifndef MicrosoftiOSChallenge_Prefix_pch
-#define MicrosoftiOSChallenge_Prefix_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#endif /* MicrosoftiOSChallenge_Prefix_pch */
+#ifdef __OBJC__
+
+//#import "MCConstants.h"
+//#import "MCProtocolHeaders.h"
+//#import "MCCategoryHeaders.h"
+//#import "MCGlobalHeaders.h"
+//#import "MCDateRangeManager.h"
+#import "MCGlobalHelpers.h"
+
+#endif

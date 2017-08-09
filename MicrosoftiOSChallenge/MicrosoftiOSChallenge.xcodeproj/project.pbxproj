@@ -7,14 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC080C7C1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C7B1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m */; };
+		DC080C7D1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C7B1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m */; };
+		DC080C801F387D0A002B4FB3 /* MCDateRangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C7F1F387D0A002B4FB3 /* MCDateRangeManager.m */; };
+		DC080C811F387D0A002B4FB3 /* MCDateRangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C7F1F387D0A002B4FB3 /* MCDateRangeManager.m */; };
+		DC080C871F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C861F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m */; };
+		DC080C881F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC080C861F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m */; };
+		DC0B613D1F385776000C6D58 /* NSDate+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B613C1F385776000C6D58 /* NSDate+DateToString.m */; };
+		DC0B613E1F385776000C6D58 /* NSDate+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B613C1F385776000C6D58 /* NSDate+DateToString.m */; };
+		DC0B61411F385B62000C6D58 /* NSDateCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61401F385B62000C6D58 /* NSDateCategoryTests.m */; };
+		DC0B61471F385DB2000C6D58 /* MCCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */; };
+		DC0B61481F385DB2000C6D58 /* MCCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */; };
+		DC0B614B1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */; };
+		DC0B614C1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */; };
+		DC0B61561F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */; };
+		DC0B61571F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */; };
+		DC0B615A1F386137000C6D58 /* MCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61591F386137000C6D58 /* MCConstants.m */; };
+		DC0B615B1F386137000C6D58 /* MCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61591F386137000C6D58 /* MCConstants.m */; };
 		DC23F49C1F379F100083A365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49B1F379F100083A365 /* main.m */; };
 		DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49E1F379F100083A365 /* MCAppDelegate.m */; };
 		DC23F4A51F379F100083A365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A31F379F100083A365 /* Main.storyboard */; };
 		DC23F4A71F379F100083A365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A61F379F100083A365 /* Assets.xcassets */; };
 		DC23F4AA1F379F100083A365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A81F379F100083A365 /* LaunchScreen.storyboard */; };
-		DC23F4B51F379F100083A365 /* MicrosoftiOSChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */; };
 		DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */; };
 		DC23F4D21F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */; };
+		DC4335531F3A493400F44F22 /* MCDataControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335521F3A493400F44F22 /* MCDataControllerManager.m */; };
+		DC4335541F3A493400F44F22 /* MCDataControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335521F3A493400F44F22 /* MCDataControllerManager.m */; };
+		DC4335571F3A494700F44F22 /* MCDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335561F3A494700F44F22 /* MCDataController.m */; };
+		DC4335581F3A494700F44F22 /* MCDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335561F3A494700F44F22 /* MCDataController.m */; };
+		DC43355B1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43355A1F3A495D00F44F22 /* MCDummyDataProvider.m */; };
+		DC43355C1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43355A1F3A495D00F44F22 /* MCDummyDataProvider.m */; };
+		DC43355F1F3A49C700F44F22 /* MCMappingData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43355E1F3A49C700F44F22 /* MCMappingData.m */; };
+		DC4335601F3A49C700F44F22 /* MCMappingData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43355E1F3A49C700F44F22 /* MCMappingData.m */; };
+		DC4335631F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335621F3A49DE00F44F22 /* MCO365DataProvider.m */; };
+		DC4335641F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335621F3A49DE00F44F22 /* MCO365DataProvider.m */; };
+		DC4335661F3A4D7B00F44F22 /* GetEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = DC4335651F3A4D7B00F44F22 /* GetEvents.json */; };
+		DC4335671F3A4D7B00F44F22 /* GetEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = DC4335651F3A4D7B00F44F22 /* GetEvents.json */; };
+		DC43356B1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43356A1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m */; };
+		DC43356C1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43356A1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m */; };
+		DC4335701F3B16B900F44F22 /* MCParticipantLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43356F1F3B16B900F44F22 /* MCParticipantLabel.m */; };
+		DC4335711F3B16B900F44F22 /* MCParticipantLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43356F1F3B16B900F44F22 /* MCParticipantLabel.m */; };
+		DC4335741F3B1B9A00F44F22 /* ParticipantLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335731F3B1B9A00F44F22 /* ParticipantLabelTests.m */; };
+		DC43357A1F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335791F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m */; };
+		DC43357E1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43357D1F3B21E600F44F22 /* MCGlobalHelpers.m */; };
+		DC43357F1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC43357D1F3B21E600F44F22 /* MCGlobalHelpers.m */; };
+		DC4335831F3B2F6C00F44F22 /* MCAvailabilityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335821F3B2F6C00F44F22 /* MCAvailabilityView.m */; };
+		DC4335841F3B2F6C00F44F22 /* MCAvailabilityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335821F3B2F6C00F44F22 /* MCAvailabilityView.m */; };
+		DC6B4A981F3B42570028EE70 /* GetEventData.json in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A971F3B42570028EE70 /* GetEventData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +67,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC080C7A1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderDayCollectionViewCell.h; sourceTree = "<group>"; };
+		DC080C7B1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderDayCollectionViewCell.m; sourceTree = "<group>"; };
+		DC080C7E1F387D0A002B4FB3 /* MCDateRangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDateRangeManager.h; sourceTree = "<group>"; };
+		DC080C7F1F387D0A002B4FB3 /* MCDateRangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDateRangeManager.m; sourceTree = "<group>"; };
+		DC080C831F3881FA002B4FB3 /* MCGlobalHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGlobalHeaders.h; sourceTree = "<group>"; };
+		DC080C851F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAgendaEmptyTableViewCell.h; sourceTree = "<group>"; };
+		DC080C861F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAgendaEmptyTableViewCell.m; sourceTree = "<group>"; };
+		DC0B613B1F385776000C6D58 /* NSDate+DateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateToString.h"; sourceTree = "<group>"; };
+		DC0B613C1F385776000C6D58 /* NSDate+DateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateToString.m"; sourceTree = "<group>"; };
+		DC0B613F1F385894000C6D58 /* MCCategoryHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCategoryHeaders.h; sourceTree = "<group>"; };
+		DC0B61401F385B62000C6D58 /* NSDateCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDateCategoryTests.m; path = ../MicrosoftiOSChallenge/NSDateCategoryTests.m; sourceTree = "<group>"; };
+		DC0B61451F385DB2000C6D58 /* MCCalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderViewController.h; sourceTree = "<group>"; };
+		DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderViewController.m; sourceTree = "<group>"; };
+		DC0B61491F385DCF000C6D58 /* MCAgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAgendaTableViewController.h; sourceTree = "<group>"; };
+		DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAgendaTableViewController.m; sourceTree = "<group>"; };
+		DC0B61531F385F85000C6D58 /* MCCalenderAgendaContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderAgendaContainerView.h; sourceTree = "<group>"; };
+		DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderAgendaContainerView.m; sourceTree = "<group>"; };
+		DC0B61581F386137000C6D58 /* MCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConstants.h; sourceTree = "<group>"; };
+		DC0B61591F386137000C6D58 /* MCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCConstants.m; sourceTree = "<group>"; };
 		DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicrosoftiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC23F49B1F379F100083A365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC23F49D1F379F100083A365 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
@@ -37,11 +95,37 @@
 		DC23F4A91F379F100083A365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC23F4AB1F379F100083A365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC23F4B01F379F100083A365 /* MicrosoftiOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicrosoftiOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MicrosoftiOSChallengeTests.m; sourceTree = "<group>"; };
 		DC23F4B61F379F100083A365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC23F4CF1F37A0F40083A365 /* MCCalenderAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderAgendaViewController.h; sourceTree = "<group>"; };
 		DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderAgendaViewController.m; sourceTree = "<group>"; };
 		DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MicrosoftiOSChallenge-Prefix.pch"; sourceTree = "<group>"; };
+		DC4335471F3A46F400F44F22 /* MCConnectivityHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConnectivityHeaders.h; sourceTree = "<group>"; };
+		DC4335481F3A470900F44F22 /* MCDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDataModels.h; sourceTree = "<group>"; };
+		DC4335491F3A471D00F44F22 /* MCBaseDataProviders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBaseDataProviders.h; sourceTree = "<group>"; };
+		DC4335511F3A493400F44F22 /* MCDataControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDataControllerManager.h; sourceTree = "<group>"; };
+		DC4335521F3A493400F44F22 /* MCDataControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDataControllerManager.m; sourceTree = "<group>"; };
+		DC4335551F3A494700F44F22 /* MCDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDataController.h; sourceTree = "<group>"; };
+		DC4335561F3A494700F44F22 /* MCDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDataController.m; sourceTree = "<group>"; };
+		DC4335591F3A495D00F44F22 /* MCDummyDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDummyDataProvider.h; sourceTree = "<group>"; };
+		DC43355A1F3A495D00F44F22 /* MCDummyDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDummyDataProvider.m; sourceTree = "<group>"; };
+		DC43355D1F3A49C700F44F22 /* MCMappingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMappingData.h; sourceTree = "<group>"; };
+		DC43355E1F3A49C700F44F22 /* MCMappingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMappingData.m; sourceTree = "<group>"; };
+		DC4335611F3A49DE00F44F22 /* MCO365DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCO365DataProvider.h; sourceTree = "<group>"; };
+		DC4335621F3A49DE00F44F22 /* MCO365DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCO365DataProvider.m; sourceTree = "<group>"; };
+		DC4335651F3A4D7B00F44F22 /* GetEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetEvents.json; sourceTree = "<group>"; };
+		DC4335691F3A66AD00F44F22 /* MCAgendaEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAgendaEventTableViewCell.h; sourceTree = "<group>"; };
+		DC43356A1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAgendaEventTableViewCell.m; sourceTree = "<group>"; };
+		DC43356E1F3B16B900F44F22 /* MCParticipantLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParticipantLabel.h; sourceTree = "<group>"; };
+		DC43356F1F3B16B900F44F22 /* MCParticipantLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParticipantLabel.m; sourceTree = "<group>"; };
+		DC4335731F3B1B9A00F44F22 /* ParticipantLabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantLabelTests.m; sourceTree = "<group>"; };
+		DC4335781F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCParticipantLabel+PrivateMethodsForTest.h"; sourceTree = "<group>"; };
+		DC4335791F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCParticipantLabel+PrivateMethodsForTest.m"; sourceTree = "<group>"; };
+		DC43357C1F3B21E600F44F22 /* MCGlobalHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGlobalHelpers.h; sourceTree = "<group>"; };
+		DC43357D1F3B21E600F44F22 /* MCGlobalHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGlobalHelpers.m; sourceTree = "<group>"; };
+		DC4335811F3B2F6C00F44F22 /* MCAvailabilityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAvailabilityView.h; sourceTree = "<group>"; };
+		DC4335821F3B2F6C00F44F22 /* MCAvailabilityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAvailabilityView.m; sourceTree = "<group>"; };
+		DC4335851F3B368600F44F22 /* MCProtocolHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProtocolHeaders.h; sourceTree = "<group>"; };
+		DC6B4A971F3B42570028EE70 /* GetEventData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetEventData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +146,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC080C791F386DD6002B4FB3 /* DayCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC080C7A1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.h */,
+				DC080C7B1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m */,
+			);
+			name = DayCell;
+			sourceTree = "<group>";
+		};
+		DC080C841F38DF7D002B4FB3 /* EmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC080C851F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.h */,
+				DC080C861F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m */,
+			);
+			name = EmptyCell;
+			sourceTree = "<group>";
+		};
+		DC0B61421F385BE0000C6D58 /* CategoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B61401F385B62000C6D58 /* NSDateCategoryTests.m */,
+			);
+			name = CategoryTests;
+			sourceTree = "<group>";
+		};
+		DC0B61431F385D7B000C6D58 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B614E1F385DF0000C6D58 /* View */,
+				DC0B614D1F385DEA000C6D58 /* Model */,
+				DC0B61451F385DB2000C6D58 /* MCCalenderViewController.h */,
+				DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */,
+			);
+			name = Calender;
+			sourceTree = "<group>";
+		};
+		DC0B61441F385D80000C6D58 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B61501F385DF9000C6D58 /* View */,
+				DC0B614F1F385DF5000C6D58 /* Model */,
+				DC0B61491F385DCF000C6D58 /* MCAgendaTableViewController.h */,
+				DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		DC0B614D1F385DEA000C6D58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC0B614E1F385DF0000C6D58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC080C791F386DD6002B4FB3 /* DayCell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DC0B614F1F385DF5000C6D58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC0B61501F385DF9000C6D58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335801F3B2F5900F44F22 /* AvailabilityView */,
+				DC43356D1F3B169B00F44F22 /* ParticipantLabel */,
+				DC4335681F3A669500F44F22 /* EventCell */,
+				DC080C841F38DF7D002B4FB3 /* EmptyCell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DC0B61511F385DFE000C6D58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC0B61521F385E03000C6D58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B61551F385F85000C6D58 /* CalenderAgendaContainer */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DC0B61551F385F85000C6D58 /* CalenderAgendaContainer */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B61531F385F85000C6D58 /* MCCalenderAgendaContainerView.h */,
+				DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */,
+			);
+			name = CalenderAgendaContainer;
+			path = ../../../MicrosoftOld/MicrosoftiOSChallenge/MicrosoftiOSChallenge;
+			sourceTree = "<group>";
+		};
 		DC23F48E1F379F0F0083A365 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +283,7 @@
 		DC23F49A1F379F0F0083A365 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC23F4D31F37A1300083A365 /* Constants */,
 				DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */,
 				DC23F4AB1F379F100083A365 /* Info.plist */,
 				DC23F49B1F379F100083A365 /* main.m */,
@@ -103,7 +294,8 @@
 		DC23F4B31F379F100083A365 /* MicrosoftiOSChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC23F4B41F379F100083A365 /* MicrosoftiOSChallengeTests.m */,
+				DC4335721F3B1B8700F44F22 /* ParticipantLabelTests */,
+				DC0B61421F385BE0000C6D58 /* CategoryTests */,
 				DC23F4B61F379F100083A365 /* Info.plist */,
 			);
 			path = MicrosoftiOSChallengeTests;
@@ -122,6 +314,7 @@
 		DC23F4C01F379F220083A365 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC43354F1F3A47C300F44F22 /* TestData */,
 				DC23F4C31F379F4A0083A365 /* Assets */,
 				DC23F4C21F379F390083A365 /* Storyboard */,
 			);
@@ -157,18 +350,22 @@
 		DC23F4C61F379FCC0083A365 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DC23F4C71F379FD80083A365 /* CalenderAgenda */,
+				DC0B61441F385D80000C6D58 /* Agenda */,
+				DC0B61431F385D7B000C6D58 /* Calender */,
+				DC23F4C71F379FD80083A365 /* CalenderAgendaContainer */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		DC23F4C71F379FD80083A365 /* CalenderAgenda */ = {
+		DC23F4C71F379FD80083A365 /* CalenderAgendaContainer */ = {
 			isa = PBXGroup;
 			children = (
+				DC0B61521F385E03000C6D58 /* View */,
+				DC0B61511F385DFE000C6D58 /* Model */,
 				DC23F4CF1F37A0F40083A365 /* MCCalenderAgendaViewController.h */,
 				DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */,
 			);
-			name = CalenderAgenda;
+			name = CalenderAgendaContainer;
 			sourceTree = "<group>";
 		};
 		DC23F4C81F379FE50083A365 /* Common */ = {
@@ -177,10 +374,10 @@
 				DC23F4C91F379FEC0083A365 /* Categories */,
 				DC23F4CC1F37A00A0083A365 /* Library */,
 				DC23F4CA1F379FF50083A365 /* Protocols */,
-				DC23F4D31F37A1300083A365 /* Constants */,
 				DC23F4CB1F379FFA0083A365 /* Global */,
 				DC23F4CE1F37A04E0083A365 /* BaseClass */,
 				DC23F4CD1F37A0140083A365 /* Connectivity */,
+				DC43357B1F3B21C100F44F22 /* Helpers */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -188,6 +385,9 @@
 		DC23F4C91F379FEC0083A365 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DC0B613F1F385894000C6D58 /* MCCategoryHeaders.h */,
+				DC0B613B1F385776000C6D58 /* NSDate+DateToString.h */,
+				DC0B613C1F385776000C6D58 /* NSDate+DateToString.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -195,6 +395,8 @@
 		DC23F4CA1F379FF50083A365 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				DC4335851F3B368600F44F22 /* MCProtocolHeaders.h */,
+				DC4335491F3A471D00F44F22 /* MCBaseDataProviders.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -202,6 +404,9 @@
 		DC23F4CB1F379FFA0083A365 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				DC080C831F3881FA002B4FB3 /* MCGlobalHeaders.h */,
+				DC080C7E1F387D0A002B4FB3 /* MCDateRangeManager.h */,
+				DC080C7F1F387D0A002B4FB3 /* MCDateRangeManager.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -216,6 +421,13 @@
 		DC23F4CD1F37A0140083A365 /* Connectivity */ = {
 			isa = PBXGroup;
 			children = (
+				DC4335471F3A46F400F44F22 /* MCConnectivityHeaders.h */,
+				DC4335481F3A470900F44F22 /* MCDataModels.h */,
+				DC43354A1F3A472800F44F22 /* DataController */,
+				DC43354B1F3A473000F44F22 /* Dummy Data Provider */,
+				DC43354C1F3A475900F44F22 /* ErrorHandler */,
+				DC43354D1F3A476100F44F22 /* Mapping */,
+				DC43354E1F3A476D00F44F22 /* O365 DataProvider */,
 			);
 			name = Connectivity;
 			sourceTree = "<group>";
@@ -230,8 +442,118 @@
 		DC23F4D31F37A1300083A365 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				DC0B61581F386137000C6D58 /* MCConstants.h */,
+				DC0B61591F386137000C6D58 /* MCConstants.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		DC43354A1F3A472800F44F22 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335501F3A490800F44F22 /* Facade Interface */,
+				DC4335551F3A494700F44F22 /* MCDataController.h */,
+				DC4335561F3A494700F44F22 /* MCDataController.m */,
+			);
+			name = DataController;
+			sourceTree = "<group>";
+		};
+		DC43354B1F3A473000F44F22 /* Dummy Data Provider */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335591F3A495D00F44F22 /* MCDummyDataProvider.h */,
+				DC43355A1F3A495D00F44F22 /* MCDummyDataProvider.m */,
+			);
+			name = "Dummy Data Provider";
+			sourceTree = "<group>";
+		};
+		DC43354C1F3A475900F44F22 /* ErrorHandler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ErrorHandler;
+			sourceTree = "<group>";
+		};
+		DC43354D1F3A476100F44F22 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				DC43355D1F3A49C700F44F22 /* MCMappingData.h */,
+				DC43355E1F3A49C700F44F22 /* MCMappingData.m */,
+			);
+			name = Mapping;
+			sourceTree = "<group>";
+		};
+		DC43354E1F3A476D00F44F22 /* O365 DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335611F3A49DE00F44F22 /* MCO365DataProvider.h */,
+				DC4335621F3A49DE00F44F22 /* MCO365DataProvider.m */,
+			);
+			name = "O365 DataProvider";
+			sourceTree = "<group>";
+		};
+		DC43354F1F3A47C300F44F22 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				DC6B4A971F3B42570028EE70 /* GetEventData.json */,
+				DC4335651F3A4D7B00F44F22 /* GetEvents.json */,
+			);
+			name = TestData;
+			sourceTree = "<group>";
+		};
+		DC4335501F3A490800F44F22 /* Facade Interface */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335511F3A493400F44F22 /* MCDataControllerManager.h */,
+				DC4335521F3A493400F44F22 /* MCDataControllerManager.m */,
+			);
+			name = "Facade Interface";
+			sourceTree = "<group>";
+		};
+		DC4335681F3A669500F44F22 /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335691F3A66AD00F44F22 /* MCAgendaEventTableViewCell.h */,
+				DC43356A1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m */,
+			);
+			name = EventCell;
+			sourceTree = "<group>";
+		};
+		DC43356D1F3B169B00F44F22 /* ParticipantLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DC43356E1F3B16B900F44F22 /* MCParticipantLabel.h */,
+				DC43356F1F3B16B900F44F22 /* MCParticipantLabel.m */,
+			);
+			name = ParticipantLabel;
+			sourceTree = "<group>";
+		};
+		DC4335721F3B1B8700F44F22 /* ParticipantLabelTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335731F3B1B9A00F44F22 /* ParticipantLabelTests.m */,
+				DC4335781F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.h */,
+				DC4335791F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m */,
+			);
+			name = ParticipantLabelTests;
+			sourceTree = "<group>";
+		};
+		DC43357B1F3B21C100F44F22 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DC43357C1F3B21E600F44F22 /* MCGlobalHelpers.h */,
+				DC43357D1F3B21E600F44F22 /* MCGlobalHelpers.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		DC4335801F3B2F5900F44F22 /* AvailabilityView */ = {
+			isa = PBXGroup;
+			children = (
+				DC4335811F3B2F6C00F44F22 /* MCAvailabilityView.h */,
+				DC4335821F3B2F6C00F44F22 /* MCAvailabilityView.m */,
+			);
+			name = AvailabilityView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +643,8 @@
 				DC23F4AA1F379F100083A365 /* LaunchScreen.storyboard in Resources */,
 				DC23F4A71F379F100083A365 /* Assets.xcassets in Resources */,
 				DC23F4A51F379F100083A365 /* Main.storyboard in Resources */,
+				DC4335661F3A4D7B00F44F22 /* GetEvents.json in Resources */,
+				DC6B4A981F3B42570028EE70 /* GetEventData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +652,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4335671F3A4D7B00F44F22 /* GetEvents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +663,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4335571F3A494700F44F22 /* MCDataController.m in Sources */,
+				DC43357E1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */,
+				DC4335631F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
 				DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */,
+				DC4335531F3A493400F44F22 /* MCDataControllerManager.m in Sources */,
+				DC0B61561F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */,
 				DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
+				DC43355B1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
+				DC0B613D1F385776000C6D58 /* NSDate+DateToString.m in Sources */,
+				DC0B614B1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */,
+				DC080C871F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */,
+				DC43355F1F3A49C700F44F22 /* MCMappingData.m in Sources */,
+				DC43356B1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */,
+				DC080C7C1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */,
+				DC0B615A1F386137000C6D58 /* MCConstants.m in Sources */,
+				DC4335701F3B16B900F44F22 /* MCParticipantLabel.m in Sources */,
 				DC23F49C1F379F100083A365 /* main.m in Sources */,
+				DC4335831F3B2F6C00F44F22 /* MCAvailabilityView.m in Sources */,
+				DC080C801F387D0A002B4FB3 /* MCDateRangeManager.m in Sources */,
+				DC0B61471F385DB2000C6D58 /* MCCalenderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +690,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0B61481F385DB2000C6D58 /* MCCalenderViewController.m in Sources */,
+				DC080C881F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */,
+				DC43357A1F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m in Sources */,
+				DC4335741F3B1B9A00F44F22 /* ParticipantLabelTests.m in Sources */,
+				DC0B61411F385B62000C6D58 /* NSDateCategoryTests.m in Sources */,
+				DC0B61571F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */,
+				DC4335841F3B2F6C00F44F22 /* MCAvailabilityView.m in Sources */,
+				DC4335541F3A493400F44F22 /* MCDataControllerManager.m in Sources */,
+				DC0B614C1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */,
+				DC43357F1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */,
+				DC0B613E1F385776000C6D58 /* NSDate+DateToString.m in Sources */,
+				DC4335711F3B16B900F44F22 /* MCParticipantLabel.m in Sources */,
+				DC4335581F3A494700F44F22 /* MCDataController.m in Sources */,
+				DC080C7D1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */,
+				DC43355C1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
+				DC4335641F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
 				DC23F4D21F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
-				DC23F4B51F379F100083A365 /* MicrosoftiOSChallengeTests.m in Sources */,
+				DC43356C1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */,
+				DC080C811F387D0A002B4FB3 /* MCDateRangeManager.m in Sources */,
+				DC4335601F3A49C700F44F22 /* MCMappingData.m in Sources */,
+				DC0B615B1F386137000C6D58 /* MCConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,8 +837,11 @@
 		DC23F4BA1F379F100083A365 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4JB848GZR;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,8 +853,11 @@
 		DC23F4BB1F379F100083A365 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4JB848GZR;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,6 +911,7 @@
 				DC23F4BB1F379F100083A365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC23F4BC1F379F100083A365 /* Build configuration list for PBXNativeTarget "MicrosoftiOSChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +920,7 @@
 				DC23F4BE1F379F100083A365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
