@@ -29,7 +29,11 @@
                                     <barButtonItem title="August 2017" id="ZpR-kI-9Lh"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SR0-8s-wA6"/>
                                     <barButtonItem image="Weather_Sunny" id="23V-nT-lQe"/>
-                                    <barButtonItem title="Today" id="Vmv-Xj-cFG"/>
+                                    <barButtonItem title="Today" id="Vmv-Xj-cFG">
+                                        <connections>
+                                            <action selector="didSelectScrollToToday:" destination="fBA-JK-9XD" id="3Np-dc-QtD"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.92148786780000003" green="0.92162030939999995" blue="0.92145878079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -83,6 +87,10 @@
                     <navigationItem key="navigationItem" id="a30-22-qKU"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="monthBarButtonItem" destination="ZpR-kI-9Lh" id="iaD-E5-UL8"/>
+                        <outlet property="weatherIconBarButtonItem" destination="23V-nT-lQe" id="8Wu-7s-rr9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCJ-BM-euC" sceneMemberID="firstResponder"/>
             </objects>

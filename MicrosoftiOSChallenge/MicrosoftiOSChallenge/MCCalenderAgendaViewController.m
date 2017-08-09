@@ -10,6 +10,7 @@
 #import "MCCalenderAgendaContainerView.h"
 #import "MCCalenderViewController.h"
 #import "MCAgendaTableViewController.h"
+#import "MCDateRangeManager.h"
 
 @interface MCCalenderAgendaViewController ()<MCAgendaTableViewControllerDelegate, MCCalenderViewControllerDelegate>
 
@@ -27,6 +28,10 @@
  MCAgendaTableViewController is used to handle agenda delegates and forward
  user events to calenderAgendaViewController.
 */
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *monthBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *weatherIconBarButtonItem;
+
 @property(nonatomic, strong) MCAgendaTableViewController *agendaViewController;
 @end
 
@@ -127,6 +132,11 @@
 }
 
 #pragma mark - IBActions
+- (IBAction)didSelectScrollToToday:(UIBarButtonItem *)sender {
+    
+    [self.calenderViewController scrollToCurrentDate];
+}
+
 #pragma mark - Accessor Methods
 #pragma mark - MCAgendaViewControllerDelegate
 
@@ -142,6 +152,12 @@
 
     //Since Date is populated section wise in table and row wise in calender, we swap the values.
     [_calenderViewController scrollToIndexPath:[NSIndexPath indexPathForRow:indexPath.section inSection:0]];
+    
+    //Update month title when table is scrolled
+    NSArray *dateRange = [MCDateRangeManager getDateRangeArray];
+    NSDate *date = dateRange[indexPath.section];
+    self.monthBarButtonItem.title = [MCDateRangeManager calculateStringFromDate:date withFormat:@"MMMM yyyy"];
+   
 }
 #pragma mark - MCCalenderViewControllerDelegate
 
@@ -156,6 +172,11 @@
 
     //Since Date is populated section wise in table and row wise in calender, we swap the values.
     [_agendaViewController scrollToIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row]];
+    
+    //Update month title when tapped on collection view
+    NSArray *dateRange = [MCDateRangeManager getDateRangeArray];
+    NSDate *date = dateRange[indexPath.row];
+    self.monthBarButtonItem.title = [MCDateRangeManager calculateStringFromDate:date withFormat:@"MMMM yyyy"];
 }
 /*
 #pragma mark - Navigation

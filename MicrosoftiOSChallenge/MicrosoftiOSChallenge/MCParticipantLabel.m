@@ -7,6 +7,7 @@
 //
 
 #import "MCParticipantLabel.h"
+#import "MCGlobalHelpers.h"
 
 @implementation MCParticipantLabel
 
