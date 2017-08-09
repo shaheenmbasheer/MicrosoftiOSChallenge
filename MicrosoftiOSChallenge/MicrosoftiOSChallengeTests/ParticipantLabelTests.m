@@ -7,7 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MCParticipantLabel+PrivateMethodsForTest.h"
+
+@interface MCParticipantLabel ()
+
++(NSString *)partsOfName:(NSString *)name;
+@end
 
 @interface ParticipantLabelTests : XCTestCase
 

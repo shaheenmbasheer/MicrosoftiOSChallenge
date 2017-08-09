@@ -8,7 +8,7 @@
 
 #import "MCAgendaEventTableViewCell.h"
 #import "MCParticipantLabel.h"
-#import "MCAvailabilityView.h"
+#import "MCMeetingImportanceView.h"
 
 @interface MCAgendaEventTableViewCell()
 
@@ -30,11 +30,11 @@
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
 
         //MCAvailabilityView for showing meeting importance
-        MCAvailabilityView *availabilityView = [[MCAvailabilityView alloc] init];
-        availabilityView.availabilty = MCAvailabilityViewKeyBusy;
-        [availabilityView.heightAnchor constraintEqualToConstant:10].active = true;
-        [availabilityView.widthAnchor constraintEqualToConstant:10].active = true;
-        availabilityView.layer.cornerRadius = 5;
+        MCMeetingImportanceView *meetingImportanceView = [[MCMeetingImportanceView alloc] init];
+        meetingImportanceView.meetingImportance = MCMeetingImportanceViewKeyHighImportance;
+        [meetingImportanceView.heightAnchor constraintEqualToConstant:10].active = true;
+        [meetingImportanceView.widthAnchor constraintEqualToConstant:10].active = true;
+        meetingImportanceView.layer.cornerRadius = 5;
 
         //Most outlier horizontal stackview.
         UIStackView *stackView = [[UIStackView alloc] initWithFrame:self.contentView.bounds];
@@ -44,7 +44,7 @@
         stackView.alignment = UIStackViewAlignmentTop;
         stackView.spacing = 20;
         [stackView addArrangedSubview:[MCAgendaEventTableViewCell getTimeAndDurationAsStackView:nil]];
-        [stackView addArrangedSubview:availabilityView];
+        [stackView addArrangedSubview:meetingImportanceView];
         [stackView addArrangedSubview:[MCAgendaEventTableViewCell getSubjectParticipantsAndLocationAsStackView:nil]];
         stackView.translatesAutoresizingMaskIntoConstraints = false;
         

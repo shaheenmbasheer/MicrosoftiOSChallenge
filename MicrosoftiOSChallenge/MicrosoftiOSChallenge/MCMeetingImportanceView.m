@@ -6,24 +6,24 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import "MCAvailabilityView.h"
+#import "MCMeetingImportanceView.h"
 
-@implementation MCAvailabilityView
+@implementation MCMeetingImportanceView
 
--(void)setAvailabilty:(MCAvailabilityViewKey)availabilty{
+-(void)setMeetingImportance:(MCMeetingImportanceViewKey)meetingImportance{
 
-    _availabilty = availabilty;
+    _meetingImportance = meetingImportance;
     
-    switch (availabilty) {
-        case MCAvailabilityViewKeyAvailable:
+    switch (meetingImportance) {
+        case MCMeetingImportanceViewKeyNotImportant:
             
             self.backgroundColor = [UIColor greenColor];
             break;
-        case MCAvailabilityViewKeyAway:
+        case MCMeetingImportanceViewKeyMediumImportance:
             self.backgroundColor = [UIColor yellowColor];
 
             break;
-        case MCAvailabilityViewKeyBusy:
+        case MCMeetingImportanceViewKeyHighImportance:
             self.backgroundColor = [UIColor redColor];
 
             break;

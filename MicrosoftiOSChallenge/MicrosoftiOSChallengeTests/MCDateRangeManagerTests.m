@@ -7,7 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MCDateRangeManager+PrivateMethodsToTest.h"
+#import "MCDateRangeManager.h"
+
+@interface MCDateRangeManager ()
+
+- (NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit;
+@end
+
 
 @interface MCDateRangeManagerTests : XCTestCase
 
