@@ -17,6 +17,8 @@
  Display date object for calender cell
  */
 @property(nonatomic, strong) NSDate *displayDate;
+@property(nonatomic, assign) BOOL isCenterDate;
+@property(nonatomic, assign) BOOL isTodayDate;
 
 /**
  Returns cell reuse identifier

@@ -12,6 +12,7 @@
 
 @property(atomic, strong) NSArray *dateListArray;
 @property(atomic, strong) NSDateFormatter *dateFormatter;
+@property(nonatomic, assign) NSInteger todayDate;
 @end
 @implementation MCDateRangeManager
 
@@ -41,24 +42,46 @@ static MCDateRangeManager *currentInstance = nil;
     [currentInstance.dateFormatter setDateFormat:format];
     return [currentInstance.dateFormatter stringFromDate:date];
 }
++ (NSUInteger)todayDateIndex{
+
+    return [[MCDateRangeManager sharedInstance] todayDate];
+
+}
 - (void)prepareData{
 
     self.dateListArray = [self prepareDataForDateRangeWithLowerLimit:-365*6 withUpperLimit:365*4];
 }
 - (NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit{
-    
+
     NSDate *now = [NSDate date];
     NSMutableArray *calenderDateArray = [@[] mutableCopy];
     unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
     NSCalendar *gregorian = [NSCalendar currentCalendar];
     NSDateComponents *comps = [gregorian components:unitFlags fromDate:now];
     
-    for (NSInteger i = -365*6; i < 365*6; i ++) {
+    BOOL firstSunday = NO;;
+    NSInteger j = 0;
+    for (NSInteger i = lowerLimit; i < upperLimit; i ++) {
         
         [comps setDay:[comps day] - i];
         NSDate *newDate = [now dateByAddingTimeInterval:i*24*60*60];
-        [calenderDateArray addObject:newDate];
+        NSDateComponents *component = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:newDate];
+        if ([component weekday] == 1) {
+            
+            firstSunday = YES;
+        }
+        if (firstSunday) {
+            
+            j = i;
+            [calenderDateArray addObject:newDate];
+        }
+        
+        if (i == 0) {
+            self.todayDate = [calenderDateArray count] -1;
+        }
+        
     }
+    
     return [calenderDateArray copy];
 }
 

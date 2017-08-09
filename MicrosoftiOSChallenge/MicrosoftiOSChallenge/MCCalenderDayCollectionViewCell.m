@@ -28,8 +28,6 @@
  */
 @property(nonatomic, strong) UIView *eventIndicatorView;
 
-@property(nonatomic, assign) BOOL isWednesday;
-@property(nonatomic, assign) NSInteger indexPath;
 @end
 
 @implementation MCCalenderDayCollectionViewCell
@@ -115,11 +113,18 @@
         self.monthLabel.text = @"";
       }
     
+    if ([[MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"EEEE"] isEqualToString:@"Wednesday"] &&
+       ( [_dayLabel.text integerValue] > 9)&&([_dayLabel.text integerValue] <17)) {
+        self.isCenterDate = YES;
+    }else{
+        self.isCenterDate = NO;
+
+    }
     if ([[MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
           //If date is today date, the label textColor is changes and the cell is highlighted.
         _dayLabel.textColor = [UIColor blueColor];
         _monthLabel.textColor = [UIColor blueColor];
-          [self setSelected:YES];
+        [self setSelected:YES];
       }else{
          //Colors are changed to default in other cases
         _dayLabel.textColor = [UIColor grayColor];

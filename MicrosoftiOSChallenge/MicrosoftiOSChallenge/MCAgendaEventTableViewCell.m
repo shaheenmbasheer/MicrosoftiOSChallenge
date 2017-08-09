@@ -167,8 +167,8 @@
     NSMutableArray *names = [@[@"Shaheen M Basheer", @"Ruksana Banu", @"Nial Harris", @"Ruksana Banu", @"Ruksana Banu", @"Ruksana Banu"] mutableCopy];
     //                NSMutableArray *names = [@[@"Shaheen M Basheer"] mutableCopy];
     
-    if ([names count] > 5) {
-        names =  [[names subarrayWithRange:NSMakeRange(0, 5)] mutableCopy];
+    if ([names count] > 4) {
+        names =  [[names subarrayWithRange:NSMakeRange(0, 4)] mutableCopy];
         [names addObject:@"..."];
     }
     

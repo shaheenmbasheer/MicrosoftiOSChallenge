@@ -35,6 +35,8 @@
 Collection view overlay View
  */
 @property(nonatomic, strong) UIView *calenderOverlayView;
+
+@property(nonatomic, strong) NSIndexPath *todayDateIndexPath;
 @end
 
 @implementation MCCalenderViewController
@@ -86,6 +88,9 @@ Collection view overlay View
 
     //Scrolling to today's date when calenderView loads.
     [self scrollToCurrentDate];
+    [self setUpOverlayView];
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -94,6 +99,17 @@ Collection view overlay View
 
 #pragma mark - UserDefined Methods
 
+-(void)setUpOverlayView{
+
+    if (!_calenderOverlayView) {
+        self.calenderOverlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.calenderView.contentSize.width, self.calenderView.contentSize.height)];
+        [self.calenderView addSubview:_calenderOverlayView];
+        _calenderOverlayView.backgroundColor = [UIColor colorWithWhite:.5 alpha:.8];
+        _calenderOverlayView.hidden = YES;
+        
+    }
+
+}
 
 /**
  Prepares date data from MCDateRangeManager for calender control. If data is already processed, its only 
@@ -131,6 +147,10 @@ Collection view overlay View
     //Registering MCCalenderDayCollectionViewCell cell to calender collection view.
     [_calenderView registerClass:[MCCalenderDayCollectionViewCell class] forCellWithReuseIdentifier:[MCCalenderDayCollectionViewCell cellReuseIdentifier]];
     self.didInvokeScrollToIndexPath = NO;
+    
+
+//    self.calenderOverlayView.hidden = YES;
+
 }
 
 
@@ -139,9 +159,15 @@ Collection view overlay View
  */
 -(void)scrollToCurrentDate{
     
-    NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[_calenderDateArray count]/2 inSection:0];
+    if (self.oldSelectedIndexPath) {
+        //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
+        [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
+    }
+    NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
     [_calenderView scrollToItemAtIndexPath:currentDateIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
     [self.delegate didSelectCellAtIndexPath:currentDateIndexPath];
+    self.oldSelectedIndexPath = currentDateIndexPath;
+
 }
 
 
@@ -201,6 +227,21 @@ Number of sections in calender collection view corresponds to number of dates in
     
     MCCalenderDayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MCCalenderDayCollectionViewCell cellReuseIdentifier] forIndexPath:indexPath];
     cell.displayDate = _calenderDateArray[indexPath.row];
+    UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
+ 
+    if (cell.isCenterDate) {
+        
+        if (![self.calenderOverlayView viewWithTag:indexPath.row]) {
+            [self.calenderOverlayView addSubview:({
+                UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(attributes.frame.origin.x - 50, attributes.frame.origin.y, 150, 50)];
+                displayLabel.text = [MCDateRangeManager calculateStringFromDate:_calenderDateArray[indexPath.row] withFormat:@"MMMM yyyy"];
+                displayLabel.textAlignment = NSTextAlignmentCenter;
+                displayLabel.tag = indexPath.row;
+                displayLabel;
+            })];
+        }
+   
+    }
     return cell;
 }
 
@@ -274,12 +315,10 @@ Number of sections in calender collection view corresponds to number of dates in
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-    if (!self.calenderOverlayView) {
-        self.calenderOverlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.calenderView.contentSize.width, self.calenderView.contentSize.height)];
-        _calenderOverlayView.backgroundColor = [UIColor colorWithWhite:.9 alpha:.7];
-        [self.calenderView addSubview:_calenderOverlayView];
-    }
+
+  
+
+
     _calenderOverlayView.hidden = NO;
     
 

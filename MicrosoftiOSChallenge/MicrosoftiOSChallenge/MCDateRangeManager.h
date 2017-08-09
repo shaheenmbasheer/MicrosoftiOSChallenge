@@ -21,4 +21,5 @@
 + (NSArray *)getDateRangeArray;
 + (NSDateFormatter *)dateFormatter;
 + (NSString *)calculateStringFromDate:(NSDate *)date withFormat:(NSString *)format;
++ (NSUInteger)todayDateIndex;
 @end
