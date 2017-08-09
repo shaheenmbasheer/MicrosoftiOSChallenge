@@ -11,7 +11,8 @@
 #import "MCCalenderViewController.h"
 #import "MCAgendaTableViewController.h"
 #import "MCDateRangeManager.h"
-
+#import "MCDataControllerManager.h"
+#import "MCEventManager.h"
 @interface MCCalenderAgendaViewController ()<MCAgendaTableViewControllerDelegate, MCCalenderViewControllerDelegate>
 
 
@@ -63,6 +64,8 @@
  */
 -(void)registerDefaults{
     
+    [self performEventRequest];
+
     // Turning off translatesAutoresizingMaskIntoConstraints to work with constraints.
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -115,9 +118,22 @@
     [self.view layoutIfNeeded];
     
     
-    
 }
 
+-(void)performEventRequest{
+
+    [MCDataControllerManager initializeEventDataWithCompletionBlock:^(id result) {
+        
+        NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
+
+        [self.calenderViewController setEventDictionary:eventDictionary];
+        [self.agendaViewController setEventDictionary:eventDictionary];
+        [self.calenderViewController reloadData];
+        [self.agendaViewController reloadData];
+        
+    } WithErrorBlock:nil enableForceLoad:YES];
+
+}
 
 #pragma mark - Class Methods
 

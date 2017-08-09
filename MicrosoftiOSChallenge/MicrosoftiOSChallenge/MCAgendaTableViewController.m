@@ -22,6 +22,14 @@
 
 @implementation MCAgendaTableViewController
 
+-(instancetype)init{
+
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,6 +78,9 @@
     
     return @"kMCAgendaTableViewControllerKey";
 }
+-(void)reloadData{
+
+}
 
 #pragma mark - IBActions
 #pragma mark - Accessor Methods
@@ -83,7 +94,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 2;
+    if (!self.eventDictionary) {
+        return 1;
+    }
+    NSDate *date = _calenderDateArray[section];
+    NSArray *events = _eventDictionary[[MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"]];
+    if ([events count]) {
+        return [events count];
+    }else{
+        return 1;
+    }
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

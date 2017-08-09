@@ -17,6 +17,7 @@
  */
 @interface MCDataController : NSObject
 
++ (void)setDelegateForDemoMode;
 
 /**
  *  User Events Request

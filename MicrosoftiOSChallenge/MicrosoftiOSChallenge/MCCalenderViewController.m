@@ -58,9 +58,9 @@ Collection view overlay View
             layout.minimumLineSpacing = 0;
             layout;
         })];
-        [_calenderView setDelegate:self];
-        [_calenderView setDataSource:self];
-        _calenderView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"calender_background"]];
+        [self.calenderView setDelegate:self];
+        [self.calenderView setDataSource:self];
+        self.calenderView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"calender_background"]];
         [self.view addSubview:_calenderView];
         //Setting up contraints for collection view
         [self setUpConstraints];
@@ -69,10 +69,16 @@ Collection view overlay View
         self.view.backgroundColor = [UIColor redColor];
         //Preparing data that is to be loaded to calender.
         [self prepareData];
+        
     }
     return self;
 }
+-(void)reloadData{
 
+
+    [self.calenderView reloadData];
+ 
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -126,7 +132,7 @@ Collection view overlay View
  */
 -(void)setUpConstraints{
     
-    _calenderView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.calenderView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_calenderView]|"
                                              options:0 metrics:nil
@@ -145,7 +151,7 @@ Collection view overlay View
     
     self.view.userInteractionEnabled = YES;
     //Registering MCCalenderDayCollectionViewCell cell to calender collection view.
-    [_calenderView registerClass:[MCCalenderDayCollectionViewCell class] forCellWithReuseIdentifier:[MCCalenderDayCollectionViewCell cellReuseIdentifier]];
+    [self.calenderView registerClass:[MCCalenderDayCollectionViewCell class] forCellWithReuseIdentifier:[MCCalenderDayCollectionViewCell cellReuseIdentifier]];
     self.didInvokeScrollToIndexPath = NO;
     
 
@@ -164,7 +170,7 @@ Collection view overlay View
         [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
     }
     NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
-    [_calenderView scrollToItemAtIndexPath:currentDateIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    [self.calenderView scrollToItemAtIndexPath:currentDateIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
     [self.delegate didSelectCellAtIndexPath:currentDateIndexPath];
     self.oldSelectedIndexPath = currentDateIndexPath;
 
@@ -185,7 +191,7 @@ Collection view overlay View
         [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
     }
     //Scroll to provided indexPath in calender collection view.
-    [_calenderView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+    [self.calenderView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
     //Select cell in provided index path in calender collection view.
     [self collectionView:_calenderView didSelectItemAtIndexPath:indexPath];
     self.didInvokeScrollToIndexPath = NO;
@@ -227,6 +233,7 @@ Number of sections in calender collection view corresponds to number of dates in
     
     MCCalenderDayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MCCalenderDayCollectionViewCell cellReuseIdentifier] forIndexPath:indexPath];
     cell.displayDate = _calenderDateArray[indexPath.row];
+    cell.eventDictionary = self.eventDictionary;
     UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
  
     if (cell.isCenterDate) {

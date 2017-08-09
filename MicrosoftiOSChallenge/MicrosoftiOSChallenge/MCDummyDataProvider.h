@@ -6,11 +6,13 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
+#import "MCBaseDataProviders.h"
+
 @import Foundation;
 
 /**
  *  Dummy Class for demo purpose
  */
-@interface MCDummyDataProvider : NSObject
+@interface MCDummyDataProvider : NSObject <MCBaseDataProviderProtocol>
 
 @end

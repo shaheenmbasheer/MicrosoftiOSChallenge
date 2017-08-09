@@ -7,6 +7,8 @@
 //
 
 #import "MCDataControllerManager.h"
+#import "MCDataController.h"
+#import "MCEventManager.h"
 
 @implementation MCDataControllerManager
 
@@ -45,14 +47,21 @@ static MCDataControllerManager *currentInstance = nil;
 
     NSOperationQueue *queue = [[MCDataControllerManager sharedInstance] backgroundOperationQueue];
     
-    ErrorBlock queueErrorBlock = ^(NSError *error){
+    ErrorBlock __unused queueErrorBlock = ^(NSError *error){
         
         [queue cancelAllOperations];
         errorBlock(error);
         
     };
+    
     // Event Data Loading
     NSOperation *eventsDataOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        [MCDataController performUserEventsRequestWithCompletionBlock:^(id result) {
+            
+            [[MCEventManager sharedInstance] setEventArray:result];
+        } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
+        
           }];
     
     [queue addOperation:eventsDataOperation];

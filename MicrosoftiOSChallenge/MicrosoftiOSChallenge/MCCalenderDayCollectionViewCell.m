@@ -120,7 +120,8 @@
         self.isCenterDate = NO;
 
     }
-    if ([[MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
+    NSString *eventDateKey = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"ddMMyyyy"];
+    if ([eventDateKey isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
           //If date is today date, the label textColor is changes and the cell is highlighted.
         _dayLabel.textColor = [UIColor blueColor];
         _monthLabel.textColor = [UIColor blueColor];
@@ -130,6 +131,13 @@
         _dayLabel.textColor = [UIColor grayColor];
         _monthLabel.textColor = [UIColor grayColor];
       }
+    
+    if ([self.eventDictionary[eventDateKey] count]) {
+        self.eventIndicatorView.hidden = NO;
+    }else{
+        self.eventIndicatorView.hidden = YES;
+
+    }
 }
 -(void)setSelected:(BOOL)selected{
 

@@ -19,11 +19,12 @@
 @property(nonatomic, strong) NSDate *displayDate;
 @property(nonatomic, assign) BOOL isCenterDate;
 @property(nonatomic, assign) BOOL isTodayDate;
-
+@property(nonatomic, strong) NSDictionary *eventDictionary;
 /**
  Returns cell reuse identifier
 
  @return cellReuseIdentifier of type NSString
  */
 + (NSString *)cellReuseIdentifier;
+
 @end

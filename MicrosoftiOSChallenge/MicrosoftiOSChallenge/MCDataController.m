@@ -10,9 +10,9 @@
 #import "MCDummyDataProvider.h"
 #import "MCO365DataProvider.h"
 #import "MCBaseDataProviders.h"
-
+#import "MCMappingData.h"
 @implementation MCDataController
-static id <LHBaseDataProviderDelegate>_dataProvider;
+static id <MCBaseDataProviderProtocol>_dataProvider;
 
 /**
  *  Initialize LHDataController as well as _dataProvider on factory method
@@ -44,8 +44,9 @@ static id <LHBaseDataProviderDelegate>_dataProvider;
  */
 +(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
 
-
-
-
+    [_dataProvider fetchOutlookEventsWithCompletionBlock:^(id result) {
+        
+        completionBlock([MCMappingData mappedObjectForEventRequestWithEntriesDictionary:result]);
+    } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
 }
 @end

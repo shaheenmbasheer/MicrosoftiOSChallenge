@@ -35,9 +35,11 @@ date in calender control.
  is MCCalenderAgendaViewController in current scenario.
  */
 @property (nonatomic, weak) id<MCAgendaTableViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSDictionary *eventDictionary;
 /**
  Method scrolls to given indexPath in table and selects the particular cell
  @param indexPath indexPath to which table should scroll.
  */
 -(void)scrollToIndexPath:(NSIndexPath *)indexPath;
+-(void)reloadData;
 @end

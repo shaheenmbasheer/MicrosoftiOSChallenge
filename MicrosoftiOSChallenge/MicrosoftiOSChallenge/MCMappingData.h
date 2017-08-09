@@ -10,4 +10,12 @@
 
 @interface MCMappingData : NSObject
 
+/**
+ *  Mapping information for Events Request
+ *
+ *  @param entriesDictionary input response data
+ *
+ *  @return mapped object
+ */
++ (id)mappedObjectForEventRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary;
 @end

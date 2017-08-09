@@ -36,6 +36,7 @@
  is MCCalenderAgendaViewController in current scenario.
  */
 @property(nonatomic, weak) id<MCCalenderViewControllerDelegate> delegate;
+@property(nonatomic, strong) NSDictionary *eventDictionary;
 
 /**
  Method scroll's to today's date in calender control.
@@ -48,5 +49,5 @@
  @param indexPath indexPath to which calender should scroll.
  */
 - (void)scrollToIndexPath:(NSIndexPath *)indexPath;
-
+-(void)reloadData;
 @end

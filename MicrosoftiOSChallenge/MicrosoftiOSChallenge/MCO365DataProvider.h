@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MCBaseDataProviders.h"
 
-@interface MCO365DataProvider : NSObject
+@interface MCO365DataProvider : NSObject <MCBaseDataProviderProtocol>
 
 @end

@@ -18,7 +18,7 @@ typedef void (^ErrorBlock)(NSError *error);
  *  and the Dummy data provider class.Developer's as per their need will be able to switch class using an
  *  environment variable to switch between dummy data and server data for testing and deployment.
  */
-@protocol LHBaseDataProviderDelegate <NSObject>
+@protocol MCBaseDataProviderProtocol <NSObject>
 
 @optional
 
