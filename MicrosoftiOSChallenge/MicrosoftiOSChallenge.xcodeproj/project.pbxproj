@@ -20,10 +20,10 @@
 		DC0B61481F385DB2000C6D58 /* MCCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */; };
 		DC0B614B1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */; };
 		DC0B614C1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */; };
-		DC0B61561F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */; };
-		DC0B61571F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */; };
 		DC0B615A1F386137000C6D58 /* MCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61591F386137000C6D58 /* MCConstants.m */; };
 		DC0B615B1F386137000C6D58 /* MCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0B61591F386137000C6D58 /* MCConstants.m */; };
+		DC146AFC1F3B6724009869AB /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146AFB1F3B6724009869AB /* MCCalenderAgendaContainerView.m */; };
+		DC146AFD1F3B6724009869AB /* MCCalenderAgendaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146AFB1F3B6724009869AB /* MCCalenderAgendaContainerView.m */; };
 		DC23F49C1F379F100083A365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49B1F379F100083A365 /* main.m */; };
 		DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49E1F379F100083A365 /* MCAppDelegate.m */; };
 		DC23F4A51F379F100083A365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A31F379F100083A365 /* Main.storyboard */; };
@@ -82,10 +82,10 @@
 		DC0B61461F385DB2000C6D58 /* MCCalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderViewController.m; sourceTree = "<group>"; };
 		DC0B61491F385DCF000C6D58 /* MCAgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAgendaTableViewController.h; sourceTree = "<group>"; };
 		DC0B614A1F385DCF000C6D58 /* MCAgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAgendaTableViewController.m; sourceTree = "<group>"; };
-		DC0B61531F385F85000C6D58 /* MCCalenderAgendaContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderAgendaContainerView.h; sourceTree = "<group>"; };
-		DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderAgendaContainerView.m; sourceTree = "<group>"; };
 		DC0B61581F386137000C6D58 /* MCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConstants.h; sourceTree = "<group>"; };
 		DC0B61591F386137000C6D58 /* MCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCConstants.m; sourceTree = "<group>"; };
+		DC146AFA1F3B6724009869AB /* MCCalenderAgendaContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCCalenderAgendaContainerView.h; path = MicrosoftiOSChallenge/MCCalenderAgendaContainerView.h; sourceTree = SOURCE_ROOT; };
+		DC146AFB1F3B6724009869AB /* MCCalenderAgendaContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCCalenderAgendaContainerView.m; path = MicrosoftiOSChallenge/MCCalenderAgendaContainerView.m; sourceTree = SOURCE_ROOT; };
 		DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicrosoftiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC23F49B1F379F100083A365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC23F49D1F379F100083A365 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
@@ -245,8 +245,8 @@
 		DC0B61551F385F85000C6D58 /* CalenderAgendaContainer */ = {
 			isa = PBXGroup;
 			children = (
-				DC0B61531F385F85000C6D58 /* MCCalenderAgendaContainerView.h */,
-				DC0B61541F385F85000C6D58 /* MCCalenderAgendaContainerView.m */,
+				DC146AFA1F3B6724009869AB /* MCCalenderAgendaContainerView.h */,
+				DC146AFB1F3B6724009869AB /* MCCalenderAgendaContainerView.m */,
 			);
 			name = CalenderAgendaContainer;
 			path = ../../../MicrosoftOld/MicrosoftiOSChallenge/MicrosoftiOSChallenge;
@@ -665,10 +665,10 @@
 			files = (
 				DC4335571F3A494700F44F22 /* MCDataController.m in Sources */,
 				DC43357E1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */,
+				DC146AFC1F3B6724009869AB /* MCCalenderAgendaContainerView.m in Sources */,
 				DC4335631F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
 				DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */,
 				DC4335531F3A493400F44F22 /* MCDataControllerManager.m in Sources */,
-				DC0B61561F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */,
 				DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
 				DC43355B1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
 				DC0B613D1F385776000C6D58 /* NSDate+DateToString.m in Sources */,
@@ -695,10 +695,10 @@
 				DC43357A1F3B1C0800F44F22 /* MCParticipantLabel+PrivateMethodsForTest.m in Sources */,
 				DC4335741F3B1B9A00F44F22 /* ParticipantLabelTests.m in Sources */,
 				DC0B61411F385B62000C6D58 /* NSDateCategoryTests.m in Sources */,
-				DC0B61571F385F85000C6D58 /* MCCalenderAgendaContainerView.m in Sources */,
 				DC4335841F3B2F6C00F44F22 /* MCAvailabilityView.m in Sources */,
 				DC4335541F3A493400F44F22 /* MCDataControllerManager.m in Sources */,
 				DC0B614C1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */,
+				DC146AFD1F3B6724009869AB /* MCCalenderAgendaContainerView.m in Sources */,
 				DC43357F1F3B21E600F44F22 /* MCGlobalHelpers.m in Sources */,
 				DC0B613E1F385776000C6D58 /* NSDate+DateToString.m in Sources */,
 				DC4335711F3B16B900F44F22 /* MCParticipantLabel.m in Sources */,
