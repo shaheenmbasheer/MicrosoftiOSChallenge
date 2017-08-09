@@ -8,6 +8,7 @@
 
 #import "MCCalenderDayCollectionViewCell.h"
 #import "NSDate+DateToString.h"
+#import "MCDateRangeManager.h"
 
 @interface MCCalenderDayCollectionViewCell()
 
@@ -27,6 +28,8 @@
  */
 @property(nonatomic, strong) UIView *eventIndicatorView;
 
+@property(nonatomic, assign) BOOL isWednesday;
+@property(nonatomic, assign) NSInteger indexPath;
 @end
 
 @implementation MCCalenderDayCollectionViewCell
@@ -98,19 +101,21 @@
 - (void)setDisplayDate:(NSDate *)displayDate {
 
       _displayDate = displayDate;
-      _dayLabel.text = [self.displayDate stringValueWithFormat:@"dd"];
-      NSInteger month = [[self.displayDate stringValueWithFormat:@"MM"] integerValue];
+    
+      _dayLabel.text = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"dd"];;
+      NSInteger month = [[MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"MM"] integerValue];
       //Alternates cell background color for alternating month.
       self.contentView.backgroundColor = (month % 2 == 0)?[UIColor clearColor]:[UIColor colorWithWhite:.8 alpha:1];
     
-      if ([[self.displayDate stringValueWithFormat:@"dd"] isEqualToString:@"01"]) {
+      if ([_dayLabel.text isEqualToString:@"01"]) {
         //Displays month if date is 1st of every month.
-        self.monthLabel.text = [self.displayDate stringValueWithFormat:@"MMM yyyy"];
+        self.monthLabel.text = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"MMM yyyy"];;
       }else{
         //Month is hidden is its not first of the month.
         self.monthLabel.text = @"";
       }
-      if ([[self.displayDate stringValueWithFormat:@"ddMMyyyy"] isEqualToString:[[NSDate date] stringValueWithFormat:@"ddMMyyyy"]]) {
+    
+    if ([[MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
           //If date is today date, the label textColor is changes and the cell is highlighted.
         _dayLabel.textColor = [UIColor blueColor];
         _monthLabel.textColor = [UIColor blueColor];

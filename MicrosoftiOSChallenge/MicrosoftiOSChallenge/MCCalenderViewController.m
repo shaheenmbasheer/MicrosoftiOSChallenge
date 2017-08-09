@@ -30,6 +30,11 @@
  Used to indicate if scrollaction is performed via user action in agenda view.
  */
 @property(nonatomic, assign) BOOL didInvokeScrollToIndexPath;
+
+/**
+Collection view overlay View
+ */
+@property(nonatomic, strong) UIView *calenderOverlayView;
 @end
 
 @implementation MCCalenderViewController
@@ -169,8 +174,7 @@
 
 /**
  Returns current View Controller storyboardID.
-
- @return <#return value description#>
+ @return storyBoardID as string.
  */
 - (NSString *)getStoryBoardID {
     
@@ -265,6 +269,32 @@ Number of sections in calender collection view corresponds to number of dates in
 
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     [cell setSelected:NO];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+    if (!self.calenderOverlayView) {
+        self.calenderOverlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.calenderView.contentSize.width, self.calenderView.contentSize.height)];
+        _calenderOverlayView.backgroundColor = [UIColor colorWithWhite:.9 alpha:.7];
+        [self.calenderView addSubview:_calenderOverlayView];
+    }
+    _calenderOverlayView.hidden = NO;
+    
+
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+
+    if (!decelerate) {
+        self.calenderOverlayView.hidden = YES;
+
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+
+    self.calenderOverlayView.hidden = YES;
+
 }
 
 
