@@ -75,6 +75,7 @@ Collection view overlay View
 }
 -(void)reloadData{
 
+    [self.calenderView.collectionViewLayout invalidateLayout];
 
     [self.calenderView reloadData];
  
@@ -164,13 +165,10 @@ Collection view overlay View
  Scroll to today's date when calender view loads.
  */
 -(void)scrollToCurrentDate{
-    
-    if (self.oldSelectedIndexPath) {
-        //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
-        [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
-    }
+//    [self killScroll];
     NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
-    [self.calenderView scrollToItemAtIndexPath:currentDateIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    [_calenderView selectItemAtIndexPath:currentDateIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionTop];
+
     [self.delegate didSelectCellAtIndexPath:currentDateIndexPath];
     self.oldSelectedIndexPath = currentDateIndexPath;
 
@@ -184,16 +182,18 @@ Collection view overlay View
  */
 - (void)scrollToIndexPath:(NSIndexPath *)indexPath{
 
+//    if(self.oldSelectedIndexPath == indexPath)
+//        return;
     //Since this method is used invoked, we set _didInvokeScrollToIndexPath flag to YES.
     self.didInvokeScrollToIndexPath = YES;
     if (self.oldSelectedIndexPath) {
         //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
-        [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
+        [_calenderView deselectItemAtIndexPath:indexPath animated:NO];
+
     }
+    [_calenderView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionTop];
     //Scroll to provided indexPath in calender collection view.
-    [self.calenderView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
     //Select cell in provided index path in calender collection view.
-    [self collectionView:_calenderView didSelectItemAtIndexPath:indexPath];
     self.didInvokeScrollToIndexPath = NO;
     //Set oldSelectedIndexPath as current selectedIndexPath, so the same can be cleared the next time this method is called.
     self.oldSelectedIndexPath = indexPath;
@@ -286,6 +286,13 @@ Number of sections in calender collection view corresponds to number of dates in
 
 #pragma mark <UICollectionViewDelegate>
 
+//- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    for (NSIndexPath *indexPath in collectionView.indexPathsForSelectedItems) {
+//        [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+//    }
+//    return collectionView.indexPathsForSelectedItems.count == 0 && indexPath.section == 1;
+//}
 
 /**
  This method is called when a particular indexPath cell is selected in the collection view. Here, if there is 
@@ -297,11 +304,13 @@ Number of sections in calender collection view corresponds to number of dates in
 
     if (self.oldSelectedIndexPath) {
         //Deselecting previously selected cell.
-        [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
-        self.oldSelectedIndexPath = nil;
+//        [self collectionView:_calenderView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
+        [collectionView deselectItemAtIndexPath:self.oldSelectedIndexPath animated:NO];
+
     }
     [cell setSelected:YES];
-    
+//    self.oldSelectedIndexPath = indexPath;
+
     if (!self.didInvokeScrollToIndexPath) {
         //If user selectes the cell, then only delegate method is called.
         [self.delegate didSelectCellAtIndexPath:indexPath];
@@ -342,6 +351,9 @@ Number of sections in calender collection view corresponds to number of dates in
     self.calenderOverlayView.hidden = YES;
 
 }
-
+- (void)killScroll{
+    CGPoint offset = _calenderView.contentOffset;
+    [_calenderView setContentOffset:offset animated:NO];
+}
 
 @end

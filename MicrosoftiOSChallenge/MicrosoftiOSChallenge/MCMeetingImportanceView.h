@@ -33,4 +33,5 @@ typedef NS_ENUM(NSUInteger, MCMeetingImportanceViewKey){
 @interface MCMeetingImportanceView : UIView
 
 @property(nonatomic, assign) MCMeetingImportanceViewKey meetingImportance;
+@property(nonatomic, strong) NSString *importance;
 @end

@@ -16,6 +16,7 @@
 @property(nonatomic, strong) NSDate *startTime;
 @property(nonatomic, strong) NSDate *endTime;
 @property(nonatomic, strong) NSString *location;
+@property(nonatomic, strong) NSArray *attendees;
 //Calculated entries
 @property(nonatomic, strong) NSString *duration;
 @property(nonatomic, strong) NSString *eventDateKey;

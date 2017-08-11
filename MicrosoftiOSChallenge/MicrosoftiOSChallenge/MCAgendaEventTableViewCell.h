@@ -6,14 +6,17 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
+#import "MCEventData.h"
+#import "MCBaseTableViewCellProtocol.h"
 @import UIKit;
 
 
 /**
  * MCAgendaEventTableViewCell is used to display events in AgendaTableView
  */
-@interface MCAgendaEventTableViewCell : UITableViewCell
+@interface MCAgendaEventTableViewCell : UITableViewCell<MCBaseTableViewCellProtocol>
 
+@property(nonatomic, strong) MCEventData *eventData;
 /**
  Returns cell reuse identifier
  

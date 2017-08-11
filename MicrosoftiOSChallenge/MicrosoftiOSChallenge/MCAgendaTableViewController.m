@@ -10,6 +10,8 @@
 #import "MCAgendaEmptyTableViewCell.h"
 #import "MCDateRangeManager.h"
 #import "MCAgendaEventTableViewCell.h"
+#import "MCBaseTableViewCellProtocol.h"
+#import "MCWeatherTableHeaderView.h"
 
 @interface MCAgendaTableViewController ()<UIScrollViewDelegate>
 /**
@@ -54,6 +56,9 @@
     
     self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedSectionHeaderHeight = 30;
+
     self.tableView.estimatedRowHeight = 100;
 
     self.calenderDateArray = [[MCDateRangeManager getDateRangeArray] mutableCopy];
@@ -73,6 +78,12 @@
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
 }
+
+- (void)killScroll{
+    CGPoint offset = self.tableView.contentOffset;
+    [self.tableView setContentOffset:offset animated:NO];
+}
+
 #pragma mark - Class Methods
 - (NSString *)getStoryBoardID {
     
@@ -80,6 +91,7 @@
 }
 -(void)reloadData{
 
+    [self.tableView reloadData];
 }
 
 #pragma mark - IBActions
@@ -106,11 +118,49 @@
     }
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+
+    
+    NSDate *dateForSection = _calenderDateArray[section];
+    NSString *displayText;
+    
+    
+    
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor darkGrayColor];
+    
+    if ([[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
+        
+        displayText = [NSString stringWithFormat:@"Today - %@",[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"]];
+    }else{
+        
+        displayText = [MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"];
+        
+    }
+    
+
+    MCWeatherTableHeaderView *stackView = [[MCWeatherTableHeaderView alloc] initWithTodayDateString:displayText withWeatherData:nil];
+    [headerView addSubview:stackView];
+    
+    
+    stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    [headerView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(15)-[_calenderView]|"
+                                             options:0 metrics:nil
+                                               views:@{@"_calenderView":stackView}]];
+    [headerView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_calenderView]|"
+                                             options:0 metrics:nil
+                                               views:@{@"_calenderView":stackView}]];
+    [headerView setNeedsLayout];
+    
+    return headerView;
+}
+
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
     NSDate *dateForSection = _calenderDateArray[section];
     NSString *displayText;
-
     
     if ([[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
         
@@ -126,11 +176,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MCAgendaEventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MCAgendaEventTableViewCell
-                                                                                     cellReuseIdentifier]];
+    NSDate *date = _calenderDateArray[indexPath.section];
+    NSArray *events = _eventDictionary[[MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"]];
+    
+    id<MCBaseTableViewCellProtocol> cell;
+    if ([events count] == 0) {
+        cell = (MCAgendaEmptyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:[MCAgendaEmptyTableViewCell
+                                                                                           cellReuseIdentifier]];
+    }else{
+    
+        cell = (MCAgendaEventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:[MCAgendaEventTableViewCell
+                                                             cellReuseIdentifier]];
+        [cell inputData:events[indexPath.row]];
+    }
     
 
-    return cell;
+    return (UITableViewCell *)cell;
 }
 
 #pragma mark - UIScrollViewDelegate

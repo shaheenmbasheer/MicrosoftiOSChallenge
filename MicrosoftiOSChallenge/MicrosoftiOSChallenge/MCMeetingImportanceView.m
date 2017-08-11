@@ -42,4 +42,20 @@
 
 
 }
+-(void)setImportance:(NSString *)importance{
+    
+    _importance = importance;
+    
+    if ([importance isEqualToString:@"High"]) {
+        self.meetingImportance = MCMeetingImportanceViewKeyHighImportance;
+    }else if([importance isEqualToString:@"Medium"]){
+        self.meetingImportance = MCMeetingImportanceViewKeyMediumImportance;
+    }else if([importance isEqualToString:@"Low"]){
+        self.meetingImportance = MCMeetingImportanceViewKeyNotImportant;
+    }else{
+        self.meetingImportance = MCMeetingImportanceViewKeyUnknown;
+
+    }
+
+}
 @end

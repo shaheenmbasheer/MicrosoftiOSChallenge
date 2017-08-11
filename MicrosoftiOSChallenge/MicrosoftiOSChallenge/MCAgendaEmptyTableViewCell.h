@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MCAgendaEmptyTableViewCell : UITableViewCell
+#import "MCBaseTableViewCellProtocol.h"
+@interface MCAgendaEmptyTableViewCell : UITableViewCell<MCBaseTableViewCellProtocol>
 
 /**
  Returns cell reuse identifier

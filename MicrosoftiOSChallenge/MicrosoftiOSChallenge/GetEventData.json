@@ -77,6 +77,61 @@
               "iCalUId": "040000008200E9888E07599CCFA23",
               "WebLink": "https://outlook.office.com/owa/?ItemID=AAAINJAAAAA%3D%3D&exvsurl=1&viewmodel=ICalendarItemDetailsViewModelFactory",
               "OnlineMeetingUrl": null
+              },{
+              "@odata.id": "https://outlook.office.com/api/v2.0/Users('user0@contoso.com')/Events('asdas==')",
+              "@odata.etag": "W/\"L8Z+4Y4u7k+97uRKg==\"",
+              "Id": "AQMkANJAAAAA==",
+              "ChangeKey": "L8Z+AAAAARKg==",
+              "Categories": [
+              ],
+              "DateTimeCreated": "2015-04-10T17:54:49.2725912Z",
+              "DateTimeLastModified": "2015-04-10T17:54:49.3038538Z",
+              "Subject": "Team Outing to DisneyLand from Office",
+              "BodyPreview": "I think it will meet our requirements!",
+              "Body": {
+              "ContentType": "HTML",
+              "Content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\nI think it will meet our requirements!\r\n</body>\r\n</html>\r\n"
+              },
+              "Importance": "Normal",
+              "HasAttachments": false,
+              "Start": {
+              "DateTime": "2017-08-09T15:00:00+0530",
+              "TimeZone": "Pacific Standard Time"
+              },
+              "End": {
+              "DateTime": "2017-08-09T17:30:00+0530",
+              "TimeZone": "Pacific Standard Time"
+              },
+              "ReminderMinutesBeforeStart": "15",
+              "IsReminderOn": "true",
+              "Location": {
+              "DisplayName": "1313 Disneyland Dr, Anaheim, CA 92802, USA",
+              "Address": null
+              },
+              "ResponseStatus": {
+              "Response": "Organizer",
+              "Time": "0001-01-01T00:00:00Z"
+              },
+              "ShowAs": "Busy",
+              "IsAllDay": false,
+              "IsCancelled": false,
+              "IsOrganizer": true,
+              "ResponseRequested": true,
+              "Type": "SingleInstance",
+              "SeriesMasterId": null,
+              "Attendees": [ ],
+              "Recurrence": null,
+              "OriginalEndTimeZone": "Pacific Standard Time",
+              "OriginalStartTimeZone": "Pacific Standard Time",
+              "Organizer": {
+              "EmailAddress": {
+              "Address": "user0@contoso.com",
+              "Name": "user0"
+              }
+              },
+              "iCalUId": "040000008200E9888E07599CCFA23",
+              "WebLink": "https://outlook.office.com/owa/?ItemID=AAAINJAAAAA%3D%3D&exvsurl=1&viewmodel=ICalendarItemDetailsViewModelFactory",
+              "OnlineMeetingUrl": null
               },
               
               {
@@ -139,6 +194,90 @@
                             "Type": "Required",
                             "EmailAddress": {
                             "Name": "Alex William",
+                            "Address": "fannyd@prosewareltd.onmicrosoft.com"
+                            }
+                            },
+                            {
+                            "Type": "Required",
+                            "EmailAddress": {
+                            "Name": "Samuel Jackson",
+                            "Address": "fannyd@prosewareltd.onmicrosoft.com"
+                            }
+                            },
+                            {
+                            "Type": "Required",
+                            "EmailAddress": {
+                            "Name": "Ryan Rehnolds",
+                            "Address": "fannyd@prosewareltd.onmicrosoft.com"
+                            }
+                            },
+                            {
+                            "Type": "Required",
+                            "EmailAddress": {
+                            "Name": "Christopher Nolan",
+                            "Address": "fannyd@prosewareltd.onmicrosoft.com"
+                            }
+                            }
+                            ],
+              "Recurrence": null,
+              "OriginalEndTimeZone": "Pacific Standard Time",
+              "OriginalStartTimeZone": "Pacific Standard Time",
+              "Organizer": {
+              "EmailAddress": {
+              "Address": "user0@contoso.com",
+              "Name": "user0"
+              }
+              },
+              "iCalUId": "040000008200E9888E07599CCFA23",
+              "WebLink": "https://outlook.office.com/owa/?ItemID=AAAINJAAAAA%3D%3D&exvsurl=1&viewmodel=ICalendarItemDetailsViewModelFactory",
+              "OnlineMeetingUrl": null
+              },
+              {
+              "@odata.id": "https://outlook.office.com/api/v2.0/Users('user0@contoso.com')/Events('asdas==')",
+              "@odata.etag": "W/\"L8Z+4Y4u7k+97uRKg==\"",
+              "Id": "AQMkANJAAAAA==",
+              "ChangeKey": "L8Z+AAAAARKg==",
+              "Categories": [
+              ],
+              "DateTimeCreated": "2015-04-10T13:54:49.2725912Z",
+              "DateTimeLastModified": "2015-04-10T14:34:49.3038538Z",
+              "Subject": "Secure Coding Practices and Security Certification Course",
+              "BodyPreview": "Send Meeting minutes update!",
+              "Body": {
+              "ContentType": "HTML",
+              "Content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\nI think it will meet our requirements!\r\n</body>\r\n</html>\r\n"
+              },
+              "Importance": "Low",
+              "HasAttachments": false,
+              "Start": {
+              "DateTime": "2017-08-10T19:00:00+0530",
+              "TimeZone": "Pacific Standard Time"
+              },
+              "End": {
+              "DateTime": "2017-08-10T19:30:00+0530",
+              "TimeZone": "Pacific Standard Time"
+              },
+              "ReminderMinutesBeforeStart": "15",
+              "IsReminderOn": "true",
+              "Location": {
+              "DisplayName": "Indoor Cafetaria",
+              "Address": null
+              },
+              "ResponseStatus": {
+              "Response": "Organizer",
+              "Time": "0001-01-01T00:00:00Z"
+              },
+              "ShowAs": "Busy",
+              "IsAllDay": false,
+              "IsCancelled": false,
+              "IsOrganizer": true,
+              "ResponseRequested": true,
+              "Type": "SingleInstance",
+              "SeriesMasterId": null,
+              "Attendees": [ {
+                            "Type": "Required",
+                            "EmailAddress": {
+                            "Name": "John Appleseed",
                             "Address": "fannyd@prosewareltd.onmicrosoft.com"
                             }
                             }

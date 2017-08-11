@@ -28,7 +28,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Gq5-mb-DNA"/>
                                     <barButtonItem title="August 2017" id="ZpR-kI-9Lh"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SR0-8s-wA6"/>
-                                    <barButtonItem image="Weather_Sunny" id="23V-nT-lQe"/>
+                                    <barButtonItem image="Weather_Rainy" id="23V-nT-lQe"/>
                                     <barButtonItem title="Today" id="Vmv-Xj-cFG">
                                         <connections>
                                             <action selector="didSelectScrollToToday:" destination="fBA-JK-9XD" id="3Np-dc-QtD"/>
@@ -98,6 +98,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Weather_Sunny" width="25" height="25"/>
+        <image name="Weather_Rainy" width="25" height="25"/>
     </resources>
 </document>

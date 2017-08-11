@@ -8,6 +8,7 @@
 
 #import "MCMappingData.h"
 #import "MCEventData.h"
+#import "MCParticipantData.h"
 
 @implementation MCMappingData
 
@@ -60,6 +61,38 @@
     [dateFormatter setDateFormat:@"ddMMyyyy"];
 
     eventData.eventDateKey = [dateFormatter stringFromDate:eventData.startTime];
+    
+    NSArray *attendees = entriesDictionary[@"Attendees"];
+    
+    NSMutableArray *attendeeList = [@[] mutableCopy];
+    for (NSDictionary *attendee in attendees) {
+        
+        [attendeeList addObject:[MCMappingData mappedObjectForAttendiesEntriesDictionary:attendee]];
+    }
+    eventData.attendees = [attendeeList copy];
+    
+    NSTimeInterval timeIntervalBetweenDates = [eventData.endTime timeIntervalSinceDate:eventData.startTime];
+    NSInteger secondsInAnHour = 3600;
+    NSInteger hours = timeIntervalBetweenDates / secondsInAnHour;
+    NSInteger minutes = ((NSInteger)timeIntervalBetweenDates % secondsInAnHour)/60;
+    if (minutes == 0) {
+        eventData.duration = [NSString stringWithFormat:@"%ldh", hours];
+
+    }else{
+        eventData.duration = [NSString stringWithFormat:@"%ldh %ldm", hours, minutes];
+
+    }
+
     return eventData;
 }
+
++ (id)mappedObjectForAttendiesEntriesDictionary:(NSDictionary *)entriesDictionary{
+    
+    MCParticipantData *participant = [MCParticipantData new];
+    participant.type = entriesDictionary[@"Type"];
+    participant.name = entriesDictionary[@"EmailAddress"][@"Name"];
+    participant.email = entriesDictionary[@"EmailAddress"][@"Address"];
+    return participant;
+}
+
 @end

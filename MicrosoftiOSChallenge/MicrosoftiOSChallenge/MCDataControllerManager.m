@@ -59,7 +59,10 @@ static MCDataControllerManager *currentInstance = nil;
         
         [MCDataController performUserEventsRequestWithCompletionBlock:^(id result) {
             
-            [[MCEventManager sharedInstance] setEventArray:result];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[MCEventManager sharedInstance] setEventArray:result];
+
+            });
         } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
         
           }];

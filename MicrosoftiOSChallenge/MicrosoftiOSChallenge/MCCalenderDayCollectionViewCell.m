@@ -57,7 +57,7 @@
          //Returns day label in Calender collection view day cell.
          UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, self.frame.size.width - 10, self.frame.size.height - 10)];
           displayLabel.textAlignment = NSTextAlignmentCenter;
-          displayLabel.textColor = [UIColor grayColor];
+          displayLabel.textColor = [UIColor darkGrayColor];
           displayLabel.backgroundColor = [UIColor clearColor];
           displayLabel.layer.cornerRadius = displayLabel.frame.size.height/2;
           displayLabel.layer.masksToBounds = YES;
@@ -107,7 +107,7 @@
     
       if ([_dayLabel.text isEqualToString:@"01"]) {
         //Displays month if date is 1st of every month.
-        self.monthLabel.text = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"MMM yyyy"];;
+        self.monthLabel.text = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"MMM"];;
       }else{
         //Month is hidden is its not first of the month.
         self.monthLabel.text = @"";
@@ -138,6 +138,12 @@
         self.eventIndicatorView.hidden = YES;
 
     }
+}
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    self.dayLabel.backgroundColor = [UIColor clearColor];
+    self.eventIndicatorView.hidden = YES;
+
 }
 -(void)setSelected:(BOOL)selected{
 

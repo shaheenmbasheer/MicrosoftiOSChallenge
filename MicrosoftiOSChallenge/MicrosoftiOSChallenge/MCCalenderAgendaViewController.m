@@ -64,7 +64,6 @@
  */
 -(void)registerDefaults{
     
-    [self performEventRequest];
 
     // Turning off translatesAutoresizingMaskIntoConstraints to work with constraints.
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -117,6 +116,8 @@
     //Updating constraits
     [self.view layoutIfNeeded];
     
+    [self performEventRequest];
+
     
 }
 
@@ -126,11 +127,19 @@
         
         NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
 
+        
         [self.calenderViewController setEventDictionary:eventDictionary];
         [self.agendaViewController setEventDictionary:eventDictionary];
-        [self.calenderViewController reloadData];
-        [self.agendaViewController reloadData];
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
+            [self.agendaViewController reloadData];
+            [self.calenderViewController reloadData];
+            [_calenderViewController scrollToCurrentDate];
+        });
+        
+  
+
     } WithErrorBlock:nil enableForceLoad:YES];
 
 }

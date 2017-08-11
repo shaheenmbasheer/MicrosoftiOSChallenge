@@ -33,6 +33,12 @@ static MCEventManager *currentInstance = nil;
         if (eventDictionary[event.eventDateKey]) {
             NSMutableArray *events = [eventDictionary[event.eventDateKey] mutableCopy];
             [events addObject:event];
+            
+            NSArray *sortedList = [events sortedArrayUsingComparator: ^(MCEventData *event1, MCEventData *event2) {
+                return [event1.startTime compare:event2.startTime];
+            }];
+            eventDictionary[event.eventDateKey] = sortedList;
+
         }else{
             eventDictionary[event.eventDateKey] = @[event];
 
