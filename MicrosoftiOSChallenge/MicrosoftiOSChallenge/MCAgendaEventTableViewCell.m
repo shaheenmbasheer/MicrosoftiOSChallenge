@@ -35,6 +35,7 @@
           }
     return self;
 }
+
 -(void)prepareForReuse{
     [super prepareForReuse];
     
@@ -44,6 +45,13 @@
 
 -(void)setUpConstraints{
 
+    // The setup totally consists of 5 stackview
+    // 1- Horizontal outlier stackview
+    // 2- Vertical stackview for time and duration
+    // 3- Vertical stackview for subject, participants and location
+    // 4- Horizontal stackview for participants
+    // 5- Horizontal stackview for location icon and location description
+    
     //MCAvailabilityView for showing meeting importance
     MCMeetingImportanceView *meetingImportanceView = [[MCMeetingImportanceView alloc] init];
     meetingImportanceView.importance = self.eventData.importance;

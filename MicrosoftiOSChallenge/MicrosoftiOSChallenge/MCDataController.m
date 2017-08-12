@@ -44,9 +44,27 @@ static id <MCBaseDataProviderProtocol>_dataProvider;
  */
 +(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
 
-    [_dataProvider fetchOutlookEventsWithCompletionBlock:^(id result) {
-        
+    
+    [[[MCDummyDataProvider alloc] init] fetchOutlookEventsWithCompletionBlock:^(id result) {
+
         completionBlock([MCMappingData mappedObjectForEventRequestWithEntriesDictionary:result]);
     } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
 }
+
+/**
+ *  Weather Request
+ *
+ *  @param completionBlock completionBlock
+ *  @param errorBlock      errorBlock
+ *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ */
++(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
+
+    [_dataProvider fetchForecastWeatherDataWithRequest:request withCompletionBlock:^(id result) {
+        
+        completionBlock([MCMappingData mappedObjectForWeatherRequestWithEntriesDictionary:result]);
+    } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
+    
+}
+
 @end

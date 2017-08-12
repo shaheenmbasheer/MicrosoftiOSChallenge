@@ -18,4 +18,7 @@
  *  @return mapped object
  */
 + (id)mappedObjectForEventRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary;
+
++ (id)mappedObjectForWeatherRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary;
+
 @end

@@ -12,6 +12,7 @@
 #import "MCAgendaEventTableViewCell.h"
 #import "MCBaseTableViewCellProtocol.h"
 #import "MCWeatherTableHeaderView.h"
+#import "MCWeatherData.h"
 
 @interface MCAgendaTableViewController ()<UIScrollViewDelegate>
 /**
@@ -68,20 +69,18 @@
     self.isUserInvokedScroll = NO;
 
 }
+
 /**
  Method scrolls to given indexPath in table and selects the particular cell
  @param indexPath indexPath to which table should scroll.
  */
 -(void)scrollToIndexPath:(NSIndexPath *)indexPath{
 
+    self.tableView.contentOffset = self.tableView.contentOffset;
+
     self.isUserInvokedScroll = YES;
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
-}
-
-- (void)killScroll{
-    CGPoint offset = self.tableView.contentOffset;
-    [self.tableView setContentOffset:offset animated:NO];
 }
 
 #pragma mark - Class Methods
@@ -129,7 +128,8 @@
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = [UIColor darkGrayColor];
     
-    if ([[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
+    NSString *dateKeyForSection = [MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"];
+    if ([dateKeyForSection isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
         
         displayText = [NSString stringWithFormat:@"Today - %@",[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"]];
     }else{
@@ -138,8 +138,9 @@
         
     }
     
+    MCWeatherData *weatherDataForDate = self.weatherDictionary[dateKeyForSection];
 
-    MCWeatherTableHeaderView *stackView = [[MCWeatherTableHeaderView alloc] initWithTodayDateString:displayText withWeatherData:nil];
+    MCWeatherTableHeaderView *stackView = [[MCWeatherTableHeaderView alloc] initWithTodayDateString:displayText withWeatherData:weatherDataForDate];
     [headerView addSubview:stackView];
     
     
@@ -210,13 +211,17 @@
 
 }
 
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-    if (!_isUserInvokedScroll) {
-        NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
-        [self.delegate didScrollToTableIndex:path];
-    }
+    
+//    if (!_isUserInvokedScroll) {
+//        NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
+//        [self.delegate didScrollToTableIndex:path];
+//    }
     _isUserInvokedScroll = NO;
+ 
+
 
 }
 

@@ -179,11 +179,9 @@
 
 -(void)handleViewPanGesture:(UIPanGestureRecognizer *)recognizer{
 
-    CGPoint initialPoint;
 
     if(recognizer.state == UIGestureRecognizerStateBegan){
 
-        initialPoint = [recognizer translationInView:self];
     }else if((recognizer.state == UIGestureRecognizerStateChanged)){
     
         [self animateViewAnimationDirection:NO];

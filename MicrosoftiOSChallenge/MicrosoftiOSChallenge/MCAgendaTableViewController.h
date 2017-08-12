@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 /**
  MCAgendaTableViewControllerDelegate is used to forward events to the delegate object when user
  scrolls to any particular indexPath.
@@ -36,6 +35,7 @@ date in calender control.
  */
 @property (nonatomic, weak) id<MCAgendaTableViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSDictionary *eventDictionary;
+@property (nonatomic, strong) NSDictionary *weatherDictionary;
 /**
  Method scrolls to given indexPath in table and selects the particular cell
  @param indexPath indexPath to which table should scroll.

@@ -7,7 +7,7 @@
 //
 
 #import "MCBaseDataProviders.h"
-
+#import "MCProtocolHeaders.h"
 
 @import Foundation;
 /**
@@ -28,4 +28,12 @@
  */
 +(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
 
+/**
+ *  Weather Request
+ *
+ *  @param completionBlock completionBlock
+ *  @param errorBlock      errorBlock
+ *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ */
++(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
 @end

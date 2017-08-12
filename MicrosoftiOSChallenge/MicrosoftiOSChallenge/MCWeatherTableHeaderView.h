@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MCWeatherData.h"
 @interface MCWeatherTableHeaderView : UIStackView
 
--(instancetype)initWithTodayDateString:(NSString *)todayDateString withWeatherData:(NSString *)weatherData;
+-(instancetype)initWithTodayDateString:(NSString *)todayDateString withWeatherData:(MCWeatherData *)weatherData;
 @end

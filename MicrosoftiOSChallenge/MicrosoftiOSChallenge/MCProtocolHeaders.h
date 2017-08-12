@@ -9,6 +9,7 @@
 #ifndef MCProtocolHeaders_h
 #define MCProtocolHeaders_h
 
+#import "MCRequestObjectProtocol.h"
 #import "MCBaseDataProviders.h"
-
+#import "MCBaseTableViewCellProtocol.h"
 #endif /* MCProtocolHeaders_h */

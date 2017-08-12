@@ -12,7 +12,7 @@
 
 @property(atomic, strong) NSArray *dateListArray;
 @property(atomic, strong) NSDateFormatter *dateFormatter;
-@property(nonatomic, assign) NSInteger todayDate;
+@property(atomic, assign) NSInteger todayDate;
 @end
 @implementation MCDateRangeManager
 
@@ -49,7 +49,7 @@ static MCDateRangeManager *currentInstance = nil;
 }
 - (void)prepareData{
 
-    self.dateListArray = [self prepareDataForDateRangeWithLowerLimit:-365*6 withUpperLimit:365*4];
+    self.dateListArray = [self prepareDataForDateRangeWithLowerLimit:-365*4 withUpperLimit:365*4];
 }
 - (NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit{
 
@@ -60,7 +60,6 @@ static MCDateRangeManager *currentInstance = nil;
     NSDateComponents *comps = [gregorian components:unitFlags fromDate:now];
     
     BOOL firstSunday = NO;;
-    NSInteger j = 0;
     for (NSInteger i = lowerLimit; i < upperLimit; i ++) {
         
         [comps setDay:[comps day] - i];
@@ -72,7 +71,6 @@ static MCDateRangeManager *currentInstance = nil;
         }
         if (firstSunday) {
             
-            j = i;
             [calenderDateArray addObject:newDate];
         }
         

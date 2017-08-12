@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MCBaseDataProviders.h"
+#import "MCProtocolHeaders.h"
 
 /**
  *  Facade Interface to simplify MCDataController
@@ -25,4 +25,14 @@
  *  @param forceLoad       specifies if data is to be forcefully loaded from server
  */
 + (void)initializeEventDataWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
+
+/**
+ *  Connection Sequence for Weather Data
+ *
+ *  @param completionBlock completionBlock
+ *  @param errorBlock      errorBlock
+ *  @param forceLoad       specifies if data is to be forcefully loaded from server
+ */
++ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
+
 @end

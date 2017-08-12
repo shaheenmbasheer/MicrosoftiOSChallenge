@@ -73,12 +73,22 @@ Collection view overlay View
     }
     return self;
 }
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    [self.calenderView reloadData];
+
+}
 -(void)reloadData{
+
 
     [self.calenderView.collectionViewLayout invalidateLayout];
 
-    [self.calenderView reloadData];
- 
+    // Giving a small delay before reloading the collection view.
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.calenderView reloadData];
+//    });
+
 }
 
 - (void)viewDidLoad {
@@ -94,7 +104,6 @@ Collection view overlay View
     [super viewDidAppear:animated];
 
     //Scrolling to today's date when calenderView loads.
-    [self scrollToCurrentDate];
     [self setUpOverlayView];
     
     
@@ -165,12 +174,21 @@ Collection view overlay View
  Scroll to today's date when calender view loads.
  */
 -(void)scrollToCurrentDate{
-//    [self killScroll];
+
     NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
-    [_calenderView selectItemAtIndexPath:currentDateIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionTop];
 
     [self.delegate didSelectCellAtIndexPath:currentDateIndexPath];
+    if (self.oldSelectedIndexPath) {
+        //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
+        [_calenderView deselectItemAtIndexPath:self.oldSelectedIndexPath animated:NO];
+        
+    }
     self.oldSelectedIndexPath = currentDateIndexPath;
+    // Giving .1 delay for table to reset its position before selecting cell.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_calenderView selectItemAtIndexPath:currentDateIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+
+    });
 
 }
 
@@ -182,13 +200,11 @@ Collection view overlay View
  */
 - (void)scrollToIndexPath:(NSIndexPath *)indexPath{
 
-//    if(self.oldSelectedIndexPath == indexPath)
-//        return;
     //Since this method is used invoked, we set _didInvokeScrollToIndexPath flag to YES.
     self.didInvokeScrollToIndexPath = YES;
     if (self.oldSelectedIndexPath) {
         //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
-        [_calenderView deselectItemAtIndexPath:indexPath animated:NO];
+        [_calenderView deselectItemAtIndexPath:self.oldSelectedIndexPath animated:NO];
 
     }
     [_calenderView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionTop];
@@ -351,9 +367,6 @@ Number of sections in calender collection view corresponds to number of dates in
     self.calenderOverlayView.hidden = YES;
 
 }
-- (void)killScroll{
-    CGPoint offset = _calenderView.contentOffset;
-    [_calenderView setContentOffset:offset animated:NO];
-}
+
 
 @end

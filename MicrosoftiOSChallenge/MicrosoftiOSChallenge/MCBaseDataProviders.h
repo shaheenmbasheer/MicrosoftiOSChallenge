@@ -6,10 +6,11 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
+#import "MCRequestObjectProtocol.h"
 
 @import Foundation;
 
-#define kIsDemoMode YES
+#define kIsDemoMode NO
 
 typedef void(^CompletionBlock)(id result);
 typedef void (^ErrorBlock)(NSError *error);
@@ -30,5 +31,15 @@ typedef void (^ErrorBlock)(NSError *error);
  *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
  */
 -(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
+
+
+/**
+ *  Weather Request
+ *
+ *  @param completionBlock completionBlock
+ *  @param errorBlock      errorBlock
+ *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ */
+-(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
 
 @end

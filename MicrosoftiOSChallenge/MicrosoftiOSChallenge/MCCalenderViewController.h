@@ -50,4 +50,5 @@
  */
 - (void)scrollToIndexPath:(NSIndexPath *)indexPath;
 -(void)reloadData;
+
 @end

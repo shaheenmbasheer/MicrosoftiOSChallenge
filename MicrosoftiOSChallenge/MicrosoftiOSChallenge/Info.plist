@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This application requires location services to work</string>    
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application requires location services to work</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,10 +33,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
-    <key>UIAppFonts</key>
-    <array>
-        <string>weathericons-regular-webfont.ttf</string>
-    </array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>weathericons-regular-webfont.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

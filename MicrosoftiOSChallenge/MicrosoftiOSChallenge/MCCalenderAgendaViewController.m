@@ -13,6 +13,9 @@
 #import "MCDateRangeManager.h"
 #import "MCDataControllerManager.h"
 #import "MCEventManager.h"
+#import "MCLocationManager.h"
+#import "MCWeatherDataRequest.h"
+
 @interface MCCalenderAgendaViewController ()<MCAgendaTableViewControllerDelegate, MCCalenderViewControllerDelegate>
 
 
@@ -65,6 +68,7 @@
 -(void)registerDefaults{
     
 
+   
     // Turning off translatesAutoresizingMaskIntoConstraints to work with constraints.
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -117,29 +121,61 @@
     [self.view layoutIfNeeded];
     
     [self performEventRequest];
-
+    [self performWeatherRequest];
     
 }
 
+-(void)performWeatherRequest{
+
+
+    
+    [[MCLocationManager sharedInstance] startUpdatingLocationWithCompletionBlock:^(CLLocation *location) {
+        
+        [self performWeatherDataRequestWithLocation:location];
+
+    } withErrorBlock:^(NSError *error) {
+        
+    }];
+
+
+
+}
+-(void)performWeatherDataRequestWithLocation:(CLLocation *)location{
+    
+    
+    [MCDataControllerManager initializeWeatherDataWithRequest:({
+        MCWeatherDataRequest *request = [[MCWeatherDataRequest alloc] init];
+        request.location = location;
+        (id)request;
+        
+    }) withCompletionBlock:^(id result) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.agendaViewController setWeatherDictionary:result];
+            [self.agendaViewController reloadData];
+        });
+        
+        
+        
+    } WithErrorBlock:nil enableForceLoad:YES];
+    
+    
+}
 -(void)performEventRequest{
 
     [MCDataControllerManager initializeEventDataWithCompletionBlock:^(id result) {
         
-        NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
-
-        
-        [self.calenderViewController setEventDictionary:eventDictionary];
-        [self.agendaViewController setEventDictionary:eventDictionary];
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
+            
+            [self.calenderViewController setEventDictionary:eventDictionary];
+            [self.agendaViewController setEventDictionary:eventDictionary];
             [self.agendaViewController reloadData];
             [self.calenderViewController reloadData];
             [_calenderViewController scrollToCurrentDate];
-        });
-        
-  
+            [self.view layoutIfNeeded];
 
+        });
     } WithErrorBlock:nil enableForceLoad:YES];
 
 }
@@ -159,7 +195,16 @@
 #pragma mark - IBActions
 - (IBAction)didSelectScrollToToday:(UIBarButtonItem *)sender {
     
+    
+//    [self.agendaViewController scrollToTodayDate];
     [self.calenderViewController scrollToCurrentDate];
+    
+//    NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
+//    [self didScrollToTableIndex:[NSIndexPath indexPathForRow:0 inSection:[MCDateRangeManager todayDateIndex]]];
+//    [self didSelectCellAtIndexPath:currentDateIndexPath];
+
+//    [self.agendaViewController scrollToTodayDate];
+
 }
 
 #pragma mark - Accessor Methods

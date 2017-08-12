@@ -39,6 +39,15 @@
 		DC146B1F1F3D1057009869AB /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC146B1D1F3D1057009869AB /* weathericons-regular-webfont.ttf */; };
 		DC146B231F3D27D7009869AB /* MCWeatherTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B221F3D27D7009869AB /* MCWeatherTableHeaderView.m */; };
 		DC146B241F3D27D7009869AB /* MCWeatherTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B221F3D27D7009869AB /* MCWeatherTableHeaderView.m */; };
+		DC146B271F3F0FDE009869AB /* MCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B261F3F0FDE009869AB /* MCLocationManager.m */; };
+		DC146B281F3F0FDE009869AB /* MCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B261F3F0FDE009869AB /* MCLocationManager.m */; };
+		DC146B2B1F3F1119009869AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC146B2A1F3F1119009869AB /* CoreLocation.framework */; };
+		DC146B2F1F3F168E009869AB /* MCErrorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B2E1F3F168E009869AB /* MCErrorUtilities.m */; };
+		DC146B301F3F168E009869AB /* MCErrorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B2E1F3F168E009869AB /* MCErrorUtilities.m */; };
+		DC146B351F3F23D8009869AB /* MCNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B341F3F23D8009869AB /* MCNetworkConnection.m */; };
+		DC146B361F3F23D8009869AB /* MCNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B341F3F23D8009869AB /* MCNetworkConnection.m */; };
+		DC146B3A1F3F243F009869AB /* MCWeatherDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B391F3F243F009869AB /* MCWeatherDataRequest.m */; };
+		DC146B3B1F3F243F009869AB /* MCWeatherDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B391F3F243F009869AB /* MCWeatherDataRequest.m */; };
 		DC23F49C1F379F100083A365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49B1F379F100083A365 /* main.m */; };
 		DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC23F49E1F379F100083A365 /* MCAppDelegate.m */; };
 		DC23F4A51F379F100083A365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC23F4A31F379F100083A365 /* Main.storyboard */; };
@@ -68,6 +77,8 @@
 		DC4335831F3B2F6C00F44F22 /* MCMeetingImportanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335821F3B2F6C00F44F22 /* MCMeetingImportanceView.m */; };
 		DC4335841F3B2F6C00F44F22 /* MCMeetingImportanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4335821F3B2F6C00F44F22 /* MCMeetingImportanceView.m */; };
 		DC6B4A981F3B42570028EE70 /* GetEventData.json in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A971F3B42570028EE70 /* GetEventData.json */; };
+		DCE94B131F3F5D63005F3297 /* MCWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE94B121F3F5D63005F3297 /* MCWeatherData.m */; };
+		DCE94B141F3F5D63005F3297 /* MCWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE94B121F3F5D63005F3297 /* MCWeatherData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +125,17 @@
 		DC146B1D1F3D1057009869AB /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		DC146B211F3D27D7009869AB /* MCWeatherTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWeatherTableHeaderView.h; sourceTree = "<group>"; };
 		DC146B221F3D27D7009869AB /* MCWeatherTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWeatherTableHeaderView.m; sourceTree = "<group>"; };
+		DC146B251F3F0FDE009869AB /* MCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLocationManager.h; sourceTree = "<group>"; };
+		DC146B261F3F0FDE009869AB /* MCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLocationManager.m; sourceTree = "<group>"; };
+		DC146B2A1F3F1119009869AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DC146B2D1F3F168E009869AB /* MCErrorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCErrorUtilities.h; sourceTree = "<group>"; };
+		DC146B2E1F3F168E009869AB /* MCErrorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCErrorUtilities.m; sourceTree = "<group>"; };
+		DC146B311F3F226A009869AB /* MicrosoftiOSChallenge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MicrosoftiOSChallenge-Prefix.pch"; sourceTree = "<group>"; };
+		DC146B331F3F23D8009869AB /* MCNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNetworkConnection.h; sourceTree = "<group>"; };
+		DC146B341F3F23D8009869AB /* MCNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNetworkConnection.m; sourceTree = "<group>"; };
+		DC146B381F3F243F009869AB /* MCWeatherDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWeatherDataRequest.h; sourceTree = "<group>"; };
+		DC146B391F3F243F009869AB /* MCWeatherDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWeatherDataRequest.m; sourceTree = "<group>"; };
+		DC146B3C1F3F26D3009869AB /* MCRequestObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRequestObjectProtocol.h; sourceTree = "<group>"; };
 		DC23F4971F379F0F0083A365 /* MicrosoftiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicrosoftiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC23F49B1F379F100083A365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC23F49D1F379F100083A365 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
@@ -126,7 +148,6 @@
 		DC23F4B61F379F100083A365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC23F4CF1F37A0F40083A365 /* MCCalenderAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCalenderAgendaViewController.h; sourceTree = "<group>"; };
 		DC23F4D01F37A0F40083A365 /* MCCalenderAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCalenderAgendaViewController.m; sourceTree = "<group>"; };
-		DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MicrosoftiOSChallenge-Prefix.pch"; sourceTree = "<group>"; };
 		DC4335471F3A46F400F44F22 /* MCConnectivityHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConnectivityHeaders.h; sourceTree = "<group>"; };
 		DC4335481F3A470900F44F22 /* MCDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDataModels.h; sourceTree = "<group>"; };
 		DC4335491F3A471D00F44F22 /* MCBaseDataProviders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBaseDataProviders.h; sourceTree = "<group>"; };
@@ -152,6 +173,8 @@
 		DC4335821F3B2F6C00F44F22 /* MCMeetingImportanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMeetingImportanceView.m; sourceTree = "<group>"; };
 		DC4335851F3B368600F44F22 /* MCProtocolHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProtocolHeaders.h; sourceTree = "<group>"; };
 		DC6B4A971F3B42570028EE70 /* GetEventData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetEventData.json; sourceTree = "<group>"; };
+		DCE94B111F3F5D63005F3297 /* MCWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWeatherData.h; sourceTree = "<group>"; };
+		DCE94B121F3F5D63005F3297 /* MCWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWeatherData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC146B2B1F3F1119009869AB /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,10 +322,13 @@
 		DC146B0A1F3BA1D0009869AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC146B371F3F2431009869AB /* Requests */,
 				DC146B0B1F3BA1E6009869AB /* MCEventData.h */,
 				DC146B0C1F3BA1E6009869AB /* MCEventData.m */,
 				DC146B0F1F3BA404009869AB /* MCParticipantData.h */,
 				DC146B101F3BA404009869AB /* MCParticipantData.m */,
+				DCE94B111F3F5D63005F3297 /* MCWeatherData.h */,
+				DCE94B121F3F5D63005F3297 /* MCWeatherData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,12 +350,39 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
+		DC146B291F3F1119009869AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC146B2A1F3F1119009869AB /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC146B321F3F23A9009869AB /* ConnectionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				DC146B331F3F23D8009869AB /* MCNetworkConnection.h */,
+				DC146B341F3F23D8009869AB /* MCNetworkConnection.m */,
+			);
+			name = ConnectionHandler;
+			sourceTree = "<group>";
+		};
+		DC146B371F3F2431009869AB /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DC146B381F3F243F009869AB /* MCWeatherDataRequest.h */,
+				DC146B391F3F243F009869AB /* MCWeatherDataRequest.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
 		DC23F48E1F379F0F0083A365 = {
 			isa = PBXGroup;
 			children = (
 				DC23F4991F379F0F0083A365 /* MicrosoftiOSChallenge */,
 				DC23F4B31F379F100083A365 /* MicrosoftiOSChallengeTests */,
 				DC23F4981F379F0F0083A365 /* Products */,
+				DC146B291F3F1119009869AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,9 +409,9 @@
 			isa = PBXGroup;
 			children = (
 				DC23F4D31F37A1300083A365 /* Constants */,
-				DC23F4D41F37A17C0083A365 /* MicrosoftiOSChallenge-Prefix.pch */,
 				DC23F4AB1F379F100083A365 /* Info.plist */,
 				DC23F49B1F379F100083A365 /* main.m */,
+				DC146B311F3F226A009869AB /* MicrosoftiOSChallenge-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -472,6 +526,7 @@
 				DC4335851F3B368600F44F22 /* MCProtocolHeaders.h */,
 				DC4335491F3A471D00F44F22 /* MCBaseDataProviders.h */,
 				DC146B1B1F3BD5AC009869AB /* MCBaseTableViewCellProtocol.h */,
+				DC146B3C1F3F26D3009869AB /* MCRequestObjectProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -486,6 +541,8 @@
 				DC146B141F3BB76E009869AB /* MCGlobalVariables.m */,
 				DC146B171F3BBAD7009869AB /* MCEventManager.h */,
 				DC146B181F3BBAD7009869AB /* MCEventManager.m */,
+				DC146B251F3F0FDE009869AB /* MCLocationManager.h */,
+				DC146B261F3F0FDE009869AB /* MCLocationManager.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -566,6 +623,7 @@
 		DC43354E1F3A476D00F44F22 /* O365 DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				DC146B321F3F23A9009869AB /* ConnectionHandler */,
 				DC4335611F3A49DE00F44F22 /* MCO365DataProvider.h */,
 				DC4335621F3A49DE00F44F22 /* MCO365DataProvider.m */,
 			);
@@ -621,6 +679,8 @@
 			children = (
 				DC43357C1F3B21E600F44F22 /* MCGlobalHelpers.h */,
 				DC43357D1F3B21E600F44F22 /* MCGlobalHelpers.m */,
+				DC146B2D1F3F168E009869AB /* MCErrorUtilities.h */,
+				DC146B2E1F3F168E009869AB /* MCErrorUtilities.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -750,16 +810,21 @@
 				DC4335631F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
 				DC23F49F1F379F100083A365 /* MCAppDelegate.m in Sources */,
 				DC4335531F3A493400F44F22 /* MCDataControllerManager.m in Sources */,
+				DC146B271F3F0FDE009869AB /* MCLocationManager.m in Sources */,
 				DC23F4D11F37A0F40083A365 /* MCCalenderAgendaViewController.m in Sources */,
 				DC43355B1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
 				DC146B191F3BBAD7009869AB /* MCEventManager.m in Sources */,
 				DC0B613D1F385776000C6D58 /* NSDate+DateToString.m in Sources */,
 				DC146B231F3D27D7009869AB /* MCWeatherTableHeaderView.m in Sources */,
 				DC0B614B1F385DCF000C6D58 /* MCAgendaTableViewController.m in Sources */,
+				DC146B3A1F3F243F009869AB /* MCWeatherDataRequest.m in Sources */,
 				DC080C871F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */,
 				DC43355F1F3A49C700F44F22 /* MCMappingData.m in Sources */,
 				DC43356B1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */,
 				DC080C7C1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */,
+				DC146B2F1F3F168E009869AB /* MCErrorUtilities.m in Sources */,
+				DC146B351F3F23D8009869AB /* MCNetworkConnection.m in Sources */,
+				DCE94B131F3F5D63005F3297 /* MCWeatherData.m in Sources */,
 				DC0B615A1F386137000C6D58 /* MCConstants.m in Sources */,
 				DC146B151F3BB76E009869AB /* MCGlobalVariables.m in Sources */,
 				DC4335701F3B16B900F44F22 /* MCParticipantLabel.m in Sources */,
@@ -777,8 +842,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0B61481F385DB2000C6D58 /* MCCalenderViewController.m in Sources */,
+				DC146B3B1F3F243F009869AB /* MCWeatherDataRequest.m in Sources */,
 				DC080C881F38DFB1002B4FB3 /* MCAgendaEmptyTableViewCell.m in Sources */,
 				DC4335741F3B1B9A00F44F22 /* ParticipantLabelTests.m in Sources */,
+				DCE94B141F3F5D63005F3297 /* MCWeatherData.m in Sources */,
 				DC0B61411F385B62000C6D58 /* NSDateCategoryTests.m in Sources */,
 				DC146B001F3B9352009869AB /* MCDateRangeManagerTests.m in Sources */,
 				DC4335841F3B2F6C00F44F22 /* MCMeetingImportanceView.m in Sources */,
@@ -792,8 +859,11 @@
 				DC146B0E1F3BA1E6009869AB /* MCEventData.m in Sources */,
 				DC146B071F3B9B2B009869AB /* MCMappingDataTests.m in Sources */,
 				DC4335581F3A494700F44F22 /* MCDataController.m in Sources */,
+				DC146B301F3F168E009869AB /* MCErrorUtilities.m in Sources */,
 				DC146B1A1F3BBAD7009869AB /* MCEventManager.m in Sources */,
 				DC146B241F3D27D7009869AB /* MCWeatherTableHeaderView.m in Sources */,
+				DC146B281F3F0FDE009869AB /* MCLocationManager.m in Sources */,
+				DC146B361F3F23D8009869AB /* MCNetworkConnection.m in Sources */,
 				DC080C7D1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */,
 				DC43355C1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
 				DC4335641F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
@@ -933,7 +1003,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4JB848GZR;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -949,7 +1019,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4JB848GZR;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

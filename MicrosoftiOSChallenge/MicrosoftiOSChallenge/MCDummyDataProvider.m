@@ -42,4 +42,10 @@
     completionBlock([MCDummyDataProvider dictionaryWithContentsOfJSONStringForFile:@"GetEventData"]);
 
 }
+
++(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
+
+
+
+}
 @end

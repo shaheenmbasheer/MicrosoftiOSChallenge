@@ -80,4 +80,50 @@ static MCDataControllerManager *currentInstance = nil;
     [queue addOperation:totalCompletionOperation];
 
 }
+
+/**
+ *  Connection Sequence for Weather Data
+ *
+ *  @param completionBlock completionBlock
+ *  @param errorBlock      errorBlock
+ *  @param forceLoad       specifies if data is to be forcefully loaded from server
+ */
++ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
+
+    NSOperationQueue *queue = [[MCDataControllerManager sharedInstance] backgroundOperationQueue];
+    
+    ErrorBlock __unused queueErrorBlock = ^(NSError *error){
+        
+        [queue cancelAllOperations];
+        errorBlock(error);
+        
+    };
+    
+    // Event Data Loading
+    
+    __block id parsedResult;
+    NSOperation *weatherDataOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        [MCDataController performWeatherRequestWithURL:request withCompletionBlock:^(id result) {
+        
+            parsedResult = result;
+        } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
+        
+    }];
+    
+    [queue addOperation:weatherDataOperation];
+    
+    NSOperation *totalCompletionOperation = [NSBlockOperation blockOperationWithBlock:^{
+        // Finish Status
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            weatherDataOperation.isFinished?completionBlock(parsedResult):errorBlock(nil);
+        });
+    }];
+    
+    [queue addOperation:totalCompletionOperation];
+
+
+
+}
 @end

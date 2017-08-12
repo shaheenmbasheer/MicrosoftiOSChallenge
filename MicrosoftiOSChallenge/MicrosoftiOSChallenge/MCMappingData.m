@@ -9,6 +9,7 @@
 #import "MCMappingData.h"
 #import "MCEventData.h"
 #import "MCParticipantData.h"
+#import "MCWeatherData.h"
 
 @implementation MCMappingData
 
@@ -76,10 +77,10 @@
     NSInteger hours = timeIntervalBetweenDates / secondsInAnHour;
     NSInteger minutes = ((NSInteger)timeIntervalBetweenDates % secondsInAnHour)/60;
     if (minutes == 0) {
-        eventData.duration = [NSString stringWithFormat:@"%ldh", hours];
+        eventData.duration = [NSString stringWithFormat:@"%ldh", (long)hours];
 
     }else{
-        eventData.duration = [NSString stringWithFormat:@"%ldh %ldm", hours, minutes];
+        eventData.duration = [NSString stringWithFormat:@"%ldh %ldm", (long)hours, minutes];
 
     }
 
@@ -94,5 +95,40 @@
     participant.email = entriesDictionary[@"EmailAddress"][@"Address"];
     return participant;
 }
+
++ (id)mappedObjectForWeatherRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary{
+
+    NSMutableDictionary *weatherDataDictionary = [@{} mutableCopy];
+
+    for (NSDictionary *entry in entriesDictionary[@"daily"][@"data"]) {
+        
+        MCWeatherData *weatherData = [MCMappingData mappedObjectForWeatherEntriesDictionary:entry];
+        
+        weatherDataDictionary[weatherData.timeKey] = weatherData;
+    }
+    return weatherDataDictionary;
+}
++ (id)mappedObjectForWeatherEntriesDictionary:(NSDictionary *)entriesDictionary{
+    
+    MCWeatherData *weatherData = [MCWeatherData new];
+    
+    NSDateFormatter *dateFormatter = ({
+        NSDateFormatter *currentdateFormatter = [[NSDateFormatter alloc] init];
+        currentdateFormatter.dateFormat = @"ddMMyyyy";
+        currentdateFormatter;
+    });
+    
+    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[entriesDictionary[@"time"] longLongValue]];
+
+    weatherData.time = date;
+    weatherData.timeKey = [dateFormatter stringFromDate:weatherData.time];
+    weatherData.summary = entriesDictionary[@"summary"];
+    weatherData.iconName = entriesDictionary[@"icon"];
+    weatherData.minTemerature = [NSString stringWithFormat:@"%d",[entriesDictionary[@"temperatureMin"] intValue]];
+    weatherData.maxTemperature = [NSString stringWithFormat:@"%d",[entriesDictionary[@"temperatureMax"] intValue]];
+
+    return weatherData;
+}
+
 
 @end
