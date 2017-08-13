@@ -31,7 +31,7 @@ date in calender control.
 @interface MCAgendaTableViewController : UITableViewController
 /**
  MCAgendaTableViewControllerDelegate object to which events are forwarded. The object
- is MCCalenderAgendaViewController in current scenario.
+ is MCCalendarAgendaViewController in current scenario.
  */
 @property (nonatomic, weak) id<MCAgendaTableViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSDictionary *eventDictionary;
@@ -42,4 +42,5 @@ date in calender control.
  */
 -(void)scrollToIndexPath:(NSIndexPath *)indexPath;
 -(void)reloadData;
+-(void)stopScrollDeceleration;
 @end

@@ -31,6 +31,10 @@
     [super tearDown];
 }
 
+
+/**
+ Testing if DateRange operation returns a valid array
+ */
 -(void)testDateRangeOperation{
 
     NSArray *dates = [[MCDateRangeManager sharedInstance] prepareDataForDateRangeWithLowerLimit:-365 withUpperLimit:365];
@@ -38,6 +42,10 @@
     XCTAssertTrue([dates count]);
 }
 
+
+/**
+ Testing if the first date returned by dateRange operation is a Sunday
+ */
 -(void)testIfFirstDateInDateRangeIsSunday{
 
     NSArray *dates = [[MCDateRangeManager sharedInstance] prepareDataForDateRangeWithLowerLimit:-365 withUpperLimit:365];
@@ -46,6 +54,10 @@
     XCTAssertEqualObjects([MCDateRangeManager calculateStringFromDate:date withFormat:@"EEEE"], @"Sunday");
 }
 
+
+/**
+ Testing today date returned by date range operation
+ */
 -(void)testIfDateRangetodayIndexIsTodayDate{
 
     NSDate *todayDate = [NSDate date];

@@ -177,6 +177,7 @@ Collection view overlay View
 
     NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
 
+//    [self.delegate willScrollToTodayDate];
     [self.delegate didSelectCellAtIndexPath:currentDateIndexPath];
     if (self.oldSelectedIndexPath) {
         //Deselect the previously selected cell, if oldSelectedIndexPath object is not nil.
@@ -189,6 +190,7 @@ Collection view overlay View
         [_calenderView selectItemAtIndexPath:currentDateIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
 
     });
+
 
 }
 
@@ -213,6 +215,8 @@ Collection view overlay View
     self.didInvokeScrollToIndexPath = NO;
     //Set oldSelectedIndexPath as current selectedIndexPath, so the same can be cleared the next time this method is called.
     self.oldSelectedIndexPath = indexPath;
+    
+
 }
 
 

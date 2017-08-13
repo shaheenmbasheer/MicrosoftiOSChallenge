@@ -6,7 +6,7 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import "MCCalenderAgendaViewController.h"
+#import "MCCalendarAgendaViewController.h"
 #import "MCCalenderAgendaContainerView.h"
 #import "MCCalenderViewController.h"
 #import "MCAgendaTableViewController.h"
@@ -16,7 +16,7 @@
 #import "MCLocationManager.h"
 #import "MCWeatherDataRequest.h"
 
-@interface MCCalenderAgendaViewController ()<MCAgendaTableViewControllerDelegate, MCCalenderViewControllerDelegate>
+@interface MCCalendarAgendaViewController ()<MCAgendaTableViewControllerDelegate, MCCalenderViewControllerDelegate, MCCalenderAgendaContainerViewDelegate>
 
 
 /**
@@ -34,12 +34,11 @@
 */
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *monthBarButtonItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *weatherIconBarButtonItem;
 
 @property(nonatomic, strong) MCAgendaTableViewController *agendaViewController;
 @end
 
-@implementation MCCalenderAgendaViewController
+@implementation MCCalendarAgendaViewController
 
 
 #pragma mark - View Cycle
@@ -100,6 +99,7 @@
 //        bottomView;
     })];
     
+    self.containerView.delegate = self;
     // Turning off translatesAutoresizingMaskIntoConstraints to work with constraints.
     _containerView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -189,7 +189,7 @@
  */
 - (NSString *)getStoryBoardID {
 
-  return @"kMCCalenderAgendaViewControllerKey";
+  return @"kMCCalendarAgendaViewControllerKey";
 }
 
 #pragma mark - IBActions
@@ -257,5 +257,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)willScrollToTodayDate{
+
+    [self.agendaViewController stopScrollDeceleration];
+
+}
+-(void)didStartPanningCalenderAgendaContainerView{
+
+}
 
 @end

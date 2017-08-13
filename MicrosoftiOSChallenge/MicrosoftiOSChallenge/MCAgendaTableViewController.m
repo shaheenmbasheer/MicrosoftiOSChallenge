@@ -82,6 +82,15 @@
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
 }
+-(void)stopScrollDeceleration{
+
+//    [self.delegate didScrollToTableIndex:[[self.tableView indexPathsForVisibleRows]lastObject]];
+
+    CGPoint offset = self.tableView.contentOffset;
+    [self.tableView setContentOffset:offset animated:NO];
+//    self.tableView.contentOffset = self.tableView.contentOffset;
+
+}
 
 #pragma mark - Class Methods
 - (NSString *)getStoryBoardID {
@@ -215,10 +224,10 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
     
-//    if (!_isUserInvokedScroll) {
-//        NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
-//        [self.delegate didScrollToTableIndex:path];
-//    }
+    if (!_isUserInvokedScroll) {
+        NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
+        [self.delegate didScrollToTableIndex:path];
+    }
     _isUserInvokedScroll = NO;
  
 

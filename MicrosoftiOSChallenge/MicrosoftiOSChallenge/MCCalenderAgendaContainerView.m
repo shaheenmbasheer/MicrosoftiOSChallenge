@@ -153,6 +153,8 @@
 
 -(void)animateViewAnimationDirection:(BOOL)animationDirectioUp{
 
+    [self.delegate didStartPanningCalenderAgendaContainerView];
+
     if ((self.topConstraint.priority == 999)) {
         
         [UIView animateWithDuration:.3f animations:^{
@@ -186,16 +188,6 @@
     
         [self animateViewAnimationDirection:NO];
 
-// Code if pan needs fine tuning according to direction of PAN
-//        CGPoint finalPoint = [recognizer translationInView:self];
-//        if ((finalPoint.y - initialPoint.y) > 0) {
-//            
-//            [self animateViewAnimationDirection:NO];
-//
-//        }else{
-//
-//            [self animateViewAnimationDirection:YES];
-//        }
     }
 }
 

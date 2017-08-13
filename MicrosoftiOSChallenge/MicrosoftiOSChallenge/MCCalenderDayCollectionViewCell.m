@@ -125,7 +125,8 @@
           //If date is today date, the label textColor is changes and the cell is highlighted.
         _dayLabel.textColor = [UIColor blueColor];
         _monthLabel.textColor = [UIColor blueColor];
-        [self setSelected:YES];
+        
+//        [self setSelected:YES];
       }else{
          //Colors are changed to default in other cases
         _dayLabel.textColor = [UIColor grayColor];

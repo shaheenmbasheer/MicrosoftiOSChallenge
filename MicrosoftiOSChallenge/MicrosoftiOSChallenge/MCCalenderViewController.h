@@ -23,17 +23,19 @@
  @param indexPath - MCCalenderViewControllerDelgate tableview indexPath to which user scrolled.
  */
 - (void)didSelectCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)willScrollToTodayDate;
+
 @end
 
 /**
  MCCalenderCollectionViewController is used to display calender interface to the user.
  User events on the calender is handled by the class and tap event delegate methods are 
- forwarded to MCCalenderAgendaViewController.
+ forwarded to MCCalendarAgendaViewController.
  */
 @interface MCCalenderViewController : UIViewController
 /**
  MCCalenderViewControllerDelegate object to which events are forwarded. The object 
- is MCCalenderAgendaViewController in current scenario.
+ is MCCalendarAgendaViewController in current scenario.
  */
 @property(nonatomic, weak) id<MCCalenderViewControllerDelegate> delegate;
 @property(nonatomic, strong) NSDictionary *eventDictionary;
