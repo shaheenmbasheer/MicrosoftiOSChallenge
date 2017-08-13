@@ -6,8 +6,12 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "MCBaseTableViewCellProtocol.h"
+
+@import UIKit;
+/**
+ MCAgendaEmptyTableViewCell is displayed in Agenda control if there is no event.
+ */
 @interface MCAgendaEmptyTableViewCell : UITableViewCell<MCBaseTableViewCellProtocol>
 
 /**

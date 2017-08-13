@@ -23,5 +23,6 @@
  @return cellReuseIdentifier of type NSString
  */
 + (NSString *)cellReuseIdentifier;
-- (void)prepareData;
+
+
 @end

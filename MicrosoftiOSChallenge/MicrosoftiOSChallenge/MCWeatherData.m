@@ -10,6 +10,12 @@
 
 @implementation MCWeatherData
 
+
+/**
+ Icon name from forecast server to weather font mapping.
+
+ @return font entity name in weather font as string.
+ */
 -(NSDictionary *)iconNameToFontMapping{
 
     return @{
@@ -30,10 +36,16 @@
              };
 }
 
+
+/**
+ Icon name accessor method.
+
+ @param iconName icons name as in forcast response.
+ */
 -(void)setIconName:(NSString *)iconName{
 
     _iconName = iconName;
-    
+    //Calculating iconFontName from iconName.
     self.iconFontName = [self iconNameToFontMapping][iconName];
 
 }

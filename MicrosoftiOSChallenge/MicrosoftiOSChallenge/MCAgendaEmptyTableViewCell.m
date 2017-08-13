@@ -9,6 +9,10 @@
 #import "MCAgendaEmptyTableViewCell.h"
 
 @interface MCAgendaEmptyTableViewCell()
+
+/**
+ EmptyLabel for displaying "No Events" or similar string.
+ */
 @property(nonatomic, strong) UILabel *emptyLabel;
 @end
 @implementation MCAgendaEmptyTableViewCell
@@ -23,6 +27,14 @@
     return @"kMCAgendaEmptyTableViewCellReuseKey";
 }
 
+
+/**
+ Cell Initialization method
+ 
+ @param style cell style
+ @param reuseIdentifier cell reuse identifier
+ @return initialized self.
+ */
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
               reuseIdentifier:(NSString *)reuseIdentifier{
 
@@ -37,49 +49,18 @@
             displayLabel;
         });
         [self.contentView addSubview:_emptyLabel];
-        
     }
     return self;
 }
 
--(void)inputData:(id)data{
 
-}
--(void)prepareForReuse{
-    [super prepareForReuse];
-
-}
-
-- (UIEdgeInsets)layoutMargins{
-    
-    return UIEdgeInsetsZero;
-}
 /**
- Initialization method
- 
- @param frame frame of cell
- @return cell instance
+ Input data method as specified by MCBaseTableViewCellProtocol
+
+ @param data cell inputData
  */
-- (instancetype)initWithFrame:(CGRect)frame {
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-
-    }
-    return self;
-}
-
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)inputData:(id)data{
+    //This method is blank as self is an empty cell.
 }
 
 @end

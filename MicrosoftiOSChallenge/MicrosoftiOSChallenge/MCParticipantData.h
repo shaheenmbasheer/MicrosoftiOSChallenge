@@ -7,11 +7,25 @@
 //
 
 @import Foundation;
-
+/**
+ MCParticipantData is used to save parsed respose of each participant/attendee
+ for a particular event data.
+ */
 @interface MCParticipantData : NSObject
 
+/**
+ Participant type specifies the attendee type eg Required.
+ */
 @property(nonatomic, strong) NSString *type;
+
+/**
+ Participant full name.
+ */
 @property(nonatomic, strong) NSString *name;
+
+/**
+ Participant email address.
+ */
 @property(nonatomic, strong) NSString *email;
 
 @end

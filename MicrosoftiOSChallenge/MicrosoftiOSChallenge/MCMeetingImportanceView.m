@@ -10,6 +10,12 @@
 
 @implementation MCMeetingImportanceView
 
+
+/**
+ Calculating color based on set meeting importance
+
+ @param meetingImportance meeting importance
+ */
 -(void)setMeetingImportance:(MCMeetingImportanceViewKey)meetingImportance{
 
     _meetingImportance = meetingImportance;
@@ -33,19 +39,20 @@
 
             break;
             
-              }
-    
+        }
     self.layer.cornerRadius = self.frame.size.height/2;
     self.layer.masksToBounds = YES;
-
-
-
-
 }
+
+
+/**
+ Calculating MCMeetingImportanceViewKey based on string in event response.
+
+ @param importance MCMeetingImportanceViewKey
+ */
 -(void)setImportance:(NSString *)importance{
     
     _importance = importance;
-    
     if ([importance isEqualToString:@"High"]) {
         self.meetingImportance = MCMeetingImportanceViewKeyHighImportance;
     }else if([importance isEqualToString:@"Medium"]){
@@ -56,6 +63,5 @@
         self.meetingImportance = MCMeetingImportanceViewKeyUnknown;
 
     }
-
 }
 @end

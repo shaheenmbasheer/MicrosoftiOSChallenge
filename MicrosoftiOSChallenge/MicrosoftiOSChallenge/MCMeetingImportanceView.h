@@ -30,8 +30,19 @@ typedef NS_ENUM(NSUInteger, MCMeetingImportanceViewKey){
     MCMeetingImportanceViewKeyHighImportance = 2,
 };
 
+
+/**
+ MCMeetingImportanceView is used to display meeting importance in an event.
+ */
 @interface MCMeetingImportanceView : UIView
 
+
+/**
+ Meeting importance as MCMeetingImportanceViewKey.
+ */
 @property(nonatomic, assign) MCMeetingImportanceViewKey meetingImportance;
+/**
+ Meeting importance as in event response.
+ */
 @property(nonatomic, strong) NSString *importance;
 @end

@@ -6,10 +6,14 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
+@import UIKit;
+/**
+ ParticipantLabel is used for displaying each attendee/participant in agenda control.
+ */
 @interface MCParticipantLabel : UILabel
 
+/**
+ Participant full name.
+ */
 @property(nonatomic, strong) NSString *participantName;
 @end

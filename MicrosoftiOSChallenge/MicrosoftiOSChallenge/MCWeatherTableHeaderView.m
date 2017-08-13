@@ -10,10 +10,17 @@
 
 @implementation MCWeatherTableHeaderView
 
+
+/**
+ Initializing MCWeatherTableHeaderView
+ 
+ @param todayDateString todayDate as string
+ @param weatherData weatherData for the respective date
+ @return MCWeatherTableHeaderView as UIStackView
+ */
 -(instancetype)initWithTodayDateString:(NSString *)todayDateString withWeatherData:(MCWeatherData *)weatherData{
 
     self = [super init];
-
     if (self) {
         
         //Outlier vertical stackview settings
@@ -103,8 +110,6 @@
 
         }
     }
-
-
     return self;
 }
 
