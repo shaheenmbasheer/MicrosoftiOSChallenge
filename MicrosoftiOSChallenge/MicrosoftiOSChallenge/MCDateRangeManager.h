@@ -22,4 +22,5 @@
 + (NSDateFormatter *)dateFormatter;
 + (NSString *)calculateStringFromDate:(NSDate *)date withFormat:(NSString *)format;
 + (NSUInteger)todayDateIndex;
++ (NSString *)getDateKeyForDate:(NSDate *)date;
 @end

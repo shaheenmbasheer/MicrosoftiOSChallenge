@@ -39,43 +39,60 @@
         dateDisplayLabel.font = [UIFont boldSystemFontOfSize:16];
         
         //Horizontal stackview for displaying weather icon, temperature and weather description
-        UIStackView *weatherStackView = [[UIStackView alloc] init];
-        weatherStackView.axis = UILayoutConstraintAxisHorizontal;
-        weatherStackView.distribution = UIStackViewDistributionFill;
-        weatherStackView.alignment = UIStackViewAlignmentLeading;
-        weatherStackView.spacing = 5;
-        weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
+        UIStackView *weatherStackView = ({
+        
+            UIStackView *weatherStackView = [[UIStackView alloc] init];
+            weatherStackView.axis = UILayoutConstraintAxisHorizontal;
+            weatherStackView.distribution = UIStackViewDistributionFill;
+            weatherStackView.alignment = UIStackViewAlignmentLeading;
+            weatherStackView.spacing = 5;
+            weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
+            weatherStackView;
+        
+        });
+        
              //Temperature label for displaying current temperature
-        UILabel *temperatureLabel = getDefaultLabelType();
-//        temperatureLabel.text = @"21ºF";
-        temperatureLabel.text = [NSString stringWithFormat:@"%@ºF",weatherData.maxTemperature];
-//        temperatureLabel.text = [NSString stringWithFormat:@"%@ºF  %@ºF",weatherData.minTemerature,weatherData.maxTemperature];
-        temperatureLabel.translatesAutoresizingMaskIntoConstraints = NO;
-
-        temperatureLabel.font = [UIFont systemFontOfSize:14];
-        [temperatureLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
-        [temperatureLabel.widthAnchor constraintEqualToConstant:40].active = true;
+        UILabel *temperatureLabel = ({
+        
+            UILabel *temperatureLabel = getDefaultLabelType();
+            temperatureLabel.text = [NSString stringWithFormat:@"%@ºF",weatherData.maxTemperature];
+            temperatureLabel.translatesAutoresizingMaskIntoConstraints = NO;
+            temperatureLabel.font = [UIFont systemFontOfSize:14];
+            [temperatureLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
+            [temperatureLabel.widthAnchor constraintEqualToConstant:40].active = true;
+            temperatureLabel;
+        });
+        
         [weatherStackView addArrangedSubview:temperatureLabel];
 
         //Weather icon label for display weather type icon using custom font.
-        UILabel *weatherIconLabel = getDefaultLabelType();
-        [weatherIconLabel setFont:[UIFont fontWithName:@"WeatherIcons-Regular" size:17.0]];
-        //        [weatherIconLabel setText:@"\uf004"];
-        weatherIconLabel.text = weatherData.iconFontName;
-        [weatherIconLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
-        [weatherIconLabel.widthAnchor constraintEqualToConstant:20].active = true;
+        UILabel *weatherIconLabel = ({
+        
+            UILabel *weatherIconLabel = getDefaultLabelType();
+            [weatherIconLabel setFont:[UIFont fontWithName:@"WeatherIcons-Regular" size:17.0]];
+            weatherIconLabel.text = weatherData.iconFontName;
+            [weatherIconLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
+            [weatherIconLabel.widthAnchor constraintEqualToConstant:20].active = true;
+            weatherIconLabel.translatesAutoresizingMaskIntoConstraints = NO;
+            weatherIconLabel;
+        });
+
         [weatherStackView addArrangedSubview:weatherIconLabel];
-        weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
 
 
         //Weather description label.
-        UILabel *weatherDescriptionLabel = getDefaultLabelType();
-        weatherDescriptionLabel.text = weatherData.summary;
-        weatherDescriptionLabel.font = [UIFont systemFontOfSize:15];
-        [weatherDescriptionLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
-        [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:270].active = true;
+        UILabel *weatherDescriptionLabel = ({
+            UILabel *weatherDescriptionLabel = getDefaultLabelType();
+            weatherDescriptionLabel.text = weatherData.summary;
+            weatherDescriptionLabel.font = [UIFont systemFontOfSize:15];
+            [weatherDescriptionLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
+            [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:270].active = true;
+            weatherDescriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+            weatherDescriptionLabel;
+        
+        });
+
         [weatherStackView addArrangedSubview:weatherDescriptionLabel];
-        weatherDescriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
         //Adding weather stackview to outlier(self) stackview.
         [self addArrangedSubview:dateDisplayLabel];

@@ -92,13 +92,74 @@
 
 }
 
+-(NSString *)getDateKeyForDate:(NSDate *)date{
+
+    return [MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"];
+
+}
+
+
+/**
+ Method is used to get display date for table header view
+
+ @param date section date for table view header
+ @return formatted display date as NSString
+ */
+-(NSString *)getDisplayStringForDate:(NSDate *)date{
+    
+    NSString *displayText;
+    //Generating date key from date
+    NSString *dateKeyForSection = [MCDateRangeManager getDateKeyForDate:date];
+    if ([dateKeyForSection isEqualToString:[MCDateRangeManager getDateKeyForDate:[NSDate date]]]) {
+        //If date is today's date then append string Today to start of date.
+        displayText = [NSString stringWithFormat:@"Today - %@",[MCDateRangeManager calculateStringFromDate:date withFormat:@"dd MMMM yyyy"]];
+    }else{
+        //Display date as usual if its not today's date
+        displayText = [MCDateRangeManager calculateStringFromDate:date withFormat:@"dd MMMM yyyy"];
+    }
+    return displayText;
+}
+
+
+/**
+ Get cell reuseIdentifier based on events
+
+ @param events event data for date
+ @return cell reuse identifier as string.
+ */
+-(NSString *)getCellReuseIdentifierForEvents:(NSArray *)events{
+
+    if ([events count]) {
+        //Return event cell if there are events
+        return [MCAgendaEventTableViewCell
+                cellReuseIdentifier];
+  
+    }else{
+        //Return empty cell if there are no events.
+        return [MCAgendaEmptyTableViewCell
+                cellReuseIdentifier];
+      
+    }
+
+}
 #pragma mark - Class Methods
+
+/**
+ Get current storyBoardID
+
+ @return current storyBoardID as NSString.
+ */
 - (NSString *)getStoryBoardID {
     
     return @"kMCAgendaTableViewControllerKey";
 }
--(void)reloadData{
 
+
+/**
+ Chain of operation to reload data for controller.
+ */
+-(void)reloadData{
+    //Reload tableview
     [self.tableView reloadData];
 }
 
@@ -126,94 +187,84 @@
     }
 }
 
+
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 
-    
+    //Gets date for section from calenderDateArray
     NSDate *dateForSection = _calenderDateArray[section];
-    NSString *displayText;
+    //Get formatted display date from section date value.
+    NSString *displayText = [self getDisplayStringForDate:dateForSection];
+ 
+    //Get weather stackview which adds weather information if available.
+    MCWeatherTableHeaderView *weatherStackView = ({
     
+        //WeatherData for the particular date(dateForSection).
+        MCWeatherData *weatherDataForDate = self.weatherDictionary[[MCDateRangeManager getDateKeyForDate:dateForSection]];
+        //Initialized weather stack view.
+        MCWeatherTableHeaderView *weatherStackView = [[MCWeatherTableHeaderView alloc] initWithTodayDateString:displayText withWeatherData:weatherDataForDate];
+        weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
+        weatherStackView;
+    });
     
-    
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor darkGrayColor];
-    
-    NSString *dateKeyForSection = [MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"];
-    if ([dateKeyForSection isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
+    //Container view for weatherstackview. Container view is required to given background color to weatherstackview
+    // as drawRect method is not called for stackview.
+    UIView *headerView = ({
         
-        displayText = [NSString stringWithFormat:@"Today - %@",[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"]];
-    }else{
-        
-        displayText = [MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"];
-        
-    }
+        UIView *headerView = [[UIView alloc] init];
+        headerView.backgroundColor = [UIColor darkGrayColor];
+        headerView;
+    });
+    [headerView addSubview:weatherStackView];
     
-    MCWeatherData *weatherDataForDate = self.weatherDictionary[dateKeyForSection];
-
-    MCWeatherTableHeaderView *stackView = [[MCWeatherTableHeaderView alloc] initWithTodayDateString:displayText withWeatherData:weatherDataForDate];
-    [headerView addSubview:stackView];
-    
-    
-    stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    //Adding vertical constraints for header view
     [headerView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(15)-[_calenderView]|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(15)-[weatherStackView]|"
                                              options:0 metrics:nil
-                                               views:@{@"_calenderView":stackView}]];
+                                               views:@{@"weatherStackView":weatherStackView}]];
+    //Adding horizontal constraints for header view.
     [headerView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_calenderView]|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[weatherStackView]|"
                                              options:0 metrics:nil
-                                               views:@{@"_calenderView":stackView}]];
+                                               views:@{@"weatherStackView":weatherStackView}]];
     [headerView setNeedsLayout];
     
     return headerView;
 }
 
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-
-    NSDate *dateForSection = _calenderDateArray[section];
-    NSString *displayText;
-    
-    if ([[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"ddMMyyyy"] isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
-        
-        displayText = [NSString stringWithFormat:@"Today - %@",[MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"]];
-    }else{
-        
-        displayText = [MCDateRangeManager calculateStringFromDate:dateForSection withFormat:@"dd MMMM yyyy"];
-    }
-
-    return displayText;
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //Get date for indexPath from calenderDateArray.
     NSDate *date = _calenderDateArray[indexPath.section];
-    NSArray *events = _eventDictionary[[MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"]];
-    
-    id<MCBaseTableViewCellProtocol> cell;
-    if ([events count] == 0) {
-        cell = (MCAgendaEmptyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:[MCAgendaEmptyTableViewCell
-                                                                                           cellReuseIdentifier]];
-    }else{
-    
-        cell = (MCAgendaEventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:[MCAgendaEventTableViewCell
-                                                             cellReuseIdentifier]];
-        [cell inputData:events[indexPath.row]];
-    }
-    
-
+    //Get events for section date.
+    NSArray *events = _eventDictionary[[MCDateRangeManager getDateKeyForDate:date]];
+    //Cell can be either EmptyCell or EventCell depending on events.
+    id<MCBaseTableViewCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:[self getCellReuseIdentifierForEvents:events]];
+    //Cell cell input data.
+    [cell inputData:events[indexPath.row]];
     return (UITableViewCell *)cell;
 }
 
 #pragma mark - UIScrollViewDelegate
 
+
+/**
+ This method is called when user begins dragging scrollview.
+
+ */
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-
+    //Flag is used to identify if its user initiated scroll.
     _isUserInvokedScroll = NO;
-
 }
+
+/**
+ This method is called when user is scrolling.
+
+ */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
     if (!_isUserInvokedScroll) {
+        //If its not user invoked scroll then apply similar changes to agenda tableview.
         NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
         [self.delegate didScrollToTableIndex:path];
     }
@@ -223,60 +274,13 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-    
-    if (!_isUserInvokedScroll) {
+        if (!_isUserInvokedScroll) {
+            
         NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
         [self.delegate didScrollToTableIndex:path];
     }
     _isUserInvokedScroll = NO;
  
-
-
 }
-
-/*
- 
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

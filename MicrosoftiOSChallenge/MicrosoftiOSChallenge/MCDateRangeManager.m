@@ -87,5 +87,8 @@ static MCDateRangeManager *currentInstance = nil;
 
     return [[MCDateRangeManager sharedInstance] dateListArray];
 }
++ (NSString *)getDateKeyForDate:(NSDate *)date{
 
+    return [MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"];
+}
 @end
