@@ -15,13 +15,13 @@
 static id <MCBaseDataProviderProtocol>_dataProvider;
 
 /**
- *  Initialize LHDataController as well as _dataProvider on factory method
+  Initialize LHDataController as well as _dataProvider on factory method
  */
 
 /**
- *  Switches between Demo and Data Provider
- *
- *  @return Demo or DataProvider Class
+ Switches between Demo and Data Provider
+ 
+ @return Demo or DataProvider Class
  */
 
 +(Class)classForDemoMode{
@@ -36,15 +36,14 @@ static id <MCBaseDataProviderProtocol>_dataProvider;
 }
 
 /**
- *  User Events Request
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ User Events Request
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
 +(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
 
-    
+    //Since we dont have online scenario, forcing MCDataController to go to offline more.
     [[[MCDummyDataProvider alloc] init] fetchOutlookEventsWithCompletionBlock:^(id result) {
 
         completionBlock([MCMappingData mappedObjectForEventRequestWithEntriesDictionary:result]);
@@ -52,11 +51,10 @@ static id <MCBaseDataProviderProtocol>_dataProvider;
 }
 
 /**
- *  Weather Request
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ Weather Request
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
 +(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
 

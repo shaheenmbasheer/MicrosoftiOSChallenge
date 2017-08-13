@@ -81,7 +81,7 @@
         outlierStackView.axis = UILayoutConstraintAxisHorizontal;
         outlierStackView.distribution = UIStackViewDistributionFill;
         outlierStackView.alignment = UIStackViewAlignmentTop;
-        outlierStackView.spacing = 20;
+        outlierStackView.spacing = 10;
         outlierStackView.translatesAutoresizingMaskIntoConstraints = false;
         outlierStackView;
     });
@@ -152,15 +152,7 @@
         durationLabel.adjustsFontSizeToFitWidth = YES;
         durationLabel;
     })];
-//    [timeVerticalStackView addArrangedSubview:({
-//        //Adding overflow view to keep a consistent width for the horizontal stackview.
-//        UIView *overflowView = [[UIView alloc] init];
-//        overflowView.backgroundColor = [UIColor whiteColor];
-//        [overflowView.heightAnchor constraintEqualToConstant:1].active = true;
-//        [overflowView.widthAnchor constraintEqualToConstant:225].active = true;
-//        overflowView;
-//    })];
-//    
+
     
     return timeVerticalStackView;
 }
@@ -257,7 +249,7 @@
         UIView *overflowView = [[UIView alloc] init];
         overflowView.backgroundColor = [UIColor whiteColor];
         [overflowView.heightAnchor constraintEqualToConstant:1].active = true;
-        [overflowView.widthAnchor constraintEqualToConstant:190].active = true;
+        [overflowView.widthAnchor constraintEqualToConstant:220].active = true;
         overflowView;
     })];
     
