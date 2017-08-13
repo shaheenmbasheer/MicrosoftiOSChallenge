@@ -34,18 +34,22 @@
  *
  *  @param completionBlock completionBlock
  *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
  */
--(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
+-(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
 
 
     completionBlock([MCDummyDataProvider dictionaryWithContentsOfJSONStringForFile:@"GetEventData"]);
-
 }
 
-+(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
-
-
-
+/**
+ Weather request for daily weather details.
+ 
+ @param request contains weather request object
+ @param completionBlock daily weather details
+ @param errorBlock encountered error
+ */
+-(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
+    
+    completionBlock([MCDummyDataProvider dictionaryWithContentsOfJSONStringForFile:@"GetWeatherData"]);
 }
 @end

@@ -1,15 +1,15 @@
 //
-//  MCCalenderAgendaContainerView.m
+//  MCCalendarAgendaContainerView.m
 //  MicrosoftiOSChallenge
 //
 //  Created by Shaheen M on 04/08/17.
 //  Copyright © 2017 Shaheen M. All rights reserved.
 //
 
-#import "MCCalenderAgendaContainerView.h"
+#import "MCCalendarAgendaContainerView.h"
 
 
-@interface MCCalenderAgendaContainerView()<UIGestureRecognizerDelegate>
+@interface MCCalendarAgendaContainerView()<UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIView *topView;
 @property(nonatomic, strong) UIView *bottomView;
@@ -21,16 +21,16 @@
 @end
 
 
-@implementation MCCalenderAgendaContainerView
+@implementation MCCalendarAgendaContainerView
 
 #pragma mark - Init
 
 /**
- Init method that returns MCCalenderAgendaContainerView object
+ Init method that returns MCCalendarAgendaContainerView object
 
- @param topView topView of the container - Calender view
+ @param topView topView of the container - Calendar view
  @param bottomView bottonView of the container - Agenda view
- @return returns initialized object of type MCCalenderAgendaContainerView
+ @return returns initialized object of type MCCalendarAgendaContainerView
  */
 -(instancetype)initWithTopView:(UIView *)topView andBottomView:(UIView *)bottomView{
 
@@ -153,7 +153,7 @@
 
 -(void)animateViewAnimationDirection:(BOOL)animationDirectioUp{
 
-    [self.delegate didStartPanningCalenderAgendaContainerView];
+    [self.delegate didStartPanningCalendarAgendaContainerView];
 
     if ((self.topConstraint.priority == 999)) {
         

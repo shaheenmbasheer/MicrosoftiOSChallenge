@@ -10,7 +10,7 @@
 
 /**
  MCDateRangeManager is used to calculating date range that is to be used
- repeatedly in the application but calender and agenda controls. Singleton will
+ repeatedly in the application but calendar and agenda controls. Singleton will
  save the data and process data range only if required.
  DateFormatter initialization is an extensive process and avoid recreating the instance
  everytime,MCDateRangeManager holds an initialized dataFormatter for calculation.

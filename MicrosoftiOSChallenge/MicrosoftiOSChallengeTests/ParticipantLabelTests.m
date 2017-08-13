@@ -7,12 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MCParticipantLabel.h"
-
-@interface MCParticipantLabel ()
-
-+(NSString *)partsOfName:(NSString *)name;
-@end
+#import "MCParticipantLabel_PrivateMethods.h"
 
 @interface ParticipantLabelTests : XCTestCase
 
@@ -30,22 +25,39 @@
     [super tearDown];
 }
 
+
+/**
+ Test if names with two part are calculated by taking first letter from each part.
+ */
 - (void)testPartsOfNameWithTwoPartNames{
     
     NSString *result = [MCParticipantLabel partsOfName:@"Shaheen Basheer"];
     XCTAssertEqualObjects(result, @"SB");
 }
 
+
+/**
+ Test if names with three parts are calculated by taking first letter from each part and truncating it to two.
+ */
 - (void)testPartsOfNameWithThreePartNames{
     
     NSString *result = [MCParticipantLabel partsOfName:@"Shaheen M Basheer"];
     XCTAssertEqualObjects(result, @"SM");
 }
+
+/**
+ Test if name with one part is calculated by taking just the first letter.
+ */
 - (void)testPartsOfNameWithOnePartNames{
     
     NSString *result = [MCParticipantLabel partsOfName:@"Shaheen"];
     XCTAssertEqualObjects(result, @"S");
 }
+
+
+/**
+ Test if name with four parts are calculated by taking first letter from each part and truncating it to two.
+ */
 - (void)testPartsOfNameWithFourPartNames{
     
     NSString *result = [MCParticipantLabel partsOfName:@"Shaheen M Basheer S"];

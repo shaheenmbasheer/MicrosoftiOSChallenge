@@ -32,7 +32,7 @@
  
  @return returns string value
  */
--(NSString *)stringValueWithFormat:(NSString *)format WithTimeZone:(NSTimeZone *)timeZone{
+-(NSString *)stringValueWithFormat:(NSString *)format withTimeZone:(NSTimeZone *)timeZone{
     
     //TODO: TimeZone
     NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];

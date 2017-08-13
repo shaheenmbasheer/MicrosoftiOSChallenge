@@ -17,11 +17,10 @@
  *
  *  @param completionBlock completionBlock
  *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
  */
--(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
+-(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
 
-    [MCNetworkConnection establishConnectionWithObject:request withCompletionBlock:completionBlock WithErrorBlock:errorBlock];
+    [MCNetworkConnection establishConnectionWithObject:request withCompletionBlock:completionBlock withErrorBlock:errorBlock];
 
 }
 @end

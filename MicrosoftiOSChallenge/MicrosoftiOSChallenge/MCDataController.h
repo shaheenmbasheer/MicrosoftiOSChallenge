@@ -11,29 +11,27 @@
 
 @import Foundation;
 /**
- * MCDataController contains a weak reference to either MCDummyDataProvider or MCO365DataProvider as
- * per the value set for kLHDemoMode set to YES or NO.This controller is used for switching between data providers
- * as well as fetching the necessary data for network operations or imitate a network operation.
+ MCDataController contains a weak reference to either MCDummyDataProvider or MCO365DataProvider as
+ per the value set for kLHDemoMode set to YES or NO.This controller is used for switching between data providers
+ as well as fetching the necessary data for network operations or imitate a network operation.
  */
 @interface MCDataController : NSObject
 
 + (void)setDelegateForDemoMode;
 
 /**
- *  User Events Request
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ User Events Request.
+ 
+ @param completionBlock completionBlock with result.
+ @param errorBlock      errorBlock
  */
-+(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
++(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 
 /**
- *  Weather Request
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
+ Weather Request.
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
-+(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
++(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 @end

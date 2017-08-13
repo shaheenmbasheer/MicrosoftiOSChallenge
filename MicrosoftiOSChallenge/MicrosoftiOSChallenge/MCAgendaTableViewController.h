@@ -15,10 +15,10 @@
 @protocol MCAgendaTableViewControllerDelegate <NSObject>
 /**
 MCAgendaViewControllerDelegate repective delegate method is called when user scrolls to an indexPath.
-Once this event is called, its forwarded to MCCalenderViewController to select the respective
-date in calender control.
+Once this event is called, its forwarded to MCCalendarViewController to select the respective
+date in calendar control.
 
-@param indexPath - MCCalenderViewControllerDelgate tableview indexPath to which user scrolled.
+@param indexPath - MCCalendarViewControllerDelgate tableview indexPath to which user scrolled.
 */
 - (void)didScrollToTableIndex:(NSIndexPath *)indexPath;
 @end

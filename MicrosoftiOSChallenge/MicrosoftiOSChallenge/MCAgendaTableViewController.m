@@ -16,9 +16,9 @@
 
 @interface MCAgendaTableViewController ()<UIScrollViewDelegate>
 /**
- Calender dates array which is used to render calender.
+ Calendar dates array which is used to render calendar.
  */
-@property(nonatomic, strong) NSMutableArray *calenderDateArray;
+@property(nonatomic, strong) NSMutableArray *calendarDateArray;
 @property(nonatomic, assign) BOOL isUserInvokedScroll;
 @property(nonatomic, strong) NSDateFormatter *dateFormatter;
 @end
@@ -62,7 +62,7 @@
 
     self.tableView.estimatedRowHeight = 100;
 
-    self.calenderDateArray = [[MCDateRangeManager getDateRangeArray] mutableCopy];
+    self.calendarDateArray = [[MCDateRangeManager getDateRangeArray] mutableCopy];
     [self.tableView registerClass:[MCAgendaEmptyTableViewCell class] forCellReuseIdentifier:[MCAgendaEmptyTableViewCell cellReuseIdentifier]];
     [self.tableView registerClass:[MCAgendaEventTableViewCell class] forCellReuseIdentifier:[MCAgendaEventTableViewCell cellReuseIdentifier]];
 
@@ -168,7 +168,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return [_calenderDateArray count];
+    return [_calendarDateArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -176,7 +176,7 @@
     if (!self.eventDictionary) {
         return 1;
     }
-    NSDate *date = _calenderDateArray[section];
+    NSDate *date = _calendarDateArray[section];
     NSArray *events = _eventDictionary[[MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"]];
     if ([events count]) {
         return [events count];
@@ -188,8 +188,8 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 
-    //Gets date for section from calenderDateArray
-    NSDate *dateForSection = _calenderDateArray[section];
+    //Gets date for section from calendarDateArray
+    NSDate *dateForSection = _calendarDateArray[section];
     //Get formatted display date from section date value.
     NSString *displayText = [self getDisplayStringForDate:dateForSection];
  
@@ -232,8 +232,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //Get date for indexPath from calenderDateArray.
-    NSDate *date = _calenderDateArray[indexPath.section];
+    //Get date for indexPath from calendarDateArray.
+    NSDate *date = _calendarDateArray[indexPath.section];
     //Get events for section date.
     NSArray *events = _eventDictionary[[MCDateRangeManager getDateKeyForDate:date]];
     //Cell can be either EmptyCell or EventCell depending on events.

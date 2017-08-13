@@ -91,18 +91,18 @@ static MCDateRangeManager *currentInstance = nil;
 
 
 /**
- Calculate calender dates from a lower and upper date limit. The date is calculated in such a way that the
+ Calculate calendar dates from a lower and upper date limit. The date is calculated in such a way that the
  first day of the calendarDateListArray is a Sunday.
 
  @param lowerLimit number of days prior to current date.
  @param upperLimit number of days ahead to current date.
- @return calculated calender date array.
+ @return calculated calendar date array.
  */
-- (NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit{
+-(NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit{
 
     //Get today's date
     NSDate *now = [NSDate date];
-    NSMutableArray *calenderDateArray = [@[] mutableCopy];
+    NSMutableArray *calendarDateArray = [@[] mutableCopy];
     //Specifies if its the day is first sunday or not.
     BOOL firstSunday = NO;
     //Loop from lower limit to upper limit to calculate valid date range.
@@ -117,15 +117,15 @@ static MCDateRangeManager *currentInstance = nil;
         }
         if (firstSunday) {
             //Start date calculation from first Sunday and thereon.
-            [calenderDateArray addObject:newDate];
+            [calendarDateArray addObject:newDate];
         }
         
         if (i == 0) {
-            //Indicates today's date index in calenderDateArray.
-            self.todayDate = [calenderDateArray count] -1;
+            //Indicates today's date index in calendarDateArray.
+            self.todayDate = [calendarDateArray count] -1;
         }
     }
-    return [calenderDateArray copy];
+    return [calendarDateArray copy];
 }
 /**
  Returns calculated array of NSDate values

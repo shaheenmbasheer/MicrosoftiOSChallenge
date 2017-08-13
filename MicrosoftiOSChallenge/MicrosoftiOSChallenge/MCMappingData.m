@@ -152,7 +152,7 @@
     weatherData.timeKey = [dateFormatter stringFromDate:weatherData.time];
     weatherData.summary = entriesDictionary[@"summary"];
     weatherData.iconName = entriesDictionary[@"icon"];
-    weatherData.minTemerature = [NSString stringWithFormat:@"%d",[entriesDictionary[@"temperatureMin"] intValue]];
+    weatherData.minTemperature = [NSString stringWithFormat:@"%d",[entriesDictionary[@"temperatureMin"] intValue]];
     weatherData.maxTemperature = [NSString stringWithFormat:@"%d",[entriesDictionary[@"temperatureMax"] intValue]];
 
     return weatherData;

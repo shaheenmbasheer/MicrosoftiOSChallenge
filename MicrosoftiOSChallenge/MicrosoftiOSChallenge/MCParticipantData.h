@@ -6,7 +6,7 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface MCParticipantData : NSObject
 

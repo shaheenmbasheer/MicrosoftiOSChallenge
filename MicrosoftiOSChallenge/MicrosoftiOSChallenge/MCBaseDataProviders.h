@@ -41,7 +41,7 @@ typedef void (^ErrorBlock)(NSError *error);
  @param completionBlock list of events from data source
  @param errorBlock encountered error with details
  */
--(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
+-(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 
 /**
  Weather request for daily weather details.
@@ -50,6 +50,6 @@ typedef void (^ErrorBlock)(NSError *error);
  @param completionBlock daily weather details
  @param errorBlock encountered error
  */
--(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
+-(void)fetchForecastWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 
 @end

@@ -15,7 +15,7 @@
 @property(nonatomic, strong) NSString *summary;
 @property(nonatomic, strong) NSString *iconName;
 @property(nonatomic, strong) NSString *iconFontName;
-@property(nonatomic, strong) NSString *minTemerature;
+@property(nonatomic, strong) NSString *minTemperature;
 @property(nonatomic, strong) NSString *maxTemperature;
 
 

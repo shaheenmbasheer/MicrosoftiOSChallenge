@@ -1,5 +1,5 @@
 //
-//  MCCalenderDayCollectionViewCell.h
+//  MCCalendarDayCollectionViewCell.h
 //  MicrosoftiOSChallenge
 //
 //  Created by Shaheen M on 07/08/17.
@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 /**
- MCCalenderDayCollectionViewCell is used to display each day cell in calender.
+ MCCalanderDayCollectionViewCell is used to display each day cell in calendar.
  */
-@interface MCCalenderDayCollectionViewCell : UICollectionViewCell
+@interface MCCalendarDayCollectionViewCell : UICollectionViewCell
 
 /**
- Display date object for calender cell
+ Display date object for calendar cell
  */
 @property(nonatomic, strong) NSDate *displayDate;
 @property(nonatomic, assign) BOOL isCenterDate;

@@ -1,20 +1,20 @@
 //
-//  MCCalenderDayCollectionViewCell.m
+//  MCCalendarDayCollectionViewCell.m
 //  MicrosoftiOSChallenge
 //
 //  Created by Shaheen M on 07/08/17.
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import "MCCalenderDayCollectionViewCell.h"
+#import "MCCalendarDayCollectionViewCell.h"
 #import "NSDate+DateToString.h"
 #import "MCDateRangeManager.h"
 
-@interface MCCalenderDayCollectionViewCell()
+@interface MCCalendarDayCollectionViewCell()
 
 
 /**
- dayLabel is used to display each day in calender.
+ dayLabel is used to display each day in calendar.
  */
 @property(nonatomic, strong) UILabel *dayLabel;
 
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation MCCalenderDayCollectionViewCell
+@implementation MCCalendarDayCollectionViewCell
 
 /**
  Returns cell reuse identifier
@@ -54,7 +54,7 @@
   if (self) {
 
       self.dayLabel = ({
-         //Returns day label in Calender collection view day cell.
+         //Returns day label in Calendar collection view day cell.
          UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, self.frame.size.width - 10, self.frame.size.height - 10)];
           displayLabel.textAlignment = NSTextAlignmentCenter;
           displayLabel.textColor = [UIColor darkGrayColor];
@@ -67,7 +67,7 @@
         [self.contentView addSubview:_dayLabel];
 
         self.monthLabel = ({
-          //Returns month label in Calender collection view day cell.
+          //Returns month label in Calendar collection view day cell.
           UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 4, self.frame.size.width, self.frame.size.height / 4)];
           displayLabel.font = [UIFont systemFontOfSize:9];
           displayLabel.textAlignment = NSTextAlignmentCenter;

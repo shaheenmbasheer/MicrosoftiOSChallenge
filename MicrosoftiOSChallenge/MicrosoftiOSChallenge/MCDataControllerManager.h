@@ -10,29 +10,27 @@
 #import "MCProtocolHeaders.h"
 
 /**
- *  Facade Interface to simplify MCDataController
- *  The requirement is to call multiple API's of MCDataController without any hassle.
+ Facade Interface to simplify MCDataController
+ The requirement is to call multiple API's of MCDataController without any hassle.
  */
 @interface MCDataControllerManager : NSObject
 
 @property (strong, nonatomic) NSOperationQueue *shortBurstOperationQueue;
 @property (strong, nonatomic) NSOperationQueue *backgroundOperationQueue;
 /**
- *  Connection Sequence for Events
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       specifies if data is to be forcefully loaded from server
+ Connection Sequence for Events
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
-+ (void)initializeEventDataWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
++ (void)initializeEventDataWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 
 /**
- *  Connection Sequence for Weather Data
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
- *  @param forceLoad       specifies if data is to be forcefully loaded from server
+ Connection Sequence for Weather Data
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
-+ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
++ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock;
 
 @end

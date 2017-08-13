@@ -10,7 +10,7 @@
 
 @implementation MCNetworkConnection
 
-+(void)establishConnectionWithObject:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
++(void)establishConnectionWithObject:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
 
 
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);

@@ -10,7 +10,7 @@
 
 /**
   MCCalendarAgendaViewController is used to display and handle events from
-  calender and agenda view controllers.
+  calendar and agenda view controllers.
  */
 @interface MCCalendarAgendaViewController : UIViewController
 

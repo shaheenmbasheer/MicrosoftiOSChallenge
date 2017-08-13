@@ -10,7 +10,7 @@
 
 
 /**
- *  CalenderAgendaContainerView Constants
+ *  CalendarAgendaContainerView Constants
  */
 
 //Constraint high priority value
