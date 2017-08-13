@@ -54,12 +54,10 @@
 
       self.dayLabel = ({
          //Returns day label in Calendar collection view day cell.
-         UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, self.frame.size.width - 10, self.frame.size.height - 10)];
+         UILabel *displayLabel = [[UILabel alloc] init];
           displayLabel.textAlignment = NSTextAlignmentCenter;
           displayLabel.textColor = [UIColor darkGrayColor];
           displayLabel.backgroundColor = [UIColor clearColor];
-          displayLabel.layer.cornerRadius = displayLabel.frame.size.height/2;
-          displayLabel.layer.masksToBounds = YES;
           displayLabel;
           });
       
@@ -67,7 +65,7 @@
 
         self.monthLabel = ({
           //Returns month label in Calendar collection view day cell.
-          UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 4, self.frame.size.width, self.frame.size.height / 4)];
+          UILabel *displayLabel = [[UILabel alloc] init];
           displayLabel.font = [UIFont systemFontOfSize:9];
           displayLabel.textAlignment = NSTextAlignmentCenter;
           displayLabel.textColor = [UIColor grayColor];
@@ -78,9 +76,8 @@
 
         self.eventIndicatorView = ({
             //Event indicator is displayed if there are events for the particular date.
-            UIView *indicatorView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 4, self.frame.size.height - 16, 8,8)];
+            UIView *indicatorView = [[UIView alloc] init];
             indicatorView.backgroundColor = [UIColor darkGrayColor];
-            indicatorView.layer.cornerRadius = indicatorView.frame.size.height/2;
             indicatorView;
               });
         [self.contentView addSubview:_eventIndicatorView];
@@ -89,8 +86,23 @@
   return self;
 }
 
+-(void)layoutSubviews{
+
+    [super layoutSubviews];
+    //Adding frame of dayLabel
+    [_dayLabel setFrame:CGRectMake(5, 5, self.frame.size.width - 10, self.frame.size.height - 10)];
+    //Setting corner radius
+    _dayLabel.layer.cornerRadius = _dayLabel.frame.size.height/2;
+    _dayLabel.layer.masksToBounds = YES;
+    //Adding frame of monthLabel
+    [_monthLabel setFrame:CGRectMake(0, 4, self.frame.size.width, self.frame.size.height / 4)];
+    //Adding frame of eventIndicatorView
+    [_eventIndicatorView setFrame:CGRectMake(self.frame.size.width/2 - 4, self.frame.size.height - 16, 8,8)];
+    //Setting corner radius
+    _eventIndicatorView.layer.cornerRadius = _eventIndicatorView.frame.size.height/2;    
+}
 /**
- Accessor method for displayDate is used to perform calculations to 
+ Accessor method for displayDate is used to perform calculations to
  display day, day cell background color which alternates between months
  and display month name for 1st day of every month.
  @param displayDate displayDate as NSDate

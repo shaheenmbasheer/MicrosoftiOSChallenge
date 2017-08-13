@@ -87,9 +87,13 @@
                                              options:0 metrics:nil
                                                views:@{@"_topView":_topView}]];
     
-    self.topConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:300.0f];
+    //Max height of calender after expansion
+    float maxHeight = UIScreen.mainScreen.bounds.size.width/7 * 5;
+    self.topConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:maxHeight];
     self.topConstraint.priority = 999;
-    self.updatedTopConstraint =  [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:120.0f];
+    //Min height of calender after contraction
+    float minHeight = UIScreen.mainScreen.bounds.size.width/7 * 2;
+    self.updatedTopConstraint =  [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:minHeight];
     self.updatedTopConstraint.priority = 998;
     [self addConstraint:_topConstraint];
     [self addConstraint:_updatedTopConstraint];

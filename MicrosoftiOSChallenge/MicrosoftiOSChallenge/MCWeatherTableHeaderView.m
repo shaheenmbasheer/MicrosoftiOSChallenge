@@ -93,7 +93,7 @@
             weatherDescriptionLabel.text = weatherData.summary;
             weatherDescriptionLabel.font = [UIFont systemFontOfSize:15];
             [weatherDescriptionLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
-            [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:270].active = true;
+            [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:220].active = true;
             weatherDescriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
             weatherDescriptionLabel;
         

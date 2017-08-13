@@ -136,6 +136,7 @@
         timeLabel.textAlignment = NSTextAlignmentLeft;
         timeLabel.text = [MCDateRangeManager calculateStringFromDate:eventData.startTime withFormat:@"hh:mm a"];
         timeLabel.textColor = [UIColor darkGrayColor];
+        timeLabel.adjustsFontSizeToFitWidth = YES;
         timeLabel;
     
     })];
@@ -148,9 +149,19 @@
         durationLabel.font = [UIFont boldSystemFontOfSize:12];
         durationLabel.text = eventData.duration;
         durationLabel.textColor = [UIColor grayColor];
+        durationLabel.adjustsFontSizeToFitWidth = YES;
         durationLabel;
     })];
-
+//    [timeVerticalStackView addArrangedSubview:({
+//        //Adding overflow view to keep a consistent width for the horizontal stackview.
+//        UIView *overflowView = [[UIView alloc] init];
+//        overflowView.backgroundColor = [UIColor whiteColor];
+//        [overflowView.heightAnchor constraintEqualToConstant:1].active = true;
+//        [overflowView.widthAnchor constraintEqualToConstant:225].active = true;
+//        overflowView;
+//    })];
+//    
+    
     return timeVerticalStackView;
 }
 
@@ -246,7 +257,7 @@
         UIView *overflowView = [[UIView alloc] init];
         overflowView.backgroundColor = [UIColor whiteColor];
         [overflowView.heightAnchor constraintEqualToConstant:1].active = true;
-        [overflowView.widthAnchor constraintEqualToConstant:225].active = true;
+        [overflowView.widthAnchor constraintEqualToConstant:190].active = true;
         overflowView;
     })];
     
@@ -278,8 +289,8 @@
         [names addObject:participant.name];
     }
     //If number of participants are more than 4 add a "..." at the end.
-    if ([names count] > 4) {
-        names =  [[names subarrayWithRange:NSMakeRange(0, 4)] mutableCopy];
+    if ([names count] > 3) {
+        names =  [[names subarrayWithRange:NSMakeRange(0, 3)] mutableCopy];
         [names addObject:@"..."];
     }
     

@@ -163,9 +163,6 @@ Collection view overlay View
     //Registering MCCalendarDayCollectionViewCell cell to calendar collection view.
     [self.calendarView registerClass:[MCCalendarDayCollectionViewCell class] forCellWithReuseIdentifier:[MCCalendarDayCollectionViewCell cellReuseIdentifier]];
     self.didInvokeScrollToIndexPath = NO;
-    
-
-//    self.calendarOverlayView.hidden = YES;
 
 }
 
@@ -219,7 +216,18 @@ Collection view overlay View
 
 }
 
-
+/**
+ Method to animated _calendarOverlayView show and hide.
+ 
+ @param isHidden show/hide view flag.
+ */
+-(void)animateOverlayViewHide:(BOOL)isHidden{
+    
+    [UIView transitionWithView:_calendarOverlayView duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        _calendarOverlayView.hidden =  isHidden;
+    } completion:nil];
+    
+}
 
 
 #pragma mark - Class Methods
@@ -232,6 +240,7 @@ Collection view overlay View
     
     return @"kMCCalendarCollectionViewControllerKey";
 }
+
 
 #pragma mark - IBActions
 #pragma mark - Accessor Methods
@@ -350,13 +359,12 @@ Number of sections in calendar collection view corresponds to number of dates in
 
 #pragma mark - UIScrollViewDelegate
 
-
 /**
  Method is called when user begins dragging calenderView.
  */
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     //Displaying overlay view
-    _calendarOverlayView.hidden = NO;
+    [self animateOverlayViewHide:NO];
 }
 /**
  Method is called when calenderView begins decelerating.
@@ -365,7 +373,8 @@ Number of sections in calendar collection view corresponds to number of dates in
 
     if (!decelerate) {
         //Hiding overlay view once scroll has ended.
-        self.calendarOverlayView.hidden = YES;
+        [self animateOverlayViewHide:YES];
+
     }
 }
 /**
@@ -373,7 +382,8 @@ Number of sections in calendar collection view corresponds to number of dates in
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     //Hiding overlay view once scroll has ended.
-    self.calendarOverlayView.hidden = YES;
+    [self animateOverlayViewHide:YES];
+
 }
 
 
