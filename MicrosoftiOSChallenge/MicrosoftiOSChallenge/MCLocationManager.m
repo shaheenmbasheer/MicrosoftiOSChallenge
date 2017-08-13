@@ -65,7 +65,6 @@ static MCLocationManager *currentInstance = nil;
 }
 - (void)startUpdatingLocation{
     
-    NSLog(@"Starting location updates");
     [self.locationManager startUpdatingLocation];
 }
 
@@ -75,16 +74,13 @@ static MCLocationManager *currentInstance = nil;
        didFailWithError:(NSError *)error{
     
     self.errorBlock(MCErrorFromParameters(@"CoreLocation", @"Unable to Retrieve CoreLocation", @"Try again later"));
-    NSLog(@"Location service failed with error %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray*)locations{
     
     CLLocation *location = [locations lastObject];
-    NSLog(@"Latitude %+.6f, Longitude %+.6f\n",
-          location.coordinate.latitude,
-          location.coordinate.longitude);
+ 
     [self.locationManager stopUpdatingLocation];
     self.currentLocation = location;
     if (self.completionBlock != nil) {

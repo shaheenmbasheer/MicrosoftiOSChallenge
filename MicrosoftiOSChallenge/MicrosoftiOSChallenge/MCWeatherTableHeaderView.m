@@ -21,7 +21,7 @@
         self.distribution = UIStackViewDistributionFill;
         self.alignment = UIStackViewAlignmentLeading;
         self.spacing = 5;
-        
+        self.translatesAutoresizingMaskIntoConstraints = NO;
         //Default label settings
         UILabel * (^getDefaultLabelType)() = ^UILabel *(){
             
@@ -44,12 +44,13 @@
         weatherStackView.distribution = UIStackViewDistributionFill;
         weatherStackView.alignment = UIStackViewAlignmentLeading;
         weatherStackView.spacing = 5;
-        
+        weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
              //Temperature label for displaying current temperature
         UILabel *temperatureLabel = getDefaultLabelType();
 //        temperatureLabel.text = @"21ºF";
         temperatureLabel.text = [NSString stringWithFormat:@"%@ºF",weatherData.maxTemperature];
 //        temperatureLabel.text = [NSString stringWithFormat:@"%@ºF  %@ºF",weatherData.minTemerature,weatherData.maxTemperature];
+        temperatureLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
         temperatureLabel.font = [UIFont systemFontOfSize:14];
         [temperatureLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
@@ -64,16 +65,18 @@
         [weatherIconLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
         [weatherIconLabel.widthAnchor constraintEqualToConstant:20].active = true;
         [weatherStackView addArrangedSubview:weatherIconLabel];
-        
+        weatherStackView.translatesAutoresizingMaskIntoConstraints = NO;
+
 
         //Weather description label.
         UILabel *weatherDescriptionLabel = getDefaultLabelType();
         weatherDescriptionLabel.text = weatherData.summary;
         weatherDescriptionLabel.font = [UIFont systemFontOfSize:15];
         [weatherDescriptionLabel.heightAnchor constraintGreaterThanOrEqualToConstant:30].active = true;
-        [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:325].active = true;
+        [weatherDescriptionLabel.widthAnchor constraintGreaterThanOrEqualToConstant:270].active = true;
         [weatherStackView addArrangedSubview:weatherDescriptionLabel];
-        
+        weatherDescriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+
         //Adding weather stackview to outlier(self) stackview.
         [self addArrangedSubview:dateDisplayLabel];
         if (weatherData) {

@@ -8,6 +8,7 @@
 
 #ifndef MCRequestObjectProtocol_h
 #define MCRequestObjectProtocol_h
+@import Foundation;
 
 @protocol MCRequestObjectProtocol <NSObject>
 

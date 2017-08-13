@@ -26,7 +26,7 @@
  *  @param errorBlock      errorBlock
  *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
  */
-+(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
++(void)performUserEventsRequestWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
 
 /**
  *  Weather Request
@@ -35,5 +35,5 @@
  *  @param errorBlock      errorBlock
  *  @param forceLoad       forceLoad specifies if data should be forcefully loaded from server
  */
-+(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad;
++(void)performWeatherRequestWithURL:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock;
 @end

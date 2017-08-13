@@ -12,7 +12,6 @@
 #import "MCAgendaTableViewController.h"
 #import "MCDateRangeManager.h"
 #import "MCDataControllerManager.h"
-#import "MCEventManager.h"
 #import "MCLocationManager.h"
 #import "MCWeatherDataRequest.h"
 
@@ -157,7 +156,7 @@
         
         
         
-    } WithErrorBlock:nil enableForceLoad:YES];
+    } WithErrorBlock:nil];
     
     
 }
@@ -166,17 +165,17 @@
     [MCDataControllerManager initializeEventDataWithCompletionBlock:^(id result) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
+//            NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
             
-            [self.calenderViewController setEventDictionary:eventDictionary];
-            [self.agendaViewController setEventDictionary:eventDictionary];
+            [self.calenderViewController setEventDictionary:result];
+            [self.agendaViewController setEventDictionary:result];
             [self.agendaViewController reloadData];
             [self.calenderViewController reloadData];
             [_calenderViewController scrollToCurrentDate];
             [self.view layoutIfNeeded];
 
         });
-    } WithErrorBlock:nil enableForceLoad:YES];
+    } WithErrorBlock:nil];
 
 }
 

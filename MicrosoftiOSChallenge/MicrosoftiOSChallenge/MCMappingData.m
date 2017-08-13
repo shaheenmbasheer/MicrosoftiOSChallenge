@@ -20,18 +20,46 @@
  *
  *  @return mapped object
  */
+//+ (id)mappedObjectForEventRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary{
+//
+//    
+//    NSArray *values = entriesDictionary[@"value"];
+//    
+//    NSMutableArray *eventArray = [@[] mutableCopy];
+//    
+//    for (NSDictionary *eventDictionary in values) {
+//
+//        [eventArray addObject:[MCMappingData mappedObjectForEventDataWithEntriesDictionary:eventDictionary]];
+//    }
+//    return eventArray;
+//}
 + (id)mappedObjectForEventRequestWithEntriesDictionary:(NSDictionary *)entriesDictionary{
-
+    
     
     NSArray *values = entriesDictionary[@"value"];
-    
-    NSMutableArray *eventArray = [@[] mutableCopy];
-    
-    for (NSDictionary *eventDictionary in values) {
+    NSMutableDictionary *eventDictionary = [@{} mutableCopy];
+    for (NSDictionary *eventItem in values) {
         
-        [eventArray addObject:[MCMappingData mappedObjectForEventDataWithEntriesDictionary:eventDictionary]];
+        
+        MCEventData *event = [MCMappingData mappedObjectForEventDataWithEntriesDictionary:eventItem];
+        
+        if (eventDictionary[event.eventDateKey]) {
+            NSMutableArray *events = [eventDictionary[event.eventDateKey] mutableCopy];
+            [events addObject:event];
+            
+            NSArray *sortedList = [events sortedArrayUsingComparator: ^(MCEventData *event1, MCEventData *event2) {
+                return [event1.startTime compare:event2.startTime];
+            }];
+            eventDictionary[event.eventDateKey] = sortedList;
+            
+        }else{
+            eventDictionary[event.eventDateKey] = @[event];
+            
+        }
     }
-    return eventArray;
+    
+    return eventDictionary;
+    
 }
 
 

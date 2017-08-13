@@ -8,7 +8,6 @@
 
 #import "MCDataControllerManager.h"
 #import "MCDataController.h"
-#import "MCEventManager.h"
 
 @implementation MCDataControllerManager
 
@@ -43,7 +42,7 @@ static MCDataControllerManager *currentInstance = nil;
  *  @param errorBlock      errorBlock
  *  @param forceLoad       specifies if data is to be forcefully loaded from server
  */
-+ (void)initializeEventDataWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
++ (void)initializeEventDataWithCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
 
     NSOperationQueue *queue = [[MCDataControllerManager sharedInstance] backgroundOperationQueue];
     
@@ -54,16 +53,14 @@ static MCDataControllerManager *currentInstance = nil;
         
     };
     
+    __block id eventResultDictionary;
     // Event Data Loading
     NSOperation *eventsDataOperation = [NSBlockOperation blockOperationWithBlock:^{
         
         [MCDataController performUserEventsRequestWithCompletionBlock:^(id result) {
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[MCEventManager sharedInstance] setEventArray:result];
-
-            });
-        } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
+            eventResultDictionary = result;
+        } WithErrorBlock:errorBlock];
         
           }];
     
@@ -73,7 +70,7 @@ static MCDataControllerManager *currentInstance = nil;
         // Finish Status
         dispatch_sync(dispatch_get_main_queue(), ^{
             
-            eventsDataOperation.isFinished?completionBlock(nil):errorBlock(nil);
+            eventsDataOperation.isFinished?completionBlock(eventResultDictionary):errorBlock(nil);
         });
     }];
     
@@ -88,7 +85,7 @@ static MCDataControllerManager *currentInstance = nil;
  *  @param errorBlock      errorBlock
  *  @param forceLoad       specifies if data is to be forcefully loaded from server
  */
-+ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock enableForceLoad:(BOOL)forceLoad{
++ (void)initializeWeatherDataWithRequest:(id<MCRequestObjectProtocol>)request withCompletionBlock:(CompletionBlock)completionBlock WithErrorBlock:(ErrorBlock)errorBlock{
 
     NSOperationQueue *queue = [[MCDataControllerManager sharedInstance] backgroundOperationQueue];
     
@@ -107,7 +104,7 @@ static MCDataControllerManager *currentInstance = nil;
         [MCDataController performWeatherRequestWithURL:request withCompletionBlock:^(id result) {
         
             parsedResult = result;
-        } WithErrorBlock:errorBlock enableForceLoad:forceLoad];
+        } WithErrorBlock:errorBlock];
         
     }];
     
