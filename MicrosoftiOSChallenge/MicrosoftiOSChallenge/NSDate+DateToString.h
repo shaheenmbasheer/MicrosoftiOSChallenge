@@ -9,26 +9,25 @@
 @import Foundation;
 @interface NSDate (DateToString)
 /**
- *  Convert NSDate to  string value with user specified format
- *
- *  @return returns string value
+ Convert NSDate to  string value with user specified format
+ 
+ @return returns string value
  */
-- (NSString *)stringValueWithFormat:(NSString *)format;
+-(NSString *)stringValueWithFormat:(NSString *)format;
 
 /**
- *  Number of days until
- *
- *  @param endDate endDate
- *
- *  @return number of days
+ Number of days until
+ 
+ @param endDate endDate
+ @return number of days
  */
-- (NSInteger)numberOfDaysUntil:(NSDate *)endDate;
+-(NSInteger)numberOfDaysUntil:(NSDate *)endDate;
 
 /**
- *  Outputs the next date
- *
- *  @return outputs the next date
+ Outputs the next date
+ 
+ @return outputs the next date
  */
-- (NSDate *)getNextDate;
+-(NSDate *)getNextDate;
 
 @end

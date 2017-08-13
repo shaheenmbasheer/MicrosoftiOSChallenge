@@ -11,11 +11,11 @@
 @implementation NSDate (DateToString)
 
 /**
- *  Convert NSDate to  string value with user specified format
- *
- *  @return returns string value
+ Convert NSDate to  string value with user specified format
+ 
+ @return returns string value
  */
-- (NSString *)stringValueWithFormat:(NSString *)format{
+-(NSString *)stringValueWithFormat:(NSString *)format{
     
     NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
     NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en"];
@@ -28,11 +28,11 @@
 }
 
 /**
- *  Convert NSDate to  string value with user specified format
- *
- *  @return returns string value
+ Convert NSDate to  string value with user specified format
+ 
+ @return returns string value
  */
-- (NSString *)stringValueWithFormat:(NSString *)format WithTimeZone:(NSTimeZone *)timeZone{
+-(NSString *)stringValueWithFormat:(NSString *)format WithTimeZone:(NSTimeZone *)timeZone{
     
     //TODO: TimeZone
     NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
@@ -41,13 +41,12 @@
     return [dateFormatter stringFromDate:self];
 }
 /**
- *  Number of days until
- *
- *  @param endDate Date endDate
- *
- *  @return number of days
+ Number of days until
+ 
+ @param endDate Date endDate
+ @return number of days
  */
-- (NSInteger)numberOfDaysUntil:(NSDate *)endDate {
+-(NSInteger)numberOfDaysUntil:(NSDate *)endDate {
     
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay fromDate:self toDate:endDate options:0];
@@ -55,11 +54,11 @@
 }
 
 /**
- *  Outputs the next date
- *
- *  @return outputs the next date
+ Outputs the next date
+ 
+ @return outputs the next date
  */
-- (NSDate *)getNextDate{
+-(NSDate *)getNextDate{
     
     NSCalendar*       calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
     NSDateComponents* components = [[NSDateComponents alloc] init];

@@ -31,8 +31,6 @@
 		DC146B0E1F3BA1E6009869AB /* MCEventData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B0C1F3BA1E6009869AB /* MCEventData.m */; };
 		DC146B111F3BA404009869AB /* MCParticipantData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B101F3BA404009869AB /* MCParticipantData.m */; };
 		DC146B121F3BA404009869AB /* MCParticipantData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B101F3BA404009869AB /* MCParticipantData.m */; };
-		DC146B151F3BB76E009869AB /* MCGlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B141F3BB76E009869AB /* MCGlobalVariables.m */; };
-		DC146B161F3BB76E009869AB /* MCGlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B141F3BB76E009869AB /* MCGlobalVariables.m */; };
 		DC146B1E1F3D1057009869AB /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC146B1D1F3D1057009869AB /* weathericons-regular-webfont.ttf */; };
 		DC146B1F1F3D1057009869AB /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC146B1D1F3D1057009869AB /* weathericons-regular-webfont.ttf */; };
 		DC146B231F3D27D7009869AB /* MCWeatherTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC146B221F3D27D7009869AB /* MCWeatherTableHeaderView.m */; };
@@ -115,8 +113,6 @@
 		DC146B0C1F3BA1E6009869AB /* MCEventData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCEventData.m; sourceTree = "<group>"; };
 		DC146B0F1F3BA404009869AB /* MCParticipantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParticipantData.h; sourceTree = "<group>"; };
 		DC146B101F3BA404009869AB /* MCParticipantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParticipantData.m; sourceTree = "<group>"; };
-		DC146B131F3BB76E009869AB /* MCGlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGlobalVariables.h; sourceTree = "<group>"; };
-		DC146B141F3BB76E009869AB /* MCGlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGlobalVariables.m; sourceTree = "<group>"; };
 		DC146B1B1F3BD5AC009869AB /* MCBaseTableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBaseTableViewCellProtocol.h; sourceTree = "<group>"; };
 		DC146B1D1F3D1057009869AB /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		DC146B211F3D27D7009869AB /* MCWeatherTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWeatherTableHeaderView.h; sourceTree = "<group>"; };
@@ -533,8 +529,6 @@
 				DC080C831F3881FA002B4FB3 /* MCGlobalHeaders.h */,
 				DC080C7E1F387D0A002B4FB3 /* MCDateRangeManager.h */,
 				DC080C7F1F387D0A002B4FB3 /* MCDateRangeManager.m */,
-				DC146B131F3BB76E009869AB /* MCGlobalVariables.h */,
-				DC146B141F3BB76E009869AB /* MCGlobalVariables.m */,
 				DC146B251F3F0FDE009869AB /* MCLocationManager.h */,
 				DC146B261F3F0FDE009869AB /* MCLocationManager.m */,
 			);
@@ -819,7 +813,6 @@
 				DC146B351F3F23D8009869AB /* MCNetworkConnection.m in Sources */,
 				DCE94B131F3F5D63005F3297 /* MCWeatherData.m in Sources */,
 				DC0B615A1F386137000C6D58 /* MCConstants.m in Sources */,
-				DC146B151F3BB76E009869AB /* MCGlobalVariables.m in Sources */,
 				DC4335701F3B16B900F44F22 /* MCParticipantLabel.m in Sources */,
 				DC23F49C1F379F100083A365 /* main.m in Sources */,
 				DC146B0D1F3BA1E6009869AB /* MCEventData.m in Sources */,
@@ -859,7 +852,6 @@
 				DC080C7D1F386E05002B4FB3 /* MCCalenderDayCollectionViewCell.m in Sources */,
 				DC43355C1F3A495D00F44F22 /* MCDummyDataProvider.m in Sources */,
 				DC4335641F3A49DE00F44F22 /* MCO365DataProvider.m in Sources */,
-				DC146B161F3BB76E009869AB /* MCGlobalVariables.m in Sources */,
 				DC23F4D21F37A0F40083A365 /* MCCalendarAgendaViewController.m in Sources */,
 				DC43356C1F3A66AD00F44F22 /* MCAgendaEventTableViewCell.m in Sources */,
 				DC080C811F387D0A002B4FB3 /* MCDateRangeManager.m in Sources */,

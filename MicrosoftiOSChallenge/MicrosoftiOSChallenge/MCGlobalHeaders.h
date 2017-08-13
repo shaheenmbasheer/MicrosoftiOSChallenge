@@ -9,6 +9,9 @@
 #ifndef MCGlobalHeaders_h
 #define MCGlobalHeaders_h
 
+/*
+ Contains global header list.
+ */
 #import "MCDateRangeManager.h"
 
 #endif /* MCGlobalHeaders_h */

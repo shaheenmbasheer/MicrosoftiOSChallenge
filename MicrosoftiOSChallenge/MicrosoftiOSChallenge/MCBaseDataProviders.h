@@ -9,20 +9,21 @@
 #import "MCRequestObjectProtocol.h"
 
 @import Foundation;
-
+/*
+ kIsDemoMode defined wheather the application runs with offline test data or using server data.
+ */
 #define kIsDemoMode NO
-
 
 /**
  Data source completionBlock.
-
+ 
  @param result data from data source.
  */
 typedef void(^CompletionBlock)(id result);
 
 /**
  Error from data source.
-
+ 
  @param error encountered error details.
  */
 typedef void (^ErrorBlock)(NSError *error);

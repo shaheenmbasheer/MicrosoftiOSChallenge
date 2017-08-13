@@ -84,11 +84,9 @@
 }
 -(void)stopScrollDeceleration{
 
-//    [self.delegate didScrollToTableIndex:[[self.tableView indexPathsForVisibleRows]lastObject]];
 
     CGPoint offset = self.tableView.contentOffset;
     [self.tableView setContentOffset:offset animated:NO];
-//    self.tableView.contentOffset = self.tableView.contentOffset;
 
 }
 

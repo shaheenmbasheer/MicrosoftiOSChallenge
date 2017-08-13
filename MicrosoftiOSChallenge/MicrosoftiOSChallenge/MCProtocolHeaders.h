@@ -6,10 +6,11 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#ifndef MCProtocolHeaders_h
-#define MCProtocolHeaders_h
+
+/*
+ Protocol headers list.
+ */
 
 #import "MCRequestObjectProtocol.h"
 #import "MCBaseDataProviders.h"
 #import "MCBaseTableViewCellProtocol.h"
-#endif /* MCProtocolHeaders_h */
