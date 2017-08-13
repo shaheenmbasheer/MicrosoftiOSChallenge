@@ -14,5 +14,4 @@
  */
 @interface MCCalendarAgendaViewController : UIViewController
 
-
 @end

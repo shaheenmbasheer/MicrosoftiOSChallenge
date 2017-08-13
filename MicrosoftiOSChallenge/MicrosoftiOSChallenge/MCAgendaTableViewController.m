@@ -19,29 +19,36 @@
  Calendar dates array which is used to render calendar.
  */
 @property(nonatomic, strong) NSMutableArray *calendarDateArray;
+
+/**
+ Flag indicates scroll is user invoked or not
+ */
 @property(nonatomic, assign) BOOL isUserInvokedScroll;
-@property(nonatomic, strong) NSDateFormatter *dateFormatter;
 @end
 
 @implementation MCAgendaTableViewController
 
+/**
+ Controller initialization method
+
+ @return initialized self.
+ */
 -(instancetype)init{
 
     self = [super init];
     if (self) {
-        
     }
     return self;
 }
 
+
+/**
+ Method is called when controller is loaded.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Registering default values for controller
     [self registerDefaults];
     
 }
@@ -55,18 +62,21 @@
 #pragma mark - UserDefined Methods
 - (void)registerDefaults {
     
+    //Adding tableview default settings.
     self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 30;
-
     self.tableView.estimatedRowHeight = 100;
 
+    //Initialzing calender data array.
     self.calendarDateArray = [[MCDateRangeManager getDateRangeArray] mutableCopy];
+    //Initializing isUserInvokedScroll
+    self.isUserInvokedScroll = NO;
+
+    //Registering cell with tableview
     [self.tableView registerClass:[MCAgendaEmptyTableViewCell class] forCellReuseIdentifier:[MCAgendaEmptyTableViewCell cellReuseIdentifier]];
     [self.tableView registerClass:[MCAgendaEventTableViewCell class] forCellReuseIdentifier:[MCAgendaEventTableViewCell cellReuseIdentifier]];
-
-    self.isUserInvokedScroll = NO;
 
 }
 
@@ -77,14 +87,16 @@
 -(void)scrollToIndexPath:(NSIndexPath *)indexPath{
 
     self.tableView.contentOffset = self.tableView.contentOffset;
-
     self.isUserInvokedScroll = YES;
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
 }
+/**
+ Method is used to stop tableview scroll deceleration
+ */
 -(void)stopScrollDeceleration{
 
-
+    //Changed the content offset stops the table from scrolling
     CGPoint offset = self.tableView.contentOffset;
     [self.tableView setContentOffset:offset animated:NO];
 
@@ -166,26 +178,36 @@
 
 #pragma mark - Table view data source
 
+/**
+ Method returns the total number of sections in table
+*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return [_calendarDateArray count];
 }
-
+/**
+ Method returns the number of rows per section in table
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (!self.eventDictionary) {
+        //If event array is nil, show one empty cell.
         return 1;
     }
     NSDate *date = _calendarDateArray[section];
-    NSArray *events = _eventDictionary[[MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"]];
+    NSArray *events = _eventDictionary[[MCDateRangeManager getDateKeyForDate:date]];
     if ([events count]) {
+        //Number of events denote number of cells in section.
         return [events count];
     }else{
+        //Display one empty cell.
         return 1;
     }
 }
 
-
+/**
+ Method returns view for header in section for tableview.
+ */
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 
     //Gets date for section from calendarDateArray
@@ -229,7 +251,9 @@
     return headerView;
 }
 
-
+/**
+ Method returns cell for each indexPath.
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Get date for indexPath from calendarDateArray.
@@ -269,16 +293,17 @@
 
 }
 
-
+/**
+ This method is called when user scroll has ended.
+ */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-        if (!_isUserInvokedScroll) {
+    if (!_isUserInvokedScroll) {
             
         NSIndexPath *path = [[self.tableView indexPathsForVisibleRows] firstObject];
         [self.delegate didScrollToTableIndex:path];
     }
     _isUserInvokedScroll = NO;
- 
 }
 
 @end

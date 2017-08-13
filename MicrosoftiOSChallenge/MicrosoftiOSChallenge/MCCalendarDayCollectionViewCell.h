@@ -17,8 +17,16 @@
  Display date object for calendar cell
  */
 @property(nonatomic, strong) NSDate *displayDate;
+
+/**
+ isCenterDate is used to denote center wednesday in calender.
+ It is used to position month and year in overlay view.
+ */
 @property(nonatomic, assign) BOOL isCenterDate;
-@property(nonatomic, assign) BOOL isTodayDate;
+
+/**
+ eventDictionary indicates wheather event is there for the particular cell.
+ */
 @property(nonatomic, strong) NSDictionary *eventDictionary;
 /**
  Returns cell reuse identifier

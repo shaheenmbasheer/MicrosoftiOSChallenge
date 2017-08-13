@@ -27,7 +27,6 @@
  particular day.
  */
 @property(nonatomic, strong) UIView *eventIndicatorView;
-
 @end
 
 @implementation MCCalendarDayCollectionViewCell
@@ -120,13 +119,12 @@
         self.isCenterDate = NO;
 
     }
-    NSString *eventDateKey = [MCDateRangeManager calculateStringFromDate:self.displayDate withFormat:@"ddMMyyyy"];
-    if ([eventDateKey isEqualToString:[MCDateRangeManager calculateStringFromDate:[NSDate date] withFormat:@"ddMMyyyy"]]) {
+    NSString *eventDateKey = [MCDateRangeManager getDateKeyForDate:self.displayDate];
+    if ([eventDateKey isEqualToString:[MCDateRangeManager getDateKeyForDate:[NSDate date]]]) {
           //If date is today date, the label textColor is changes and the cell is highlighted.
         _dayLabel.textColor = [UIColor blueColor];
         _monthLabel.textColor = [UIColor blueColor];
         
-//        [self setSelected:YES];
       }else{
          //Colors are changed to default in other cases
         _dayLabel.textColor = [UIColor grayColor];
@@ -134,18 +132,29 @@
       }
     
     if ([self.eventDictionary[eventDateKey] count]) {
+        //If eventDictionary is present, display eventIndicatorView.
         self.eventIndicatorView.hidden = NO;
     }else{
         self.eventIndicatorView.hidden = YES;
 
     }
 }
+
+/**
+ Resetting cell for reuse.
+ */
 -(void)prepareForReuse{
+    
     [super prepareForReuse];
     self.dayLabel.backgroundColor = [UIColor clearColor];
     self.eventIndicatorView.hidden = YES;
-
 }
+
+/**
+Method is used to set cell changes on selection and deselection.
+
+ @param selected selected state
+ */
 -(void)setSelected:(BOOL)selected{
 
     if (selected) {

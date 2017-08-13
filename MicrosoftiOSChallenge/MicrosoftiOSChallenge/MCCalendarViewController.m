@@ -186,7 +186,7 @@ Collection view overlay View
     }
     self.oldSelectedIndexPath = currentDateIndexPath;
     // Giving .1 delay for table to reset its position before selecting cell.
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_calendarView selectItemAtIndexPath:currentDateIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
 
     });
@@ -305,14 +305,17 @@ Number of sections in calendar collection view corresponds to number of dates in
 }
 
 #pragma mark <UICollectionViewDelegate>
-
-//- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    for (NSIndexPath *indexPath in collectionView.indexPathsForSelectedItems) {
-//        [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-//    }
-//    return collectionView.indexPathsForSelectedItems.count == 0 && indexPath.section == 1;
-//}
+/**
+ This method is called before the user is about to select a cell.
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Deselect all index path before selecting item in cell
+    for (NSIndexPath *indexPath in collectionView.indexPathsForSelectedItems) {
+        [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
+    return collectionView.indexPathsForSelectedItems.count == 0;
+}
 
 /**
  This method is called when a particular indexPath cell is selected in the collection view. Here, if there is 
@@ -324,13 +327,11 @@ Number of sections in calendar collection view corresponds to number of dates in
 
     if (self.oldSelectedIndexPath) {
         //Deselecting previously selected cell.
-//        [self collectionView:_calendarView didDeselectItemAtIndexPath:_oldSelectedIndexPath];
         [collectionView deselectItemAtIndexPath:self.oldSelectedIndexPath animated:NO];
 
     }
     [cell setSelected:YES];
-//    self.oldSelectedIndexPath = indexPath;
-
+    self.oldSelectedIndexPath = indexPath;
     if (!self.didInvokeScrollToIndexPath) {
         //If user selectes the cell, then only delegate method is called.
         [self.delegate didSelectCellAtIndexPath:indexPath];
@@ -340,7 +341,6 @@ Number of sections in calendar collection view corresponds to number of dates in
 
 /**
  Deselect calendar cell at given indexPath.
-
  */
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -350,26 +350,30 @@ Number of sections in calendar collection view corresponds to number of dates in
 
 #pragma mark - UIScrollViewDelegate
 
+
+/**
+ Method is called when user begins dragging calenderView.
+ */
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-
-  
-
-
+    //Displaying overlay view
     _calendarOverlayView.hidden = NO;
-    
-
 }
+/**
+ Method is called when calenderView begins decelerating.
+ */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 
     if (!decelerate) {
+        //Hiding overlay view once scroll has ended.
         self.calendarOverlayView.hidden = YES;
-
     }
 }
+/**
+ Method is called when calenderView has decelerated.
+ */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-
+    //Hiding overlay view once scroll has ended.
     self.calendarOverlayView.hidden = YES;
-
 }
 
 

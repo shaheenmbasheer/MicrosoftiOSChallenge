@@ -124,7 +124,6 @@
 		DC146B2A1F3F1119009869AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DC146B2D1F3F168E009869AB /* MCErrorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCErrorUtilities.h; sourceTree = "<group>"; };
 		DC146B2E1F3F168E009869AB /* MCErrorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCErrorUtilities.m; sourceTree = "<group>"; };
-		DC146B311F3F226A009869AB /* MicrosoftiOSChallenge-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MicrosoftiOSChallenge-Prefix.pch"; sourceTree = "<group>"; };
 		DC146B331F3F23D8009869AB /* MCNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNetworkConnection.h; sourceTree = "<group>"; };
 		DC146B341F3F23D8009869AB /* MCNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNetworkConnection.m; sourceTree = "<group>"; };
 		DC146B381F3F243F009869AB /* MCWeatherDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWeatherDataRequest.h; sourceTree = "<group>"; };
@@ -403,7 +402,6 @@
 				DC23F4D31F37A1300083A365 /* Constants */,
 				DC23F4AB1F379F100083A365 /* Info.plist */,
 				DC23F49B1F379F100083A365 /* main.m */,
-				DC146B311F3F226A009869AB /* MicrosoftiOSChallenge-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1020,7 +1018,7 @@
 				DEVELOPMENT_TEAM = T4JB848GZR;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallenge;
@@ -1036,7 +1034,7 @@
 				DEVELOPMENT_TEAM = T4JB848GZR;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "/Users/shaheenmbasheer/Projects/Microsoft/MicrosoftiOSChallenge/MicrosoftiOSChallenge/MicrosoftiOSChallenge-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = MicrosoftiOSChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaheen.MicrosoftiOSChallenge.MicrosoftiOSChallenge;

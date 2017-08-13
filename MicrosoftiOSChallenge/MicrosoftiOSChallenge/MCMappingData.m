@@ -108,7 +108,7 @@
         eventData.duration = [NSString stringWithFormat:@"%ldh", (long)hours];
 
     }else{
-        eventData.duration = [NSString stringWithFormat:@"%ldh %ldm", (long)hours, minutes];
+        eventData.duration = [NSString stringWithFormat:@"%ldh %ldm", (long)hours, (long)minutes];
 
     }
 

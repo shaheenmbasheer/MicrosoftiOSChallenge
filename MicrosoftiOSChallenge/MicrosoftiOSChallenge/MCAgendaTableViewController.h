@@ -23,7 +23,6 @@ date in calendar control.
 - (void)didScrollToTableIndex:(NSIndexPath *)indexPath;
 @end
 
-
 /**
  MCAgendaTableViewController is used to display events respective to the date
  the user.
@@ -41,6 +40,12 @@ date in calendar control.
  @param indexPath indexPath to which table should scroll.
  */
 -(void)scrollToIndexPath:(NSIndexPath *)indexPath;
+/**
+ Method is used to reload MCAgendaTableViewController
+ */
 -(void)reloadData;
+/**
+ Method is used to stop tableview scroll deceleration
+ */
 -(void)stopScrollDeceleration;
 @end

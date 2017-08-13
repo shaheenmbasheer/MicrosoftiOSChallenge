@@ -65,8 +65,6 @@
  */
 -(void)registerDefaults{
     
-
-   
     // Turning off translatesAutoresizingMaskIntoConstraints to work with constraints.
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -77,13 +75,9 @@
         self.calendarViewController = [[MCCalendarViewController alloc] init];
         _calendarViewController.view.backgroundColor = [UIColor grayColor];
         _calendarViewController.delegate = self;
-
         [self addChildViewController:_calendarViewController];
         _calendarViewController.view;
 
-//        UIView *topView = [[UIView alloc] init];
-//        topView.backgroundColor = [UIColor blueColor];
-//        topView;
     }) andBottomView:({
         
         //Returns MCAgendaTableViewController as bottomView
@@ -92,10 +86,6 @@
         _agendaViewController.delegate = self;
         [self addChildViewController:_agendaViewController];
         _agendaViewController.view;
-        
-//        UIView *bottomView = [[UIView alloc] init];
-//        bottomView.backgroundColor = [UIColor greenColor];
-//        bottomView;
     })];
     
     self.containerView.delegate = self;
@@ -119,54 +109,90 @@
     //Updating constraits
     [self.view layoutIfNeeded];
     
+    //Performing Event Data request.
     [self performEventRequest];
+    //Performing Weather Data request.
     [self performWeatherRequest];
     
 }
 
+/**
+ Displaying alert to user with title and description
+
+ @param title alert title as string
+ @param description alert description as string
+ */
+-(void)displayAlertWithTitle:(NSString *)title andDescription:(NSString *)description{
+
+    //Displaying alert to user with title and description
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:title
+                                                                  message:description
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okayButton = [UIAlertAction actionWithTitle:@"Okay"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:nil];
+
+    [alert addAction:okayButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+/**
+ This method is used to retrieve device location and perform weather data request.
+ */
 -(void)performWeatherRequest{
 
-
-    
+    //Get user current location from device
     [[MCLocationManager sharedInstance] startUpdatingLocationWithCompletionBlock:^(CLLocation *location) {
-        
+        //Performing event request once user gets current device location
         [self performWeatherDataRequestWithLocation:location];
 
     } withErrorBlock:^(NSError *error) {
+        //Displaying alert to user if application is denied location permission.
+        [self displayAlertWithTitle:error.localizedFailureReason andDescription:error.localizedDescription];
         
     }];
 
 
 
 }
+
+/**
+ Method is used to perform weather data request.
+
+ @param location current location of device.
+ */
 -(void)performWeatherDataRequestWithLocation:(CLLocation *)location{
     
     
     [MCDataControllerManager initializeWeatherDataWithRequest:({
+        //Creating request object.
         MCWeatherDataRequest *request = [[MCWeatherDataRequest alloc] init];
         request.location = location;
         (id)request;
         
     }) withCompletionBlock:^(id result) {
-        
+        //Moving UI updates to main thread.
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.agendaViewController setWeatherDictionary:result];
             [self.agendaViewController reloadData];
         });
         
-        
-        
-    } withErrorBlock:nil];
-    
-    
+    } withErrorBlock:^(NSError *error) {
+        //Displaying alert if connection fails.
+        [self displayAlertWithTitle:@"Network Error" andDescription:@"Unable to retrieve weather data."];
+    }];
 }
+
+/**
+ Method is used to perform event data request
+ */
 -(void)performEventRequest{
 
     [MCDataControllerManager initializeEventDataWithCompletionBlock:^(id result) {
-        
+        //Moving UI updates to main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSDictionary *eventDictionary = [MCEventManager getEventDictionary];
-            
             [self.calendarViewController setEventDictionary:result];
             [self.agendaViewController setEventDictionary:result];
             [self.agendaViewController reloadData];
@@ -175,7 +201,11 @@
             [self.view layoutIfNeeded];
 
         });
-    } withErrorBlock:nil];
+    } withErrorBlock:^(NSError *error) {
+        //Displaying alert if connection fails.
+        [self displayAlertWithTitle:@"Network Error" andDescription:@"Unable to retrieve outlook events data."];
+        
+    }];
 
 }
 
@@ -192,18 +222,12 @@
 }
 
 #pragma mark - IBActions
+/**
+ Method is triggered when user taps on today bar button.
+ */
 - (IBAction)didSelectScrollToToday:(UIBarButtonItem *)sender {
     
-    
-//    [self.agendaViewController scrollToTodayDate];
-    [self.calendarViewController scrollToCurrentDate];
-    
-//    NSIndexPath *currentDateIndexPath = [NSIndexPath indexPathForRow:[MCDateRangeManager todayDateIndex] inSection:0];
-//    [self didScrollToTableIndex:[NSIndexPath indexPathForRow:0 inSection:[MCDateRangeManager todayDateIndex]]];
-//    [self didSelectCellAtIndexPath:currentDateIndexPath];
-
-//    [self.agendaViewController scrollToTodayDate];
-
+        [self.calendarViewController scrollToCurrentDate];
 }
 
 #pragma mark - Accessor Methods
@@ -247,21 +271,23 @@
     NSDate *date = dateRange[indexPath.row];
     self.monthBarButtonItem.title = [MCDateRangeManager calculateStringFromDate:date withFormat:@"MMMM yyyy"];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+/**
+ MCCalendarViewControllerDelegate method is called when calender is about to scroll to today's date.
+ */
 - (void)willScrollToTodayDate{
 
     [self.agendaViewController stopScrollDeceleration];
 
 }
+
+/**
+ MCCalendarAgendaContainerViewDelegate is called when user starts pan gesture on container view.
+ */
 -(void)didStartPanningCalendarAgendaContainerView{
+
+    [self.agendaViewController stopScrollDeceleration];
 
 }
 
