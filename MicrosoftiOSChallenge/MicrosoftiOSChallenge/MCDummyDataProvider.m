@@ -12,11 +12,10 @@
 
 
 /**
- *  Method for converting JSON file to NSDictionary/NSArray
- *
- *  @param fileLocation name of JSON file from which data is loaded
- *
- *  @return object of type NSDictionary/NSArray
+ Method for converting JSON file to NSDictionary/NSArray
+
+ @param fileLocation name of JSON file from which data is loaded
+ @return object of type NSDictionary/NSArray
  */
 +(id)dictionaryWithContentsOfJSONStringForFile:(NSString*)fileLocation{
     
@@ -30,13 +29,12 @@
 }
 
 /**
- *  User  Outlook list of events for range of date Request
- *
- *  @param completionBlock completionBlock
- *  @param errorBlock      errorBlock
+ User  Outlook list of events for range of date Request
+ 
+ @param completionBlock completionBlock
+ @param errorBlock      errorBlock
  */
 -(void)fetchOutlookEventsWithCompletionBlock:(CompletionBlock)completionBlock withErrorBlock:(ErrorBlock)errorBlock{
-
 
     completionBlock([MCDummyDataProvider dictionaryWithContentsOfJSONStringForFile:@"GetEventData"]);
 }

@@ -11,7 +11,6 @@
 
 @implementation MCParticipantLabel
 
-
 /**
  Initializing MCParticipantLabel
 

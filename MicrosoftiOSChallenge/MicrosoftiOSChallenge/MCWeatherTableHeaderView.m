@@ -10,7 +10,6 @@
 
 @implementation MCWeatherTableHeaderView
 
-
 /**
  Initializing MCWeatherTableHeaderView
  
