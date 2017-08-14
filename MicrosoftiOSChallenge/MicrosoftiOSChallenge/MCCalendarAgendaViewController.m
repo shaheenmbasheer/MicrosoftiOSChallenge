@@ -31,10 +31,12 @@
  MCAgendaTableViewController is used to handle agenda delegates and forward
  user events to calendarAgendaViewController.
 */
-
+@property(nonatomic, strong) MCAgendaTableViewController *agendaViewController;
+/**
+ Is used to display current month and year on toolbar.
+ */
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *monthBarButtonItem;
 
-@property(nonatomic, strong) MCAgendaTableViewController *agendaViewController;
 @end
 
 @implementation MCCalendarAgendaViewController

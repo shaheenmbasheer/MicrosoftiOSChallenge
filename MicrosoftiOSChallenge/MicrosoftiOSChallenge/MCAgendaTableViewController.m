@@ -102,13 +102,6 @@
 
 }
 
--(NSString *)getDateKeyForDate:(NSDate *)date{
-
-    return [MCDateRangeManager calculateStringFromDate:date withFormat:@"ddMMyyyy"];
-
-}
-
-
 /**
  Method is used to get display date for table header view
 

@@ -266,7 +266,7 @@ Number of sections in calendar collection view corresponds to number of dates in
     UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
  
     if (cell.isCenterDate) {
-        
+        //If cell iscenterDate then add month and year label to calenderOverlayView.
         if (![self.calendarOverlayView viewWithTag:indexPath.row]) {
             [self.calendarOverlayView addSubview:({
                 UILabel *displayLabel = [[UILabel alloc] initWithFrame:CGRectMake(attributes.frame.origin.x - 50, attributes.frame.origin.y, 150, 50)];

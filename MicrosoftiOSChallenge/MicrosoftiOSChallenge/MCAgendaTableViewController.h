@@ -33,7 +33,15 @@ date in calendar control.
  is MCCalendarAgendaViewController in current scenario.
  */
 @property (nonatomic, weak) id<MCAgendaTableViewControllerDelegate> delegate;
+
+/**
+ Event data dictionary mapped according to date.
+ */
 @property (nonatomic, strong) NSDictionary *eventDictionary;
+
+/**
+ Weather data dictionary mapped according to date.
+ */
 @property (nonatomic, strong) NSDictionary *weatherDictionary;
 /**
  Method scrolls to given indexPath in table and selects the particular cell

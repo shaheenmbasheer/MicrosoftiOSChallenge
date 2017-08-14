@@ -10,10 +10,9 @@
 @import UIKit;
 
 /**
- *  Coded in such a way that it won't hide the darkest/lightest label
- *
- *
- *  @return UIColor parameter
+ Coded in such a way that it won't hide the darkest/lightest label
+ 
+ @return UIColor parameter
  */
 UIColor *MCAutoThemeCreator();
 

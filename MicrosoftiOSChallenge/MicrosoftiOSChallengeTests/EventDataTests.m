@@ -13,6 +13,10 @@
 
 @interface EventDataTests : XCTestCase
 
+
+/**
+ Event data response is saved in this dictionary.
+ */
 @property(nonatomic, strong) NSDictionary *eventDataResponseDictionary;
 
 @end
@@ -73,11 +77,8 @@
                 XCTAssertTrue([oldEventData.startTime compare:eventData.startTime] == NSOrderedAscending);
             }
             oldEventData = eventData;
-            
         }
-        
     }
-
 }
 
 

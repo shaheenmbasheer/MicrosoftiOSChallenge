@@ -9,8 +9,9 @@
 #import "MCErrorUtilities.h"
 
 /**
- *  Generates error object
+ Generates error object
  */
+
 NSError *MCErrorFromParameters(NSString *errorType, NSString *failureReason,NSString *errorRecoverySuggestion) {
     return [NSError
             errorWithDomain:@"com.microsoft.iOSChallenge"
