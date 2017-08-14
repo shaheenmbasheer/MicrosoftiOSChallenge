@@ -9,6 +9,10 @@
 #import <XCTest/XCTest.h>
 #import "MCDateRangeManager.h"
 
+
+/**
+ DateRangeManager extension for exposing private methods.
+ */
 @interface MCDateRangeManager ()
 
 - (NSArray *)prepareDataForDateRangeWithLowerLimit:(NSInteger)lowerLimit withUpperLimit:(NSInteger)upperLimit;

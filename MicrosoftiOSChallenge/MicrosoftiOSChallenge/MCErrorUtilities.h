@@ -9,6 +9,6 @@
 @import Foundation;
 
 /**
- *  Generates error object
+  Generates error object
  */
 NSError *MCErrorFromParameters(NSString *errorType, NSString *failureReason,NSString *errorRecoverySuggestion);

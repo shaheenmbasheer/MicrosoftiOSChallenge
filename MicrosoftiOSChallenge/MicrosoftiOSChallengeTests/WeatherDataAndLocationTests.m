@@ -17,7 +17,15 @@
 
 @interface WeatherDataAndLocationTests : XCTestCase
 
+
+/**
+ Weather data json response is saved in this dictionary
+ */
 @property(nonatomic, strong) NSDictionary *weatherResponseDictionary;
+
+/**
+ Weather data request which confirms to MCRequestObjectProtocol for generating request URL.
+ */
 @property(nonatomic, strong) MCWeatherDataRequest<MCRequestObjectProtocol> *weatherDataRequest;
 
 @end
@@ -61,6 +69,7 @@
 //Testing MCLocationManager whether it returns a valid location or not.
 -(void)testLocationisNotNil{
 
+    //Testing if MCLocationManager returns a valid location.
     XCTestExpectation *locationExpectation = [self expectationWithDescription:@"Location"];
     [[MCLocationManager sharedInstance] startUpdatingLocationWithCompletionBlock:^(CLLocation *location) {
         
@@ -82,7 +91,6 @@
 
 //Test if weather data parsing is returning a valid object
 -(void)testWeatherDataMappedObjectNotNil{
-
 
     NSDictionary *weatherDataDictionary = [MCMappingData mappedObjectForWeatherRequestWithEntriesDictionary:self.weatherResponseDictionary];
     

@@ -11,11 +11,34 @@
 
 @interface MCCalendarAgendaContainerView()<UIGestureRecognizerDelegate>
 
+/**
+ TopView in container view which is calendar control
+ */
 @property(nonatomic, strong) UIView *topView;
+
+/**
+ Bottom view in container view which is agenda control
+ */
 @property(nonatomic, strong) UIView *bottomView;
+
+/**
+ TopConstraint for pan gesture animation
+ */
 @property(nonatomic, strong) NSLayoutConstraint *topConstraint;
+
+/**
+ Updated constraint for pan gesture animation
+ */
 @property(nonatomic, strong) NSLayoutConstraint *updatedTopConstraint;
+
+/**
+ Top view pan gesture
+ */
 @property(nonatomic, strong) UIPanGestureRecognizer *topViewPanGesture;
+
+/**
+ Bottom view pan gesture
+ */
 @property(nonatomic, strong) UIPanGestureRecognizer *bottomViewPanGesture;
 
 @end
@@ -39,7 +62,6 @@
         
         self.topView = topView;
         self.bottomView = bottomView;
-//        [self setUpSubViewsWithStackView];
         [self setUpViewContraints];
         [self addPanGestureToSubViews];
         [self addPanGestureForState:YES];
@@ -101,6 +123,9 @@
 }
 
 
+/**
+ Adding pan gesture to top and bottom views.
+ */
 -(void)addPanGestureToSubViews{
 
     
@@ -141,6 +166,12 @@
 
 
 
+/**
+ Switing between pan gestures
+
+ @param isTopViewDominant flag denotes which view is dominant
+ and inverse view pan gesture is enabled.
+ */
 -(void)addPanGestureForState:(BOOL)isTopViewDominant{
     
     if (isTopViewDominant) {
@@ -155,7 +186,13 @@
 
 }
 
--(void)animateViewAnimationDirection:(BOOL)animationDirectioUp{
+
+/**
+ Animates the bottom view is up and down direction according to constraint priority.
+
+ @param animationDirectionUp view animation direction
+ */
+-(void)animateViewAnimationDirection:(BOOL)animationDirectionUp{
 
     [self.delegate didStartPanningCalendarAgendaContainerView];
 
@@ -182,9 +219,11 @@
 #pragma mark - UIGestureRecognizerDelegate
 
 
+/**
+ Gesture delegate for handling view animation.
 
+ */
 -(void)handleViewPanGesture:(UIPanGestureRecognizer *)recognizer{
-
 
     if(recognizer.state == UIGestureRecognizerStateBegan){
 
@@ -195,7 +234,10 @@
     }
 }
 
+/**
+ Method forwards gesture to subviews.
 
+ */
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }

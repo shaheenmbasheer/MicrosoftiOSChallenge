@@ -11,7 +11,7 @@
 @import Foundation;
 
 /**
- *  Dummy Class for demo purpose
+  Dummy Class for demo purpose
  */
 @interface MCDummyDataProvider : NSObject <MCBaseDataProviderProtocol>
 
