@@ -6,9 +6,13 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCBaseDataProviders.h"
 
+@import Foundation;
+
+/**
+ MCO365DataProvider acts as the online data source provider.
+ */
 @interface MCO365DataProvider : NSObject <MCBaseDataProviderProtocol>
 
 @end

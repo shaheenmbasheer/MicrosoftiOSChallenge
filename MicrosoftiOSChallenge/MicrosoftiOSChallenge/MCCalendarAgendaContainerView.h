@@ -6,8 +6,7 @@
 //  Copyright © 2017 Shaheen M. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
 
 /**
  MCCalendarAgendaContainerViewDelegate is triggered on pan gesture event

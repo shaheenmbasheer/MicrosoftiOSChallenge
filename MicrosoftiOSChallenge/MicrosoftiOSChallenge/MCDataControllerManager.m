@@ -14,7 +14,7 @@
 static MCDataControllerManager *currentInstance = nil;
 
 /**
- Returns shared instance of LHDataControllerManager
+ Returns shared instance of MCDataControllerManager
  
  @return MCDataControllerManager shared instance
  */

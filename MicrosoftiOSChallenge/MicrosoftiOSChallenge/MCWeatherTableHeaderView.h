@@ -6,9 +6,8 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import "MCWeatherData.h"
 @import UIKit;
-
+@class MCWeatherData;
 /**
  MCWeatherTableHeaderView is used to generate stackview to display weather information alongside today's date
  in table section view header.

@@ -7,9 +7,7 @@
 //
 
 #import "MCMappingData.h"
-#import "MCEventData.h"
-#import "MCParticipantData.h"
-#import "MCWeatherData.h"
+#import "MCDataModels.h"
 
 @implementation MCMappingData
 

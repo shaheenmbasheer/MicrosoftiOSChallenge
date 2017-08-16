@@ -10,7 +10,6 @@
 #import "MCBaseTableViewCellProtocol.h"
 @import UIKit;
 
-
 /**
  * MCAgendaEventTableViewCell is used to display events in AgendaTableView
  */
