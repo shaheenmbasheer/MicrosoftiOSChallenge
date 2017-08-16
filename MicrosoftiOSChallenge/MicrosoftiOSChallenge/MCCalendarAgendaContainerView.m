@@ -7,7 +7,7 @@
 //
 
 #import "MCCalendarAgendaContainerView.h"
-
+#import "MCConstants.h"
 
 @interface MCCalendarAgendaContainerView()<UIGestureRecognizerDelegate>
 
@@ -112,7 +112,7 @@
     //Max height of calender after expansion
     float maxHeight = UIScreen.mainScreen.bounds.size.width/7 * 5;
     self.topConstraint = [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:maxHeight];
-    self.topConstraint.priority = 999;
+    self.topConstraint.priority = kConstraintHighPriorityKey;
     //Min height of calender after contraction
     float minHeight = UIScreen.mainScreen.bounds.size.width/7 * 2;
     self.updatedTopConstraint =  [NSLayoutConstraint constraintWithItem:self.bottomView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0f constant:minHeight];
@@ -196,20 +196,20 @@
 
     [self.delegate didStartPanningCalendarAgendaContainerView];
 
-    if ((self.topConstraint.priority == 999)) {
+    if ((self.topConstraint.priority == kConstraintHighPriorityKey)) {
         
         [UIView animateWithDuration:.3f animations:^{
             
-            self.topConstraint.priority = 995;
+            self.topConstraint.priority = kConstraintLowPriorityKey;
             [self layoutIfNeeded];
         }];
         
         [self addPanGestureForState:NO];
-    }else if((self.topConstraint.priority == 995)){
+    }else if((self.topConstraint.priority == kConstraintLowPriorityKey)){
         
         [UIView animateWithDuration:0.3f animations:^{
             
-            self.topConstraint.priority = 999;
+            self.topConstraint.priority = kConstraintHighPriorityKey;
             [self layoutIfNeeded];
         }];
         [self addPanGestureForState:YES];

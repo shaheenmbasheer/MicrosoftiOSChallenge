@@ -15,7 +15,7 @@
 static id <MCBaseDataProviderProtocol>_dataProvider;
 
 /**
-  Initialize LHDataController as well as _dataProvider on factory method
+  Initialize MCDataController as well as _dataProvider on factory method
  */
 
 /**

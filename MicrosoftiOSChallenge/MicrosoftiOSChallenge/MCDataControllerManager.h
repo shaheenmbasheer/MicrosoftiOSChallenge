@@ -6,9 +6,8 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCProtocolHeaders.h"
-
+@import Foundation;
 /**
  Facade Interface to simplify MCDataController
  The requirement is to call multiple API's of MCDataController without any hassle.

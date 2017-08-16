@@ -6,9 +6,9 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCBaseDataProviders.h"
 
+@import Foundation;
 @interface MCO365DataProvider : NSObject <MCBaseDataProviderProtocol>
 
 @end
