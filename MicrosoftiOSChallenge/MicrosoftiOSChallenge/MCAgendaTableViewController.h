@@ -6,8 +6,7 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
 /**
  MCAgendaTableViewControllerDelegate is used to forward events to the delegate object when user
  scrolls to any particular indexPath.

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 /**
  MCCalanderDayCollectionViewCell is used to display each day cell in calendar.

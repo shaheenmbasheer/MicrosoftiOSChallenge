@@ -9,6 +9,10 @@
 #import "MCBaseDataProviders.h"
 
 @import Foundation;
+
+/**
+ MCO365DataProvider acts as the online data source provider.
+ */
 @interface MCO365DataProvider : NSObject <MCBaseDataProviderProtocol>
 
 @end

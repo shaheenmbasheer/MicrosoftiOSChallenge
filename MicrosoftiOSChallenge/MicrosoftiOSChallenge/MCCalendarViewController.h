@@ -6,8 +6,7 @@
 //  Copyright © 2017 Shaheen M Basheer. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
 
 /**
  MCCalendarViewControllerDelegate is used to forward events when user taps on

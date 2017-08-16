@@ -9,5 +9,8 @@
 #ifndef MCDataModels_h
 #define MCDataModels_h
 
-
+#import "MCEventData.h"
+#import "MCParticipantData.h"
+#import "MCWeatherData.h"
+#import "MCWeatherDataRequest.h"
 #endif /* MCDataModels_h */

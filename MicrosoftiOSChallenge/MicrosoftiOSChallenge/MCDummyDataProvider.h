@@ -11,7 +11,7 @@
 @import Foundation;
 
 /**
-  Dummy Class for demo purpose
+  MCDummyDataProvider acts as the offline dummydata data source provider.
  */
 @interface MCDummyDataProvider : NSObject <MCBaseDataProviderProtocol>
 
