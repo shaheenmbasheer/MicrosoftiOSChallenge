@@ -7,6 +7,7 @@
 //
 
 #import "MCWeatherTableHeaderView.h"
+#import "MCDataModels.h"
 
 @implementation MCWeatherTableHeaderView
 
