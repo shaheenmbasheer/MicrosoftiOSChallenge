@@ -1,6 +1,7 @@
 # MicrosoftiOSChallenge
 <a href="https://imgflip.com/gif/1u1njy"><img src="https://i.imgflip.com/1u1njy.gif" title="made at imgflip.com"/></a>
-is test project was created to demonstrate outlook calender creation from scratch without any third party libraries. The same was completed with in 3-4 days.
+
+This test project was created to demonstrate outlook calender creation from scratch without any third party libraries. The same was completed with in 3-4 days.
 
 # Experience highlights
 
